@@ -1,0 +1,93 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  analyze-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache Pub
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            ~/.pub-cache/hosted
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test --coverage
+
+  build-web:
+    runs-on: ubuntu-latest
+    needs: analyze-test
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.base_ref == 'main')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache Pub
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            ~/.pub-cache/hosted
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build web
+        run: flutter build web --web-renderer html
+
+  build-android:
+    runs-on: ubuntu-latest
+    needs: analyze-test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache Pub
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            ~/.pub-cache/hosted
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK (debug)
+        run: flutter build apk --debug

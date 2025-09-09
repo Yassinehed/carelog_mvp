@@ -1,0 +1,20 @@
+include: package:flutter_lints/flutter.yaml
+
+# Project-specific linter adjustments for CareLog MVP
+linter:
+  rules:
+    avoid_print: true
+    prefer_const_constructors: true
+    prefer_final_locals: true
+
+# Enforce stronger type safety and null-safety related rules
+analyzer:
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+
+# Exclude generated files from analysis
+exclude:
+  - '**/*.g.dart'
+  - '**/*.freezed.dart'
+  - '.dart_tool/**'
