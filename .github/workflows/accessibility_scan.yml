@@ -1,0 +1,35 @@
+name: Accessibility Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build web
+        run: flutter build web --web-renderer html
+
+      - name: Install http-server
+        run: npm install -g http-server
+
+      - name: Run accessibility scan
+        run: |
+          # serve the built web then run pa11y-ci (via npx) against it
+          npx pa11y-ci --version || npm i -g pa11y-ci
+          http-server build/web -p 8080 &
+          npx pa11y-ci --config .pa11yci.json || true
