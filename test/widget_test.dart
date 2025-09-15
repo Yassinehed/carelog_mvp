@@ -5,16 +5,20 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/material.dart';
 import 'package:carelog_mvp/core/presentation/widgets/carelog_logo.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('renders CareLogLogo inside a MaterialApp', (WidgetTester tester) async {
+  testWidgets('renders CareLogLogo inside a MaterialApp',
+      (WidgetTester tester) async {
     await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: CareLogLogo(size: 64, primaryColor: Color(0xFF0A66C2), accentColor: Color(0xFFFF8A00)),
+          child: CareLogLogo(
+              size: 64,
+              primaryColor: Color(0xFF0A66C2),
+              accentColor: Color(0xFFFF8A00)),
         ),
       ),
     ));
