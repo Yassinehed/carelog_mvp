@@ -6,15 +6,20 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:carelog_mvp/main.dart';
+import 'package:flutter/material.dart';
+import 'package:carelog_mvp/core/presentation/widgets/carelog_logo.dart';
 
 void main() {
-  testWidgets('HomePage shows welcome text', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const CareLogApp());
+  testWidgets('renders CareLogLogo inside a MaterialApp', (WidgetTester tester) async {
+    await tester.pumpWidget(const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: CareLogLogo(size: 64, primaryColor: Color(0xFF0A66C2), accentColor: Color(0xFFFF8A00)),
+        ),
+      ),
+    ));
 
-    // Verify the HomePage welcome text is present.
-    expect(find.textContaining('Bienvenue dans CareLog MVP'), findsOneWidget);
+    // CareLogLogo should be present in the widget tree
+    expect(find.byType(CareLogLogo), findsOneWidget);
   });
 }

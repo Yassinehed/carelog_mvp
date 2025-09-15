@@ -1,0 +1,55 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function to check if system is in read-only mode
+    function isSystemReadOnly() {
+      return get(/databases/$(database)/documents/config/system_status).data.isReadOnly == true;
+    }
+
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper function to check if user owns the document
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // CONFIG COLLECTION - System status (read-only for all users)
+    match /config/{document} {
+      allow read: if true;
+      allow write: if false; // Only Cloud Functions can write to config
+    }
+
+    // USERS COLLECTION
+    match /users/{userId} {
+      allow read: if isAuthenticated() && (isOwner(userId) || isAdmin());
+      allow write: if isAuthenticated() && !isSystemReadOnly() && isOwner(userId);
+      allow create: if isAuthenticated() && !isSystemReadOnly();
+    }
+
+    // SIGNALEMENTS COLLECTION
+    match /signalements/{signalementId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && !isSystemReadOnly();
+      allow create: if isAuthenticated() && !isSystemReadOnly();
+    }
+
+    // OF_ORDERS COLLECTION
+    match /of_orders/{orderId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && !isSystemReadOnly();
+      allow create: if isAuthenticated() && !isSystemReadOnly();
+    }
+
+    // Helper function to check if user is admin (future implementation)
+    function isAdmin() {
+      // Preferred method: use Firebase custom claims to mark admins.
+      // Example: set custom claim `admin: true` on the user's token using
+      // the Admin SDK. This makes role checks very efficient in security rules.
+      return request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}

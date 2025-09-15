@@ -1,0 +1,37 @@
+{
+  "name": "CareLog MVP Build Configuration",
+  "version": "1.0.0",
+  "build_configs": {
+    "development": {
+      "build_mode": "debug",
+      "tree_shake_icons": false,
+      "source_maps": true,
+      "minify": false
+    },
+    "staging": {
+      "build_mode": "profile",
+      "tree_shake_icons": true,
+      "source_maps": true,
+      "minify": true
+    },
+    "production": {
+      "build_mode": "release",
+      "tree_shake_icons": true,
+      "source_maps": false,
+      "minify": true
+    }
+  },
+  "deployment": {
+    "firebase_project": "carelog-mvp",
+    "hosting_target": "carelog-mvp-web",
+    "functions_region": "europe-west1",
+    "budget_limit": 1000
+  },
+  "features": {
+    "enable_firebase": true,
+    "enable_app_check": true,
+    "enable_cloud_functions": true,
+    "enable_budget_control": true,
+    "enable_admin_dashboard": true
+  }
+}

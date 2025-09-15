@@ -1,46 +1,167 @@
-// Minimal entry point for CareLog MVP
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'dart:async';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'firebase_options.dart';
+import 'injection.dart';
+import 'package:carelog_mvp/features/of_order/domain/usecases/list_of_orders.dart';
+import 'package:carelog_mvp/features/of_order/domain/usecases/create_of_order.dart';
+import 'package:carelog_mvp/features/of_order/domain/usecases/update_of_order_status.dart';
+import 'package:carelog_mvp/features/signalement/domain/usecases/list_signalements.dart';
+import 'package:carelog_mvp/features/signalement/domain/usecases/create_signalement.dart';
+import 'package:carelog_mvp/features/signalement/domain/usecases/update_signalement_status.dart';
+import 'core/presentation/pages/home_page.dart';
+import 'features/auth/presentation/pages/login_page.dart';
+import 'features/auth/presentation/pages/reset_password_page.dart';
+import 'features/material/presentation/pages/material_list_page.dart';
+import 'features/material/presentation/pages/create_material_page.dart';
+import 'features/signalement/presentation/pages/signalement_list_page.dart';
+import 'features/signalement/presentation/pages/create_signalement_page.dart';
+import 'features/of_order/presentation/pages/of_order_list_page.dart';
+import 'features/of_order/presentation/pages/create_of_order_page.dart';
+import 'features/admin/presentation/pages/admin_dashboard_page.dart';
 import 'l10n/app_localizations.dart';
-import 'core/security/secure_storage.dart';
-import 'core/security/app_check_service.dart';
+import 'features/auth/presentation/providers/auth_providers.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  // Attempt to initialize App Check (no-op if not configured)
-  try {
-    await AppCheckService.initialize();
-  } catch (_) {
-    // Initialization may fail in CI or without Firebase; continue anyway.
-  }
+void main() {
+  // Install Flutter error handler early
+  FlutterError.onError = (FlutterErrorDetails details) {
+    // ignore: avoid_print
+    print('FlutterError.onError: ${details.exceptionAsString()}');
+    // ignore: avoid_print
+    print(details.stack);
+    FlutterError.presentError(details);
+  };
 
-  runApp(const CareLogApp());
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+
+    // Initialize Firebase and fail fast if it doesn't initialize.
+    try {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+      debugPrint('Firebase initialized successfully.');
+    } catch (e, st) {
+      // rethrow so runZonedGuarded captures and logs the stack
+      debugPrint('Firebase.initializeApp() failed: $e');
+      debugPrint(st.toString());
+      rethrow;
+    }
+
+    // Configure DI (injectable) and surface any configuration errors.
+    try {
+      configureDependencies();
+      debugPrint('Dependency injection configured.');
+    } catch (e, st) {
+      debugPrint('configureDependencies() failed: $e');
+      debugPrint(st.toString());
+      rethrow;
+    }
+
+    // Consolidated alias registrations for abstract->concrete usecases
+    // (lightweight fallbacks when consumers ask for abstract types).
+    try {
+      // OF usecases
+      if (!getIt.isRegistered<GetOfOrdersUseCase>()) {
+        if (getIt.isRegistered<GetOfOrdersUseCaseImpl>()) {
+          getIt.registerFactory<GetOfOrdersUseCase>(
+              () => getIt<GetOfOrdersUseCaseImpl>());
+        }
+      }
+      if (!getIt.isRegistered<CreateOfOrderUseCase>()) {
+        if (getIt.isRegistered<CreateOfOrderUseCaseImpl>()) {
+          getIt.registerFactory<CreateOfOrderUseCase>(
+              () => getIt<CreateOfOrderUseCaseImpl>());
+        }
+      }
+      if (!getIt.isRegistered<UpdateOfOrderStatusUseCase>()) {
+        if (getIt.isRegistered<UpdateOfOrderStatusUseCaseImpl>()) {
+          getIt.registerFactory<UpdateOfOrderStatusUseCase>(
+              () => getIt<UpdateOfOrderStatusUseCaseImpl>());
+        }
+      }
+
+      // Signalement usecases
+      if (!getIt.isRegistered<ListSignalementsUseCase>()) {
+        if (getIt.isRegistered<ListSignalementsUseCaseImpl>()) {
+          getIt.registerFactory<ListSignalementsUseCase>(
+              () => getIt<ListSignalementsUseCaseImpl>());
+        }
+      }
+      if (!getIt.isRegistered<CreateSignalementUseCase>()) {
+        if (getIt.isRegistered<CreateSignalementUseCaseImpl>()) {
+          getIt.registerFactory<CreateSignalementUseCase>(
+              () => getIt<CreateSignalementUseCaseImpl>());
+        }
+      }
+      if (!getIt.isRegistered<UpdateSignalementStatusUseCase>()) {
+        if (getIt.isRegistered<UpdateSignalementStatusUseCaseImpl>()) {
+          getIt.registerFactory<UpdateSignalementStatusUseCase>(
+              () => getIt<UpdateSignalementStatusUseCaseImpl>());
+        }
+      }
+
+      // Log a compact summary of the important registration status
+      debugPrint(
+          'DI summary: GetOfOrdersUseCase registered=${getIt.isRegistered<GetOfOrdersUseCase>()}, impl=${getIt.isRegistered<GetOfOrdersUseCaseImpl>()}');
+      debugPrint(
+          'DI summary: ListSignalementsUseCase registered=${getIt.isRegistered<ListSignalementsUseCase>()}, impl=${getIt.isRegistered<ListSignalementsUseCaseImpl>()}');
+    } catch (e, st) {
+      debugPrint('Error during alias registration: $e');
+      debugPrint(st.toString());
+    }
+
+    // Run the app now that Firebase is initialized and DI is configured
+    runApp(const ProviderScope(child: MyApp()));
+  }, (error, stack) {
+    // ignore: avoid_print
+    print('Uncaught error in runZonedGuarded: $error');
+    // ignore: avoid_print
+    print(stack);
+  });
 }
 
-class CareLogApp extends StatefulWidget {
-  const CareLogApp({super.key});
+class MyApp extends ConsumerWidget {
+  const MyApp({super.key});
 
   @override
-  State<CareLogApp> createState() => _CareLogAppState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authState = ref.watch(authNotifierProvider);
+    final isAuthenticated = authState.isAuthenticated;
+    final isAuthLoading = authState.isLoading;
 
-class _CareLogAppState extends State<CareLogApp> {
-  Locale _locale = const Locale('fr');
+    // Show a simple splash/loading screen while auth status is being determined
+    if (isAuthLoading) {
+      return const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: Center(child: CircularProgressIndicator()),
+        ),
+      );
+    }
 
-  void _toggleLocale() {
-    setState(() {
-      _locale = _locale.languageCode == 'fr' ? const Locale('en') : const Locale('fr');
-    });
-  }
+    const primaryBlue = Color(0xFF0A66C2);
+    const accentOrange = Color(0xFFFF8A00);
+    const successGreen = Color(0xFF2ECC71);
 
-  @override
-  Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'CareLog MVP',
       debugShowCheckedModeBanner: false,
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
       theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: primaryBlue,
+          primary: primaryBlue,
+          secondary: accentOrange,
+          tertiary: successGreen,
+        ),
+        primaryColor: primaryBlue,
+        scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
+        textTheme: ThemeData.light().textTheme.apply(
+              fontFamily: 'Inter',
+            ),
       ),
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -48,79 +169,45 @@ class _CareLogAppState extends State<CareLogApp> {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: AppLocalizations.supportedLocales,
-      locale: _locale,
-      home: HomePage(
-        locale: _locale,
-        onToggleLocale: _toggleLocale,
-      ),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.locale, required this.onToggleLocale});
-
-  final Locale locale;
-  final VoidCallback onToggleLocale;
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  final _storage = SecureStorage();
-  String _token = '';
-
-  Future<void> _writeDemoToken() async {
-    await _storage.write('demo_token', 'carelog-demo-token');
-    final v = await _storage.read('demo_token');
-    setState(() => _token = v ?? '');
-  }
-
-  Future<void> _deleteDemoToken() async {
-    await _storage.delete('demo_token');
-    setState(() => _token = '');
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final loc = AppLocalizations.of(context)!;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(loc.homeDashboard),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            tooltip: widget.locale.languageCode == 'fr' ? 'Anglais' : 'Français',
-            icon: const Icon(Icons.language),
-            onPressed: widget.onToggleLocale,
-          ),
-        ],
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-            Text(
-              loc.homeWelcome,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: _writeDemoToken,
-              child: const Text('Store demo token'),
-            ),
-            const SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: _deleteDemoToken,
-              child: const Text('Delete demo token'),
-            ),
-            const SizedBox(height: 12),
-            Text('Stored token: $_token'),
-          ]),
-        ),
-      ),
+      supportedLocales: const [
+        Locale('en'), // English
+        Locale('fr'), // French
+      ],
+      // The app default language should be French; English remains optional.
+      locale: const Locale('fr'),
+      home: isAuthenticated ? const HomePage() : const LoginPage(),
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/reset-password': (context) => const ResetPasswordPage(),
+        '/home': (context) => const HomePage(),
+        '/materials': (context) => const MaterialListPage(),
+        '/materials/create': (context) => const CreateMaterialPage(),
+        '/signalements': (context) => const SignalementListPage(),
+        '/signalements/create': (context) => const CreateSignalementPage(),
+        '/of_orders': (context) => const OfOrderListPage(),
+        '/of_orders/create': (context) => const CreateOfOrderPage(),
+        '/admin': (context) => const AdminDashboardPage(),
+      },
+      onGenerateRoute: (settings) {
+        // Handle dynamic routes like /materials/{id}
+        if (settings.name?.startsWith('/materials/') == true) {
+          final materialId = settings.name!.substring('/materials/'.length);
+          if (materialId.isNotEmpty && materialId != 'create') {
+            // TODO: Implement MaterialDetailPage
+            return MaterialPageRoute(
+              builder: (context) => Scaffold(
+                appBar: AppBar(
+                    title: Text(AppLocalizations.of(context)!
+                        .materialDetailTitle(materialId))),
+                body: Center(
+                    child: Text(AppLocalizations.of(context)!
+                        .materialDetailComingSoon)),
+              ),
+            );
+          }
+        }
+        return null;
+      },
     );
   }
 }
