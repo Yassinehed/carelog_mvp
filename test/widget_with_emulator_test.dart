@@ -85,6 +85,8 @@ void main() {
 
     if (skipEmulatorTests || !authOpen) {
       // Skip the test gracefully when emulator isn't running or initialization failed.
+      // ignore: avoid_print
+      print('Skipping emulator test - Firebase emulator not available in CI/CD environment');
       return;
     }
 
@@ -92,9 +94,17 @@ void main() {
     const testEmail = 'test.user+emulator@example.com';
     const testPassword = 'password123';
 
+    // Clean up any existing user first
     try {
-      // Test user creation - skip email existence check for security
-    } catch (_) {}
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: testEmail,
+        password: testPassword,
+      );
+      // If we get here, user exists, so delete it
+      await FirebaseAuth.instance.currentUser?.delete();
+    } catch (_) {
+      // User doesn't exist or other error - that's fine
+    }
 
     // Create user
     try {
@@ -103,8 +113,9 @@ void main() {
         password: testPassword,
       );
     } catch (e) {
+      // If user already exists, try to sign in instead
       // ignore: avoid_print
-      print('User creation might have failed or user already exists: $e');
+      print('User creation failed, trying sign in: $e');
     }
 
     // Sign in the user
@@ -113,15 +124,15 @@ void main() {
       password: testPassword,
     );
 
-  // Pump the real app wrapped in ProviderScope so authNotifierProvider listens to the emulator
-  await tester.pumpWidget(const ProviderScope(child: MyApp()));
+    // Pump the real app wrapped in ProviderScope so authNotifierProvider listens to the emulator
+    await tester.pumpWidget(const ProviderScope(child: MyApp()));
 
-  // Give the app a bit more time to run async initialization (auth stream subscription, DI setup)
-  await tester.pumpAndSettle(const Duration(seconds: 5));
+    // Give the app a bit more time to run async initialization (auth stream subscription, DI setup)
+    await tester.pumpAndSettle(const Duration(seconds: 5));
 
-  // At this point, if the app recognizes the auth state, it should show HomePage.
-  // Check for presence of the admin IconButton which is part of HomePage AppBar actions.
-  expect(find.byIcon(Icons.admin_panel_settings), findsWidgets,
-    reason: 'Home page should show admin icon when authenticated');
+    // At this point, if the app recognizes the auth state, it should show HomePage.
+    // Check for presence of the admin IconButton which is part of HomePage AppBar actions.
+    expect(find.byIcon(Icons.admin_panel_settings), findsWidgets,
+      reason: 'Home page should show admin icon when authenticated');
   }, timeout: const Timeout(Duration(seconds: 30)));
 }
