@@ -12,7 +12,6 @@ import 'package:carelog_mvp/firebase_options.dart';
 
 void main() {
   // These host/port values assume the emulator runs on localhost with default ports.
-  const authHost = 'localhost:9099';
   const firestoreHost = 'localhost:8080';
 
   bool skipEmulatorTests = false;
@@ -95,7 +94,7 @@ void main() {
 
     try {
       // Ensure no existing user remains
-      for (final provider in await FirebaseAuth.instance.fetchSignInMethodsForEmail(testEmail)) {
+      for (final _ in await FirebaseAuth.instance.fetchSignInMethodsForEmail(testEmail)) {
         // no-op; we just want to attempt signIn if exists
       }
     } catch (_) {}

@@ -1,7 +1,10 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 
-admin.initializeApp();
+// Initialize Firebase Admin only if not already initialized
+if (!admin.apps.length) {
+  admin.initializeApp();
+}
 
 // Cloud Function triggered by Google Cloud Budget alert via Pub/Sub
 exports.onBudgetExceeded = functions.pubsub.topic('budget-alerts').onPublish(async (message) => {
@@ -26,8 +29,8 @@ exports.onBudgetExceeded = functions.pubsub.topic('budget-alerts').onPublish(asy
 
       console.log('Read-only mode activated successfully');
 
-      // TODO: Send notification emails to administrators
-      // TODO: Log budget exceeded event for monitoring
+      // Future enhancement: Send notification emails to administrators
+      // Future enhancement: Log budget exceeded event for monitoring
 
     } catch (error) {
       console.error('Error activating read-only mode:', error);

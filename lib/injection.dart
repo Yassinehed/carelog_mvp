@@ -19,10 +19,8 @@ import 'features/auth/data/repositories/auth_repository.dart';
 import 'features/auth/domain/repositories/i_auth_repository.dart';
 import 'data/repositories/material_repository_impl.dart';
 import 'domain/repositories/material_repository.dart';
-import 'domain/usecases/material/material_usecases.dart';
 import 'data/repositories/user_repository_impl.dart';
 import 'domain/repositories/user_repository.dart';
-import 'domain/usecases/user/user_usecases.dart';
 import 'injection.config.dart';
 
 final getIt = GetIt.instance;

@@ -1,0 +1,130 @@
+const { expect } = require    // Create a proper mock firestore object
+    const mockDoc = {
+      set: setStub,
+      get: getStub
+    };
+
+    const mockCollection = {
+      doc: sinon.stub().returns(mockDoc)
+    };
+
+    const mockFirestore = {
+      collection: sinon.stub().returns(mockCollection),
+      FieldValue: {
+        serverTimestamp: sinon.stub().returns('mock-timestamp')
+      }
+    };
+
+    // Replace admin.firestore with our mock
+    sinon.replace(admin, 'firestore', mockFirestore);
+
+describe('Cloud Functions', () => {
+  let setStub;
+  let getStub;
+  let myFunctions;
+
+  before(() => {
+    // Initialize admin SDK if not already done
+    if (!admin.apps.length) {
+      admin.initializeApp({ projectId: 'carelog-mv' });
+    }
+
+    // Create stubs for firestore operations
+    setStub = sinon.stub().callsFake((data) => {
+      console.log('setStub called with:', JSON.stringify(data, null, 2));
+      return Promise.resolve();
+    });
+    getStub = sinon.stub().resolves({
+      exists: true,
+      data: () => ({ isReadOnly: false })
+    });
+
+    // Create a proper mock firestore object
+    const mockFirestore = {
+      collection: sinon.stub().returns({
+        doc: sinon.stub().returns({
+          set: setStub,
+          get: getStub
+        })
+      }),
+      FieldValue: {
+        serverTimestamp: sinon.stub().returns('mock-timestamp')
+      }
+    };
+
+    // Stub admin.firestore BEFORE importing functions
+    sinon.stub(admin, 'firestore').returns(mockFirestore);
+
+    // Now import functions after the mock is set up
+    myFunctions = require('..');
+  });
+
+  after(() => {
+    test.cleanup();
+    sinon.restore();
+  });
+
+  it('onBudgetExceeded writes read-only state when budget exceeded', async () => {
+    const wrapped = test.wrap(myFunctions.onBudgetExceeded);
+
+    const fakeMessage = {
+      json: {
+        costAmount: 120,
+        budgetAmount: 100
+      }
+    };
+
+    await wrapped(fakeMessage);
+
+    // Debug: Check if setStub was called at all
+    console.log('setStub called?', setStub.called);
+    console.log('setStub call count:', setStub.callCount);
+    
+    // Verify that set was called with correct data
+    expect(setStub.calledOnce).to.be.true;
+    const setCallArgs = setStub.firstCall.args[0];
+    console.log('Actual set call args:', JSON.stringify(setCallArgs, null, 2));
+    expect(setCallArgs).to.have.property('isReadOnly', true);
+    expect(setCallArgs).to.have.property('budgetExceeded', true);
+  });
+
+  it('resetReadOnlyMode rejects unauthenticated caller', async () => {
+    const wrapped = test.wrap(myFunctions.resetReadOnlyMode);
+    try {
+      await wrapped({}, { auth: null });
+      throw new Error('Expected unauthenticated error');
+    } catch (err) {
+      expect(err).to.have.property('code', 'unauthenticated');
+    }
+  });
+
+  it('resetReadOnlyMode rejects caller without admin claim', async () => {
+    const wrapped = test.wrap(myFunctions.resetReadOnlyMode);
+    try {
+      await wrapped({}, { auth: { uid: 'user123', token: {} } });
+      throw new Error('Expected permission denied error');
+    } catch (err) {
+      expect(err).to.have.property('code', 'permission-denied');
+    }
+  });
+
+  it('resetReadOnlyMode succeeds for admin user', async () => {
+    const wrapped = test.wrap(myFunctions.resetReadOnlyMode);
+
+    const result = await wrapped({}, {
+      auth: {
+        uid: 'admin123',
+        token: { admin: true }
+      }
+    });
+
+    expect(result).to.have.property('success', true);
+  });
+
+  it('getSystemStatus returns object', async () => {
+    const wrapped = test.wrap(myFunctions.getSystemStatus);
+    const res = await wrapped({}, { auth: null });
+    expect(res).to.be.an('object');
+    expect(res).to.have.property('isReadOnly', false);
+  });
+});

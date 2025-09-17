@@ -170,7 +170,6 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
   ) async =>
       Left(ServerFailure());
 
-  @override
   Future<Either<Failure, OfOrder>> assignSupervisor(
     String orderId,
     String supervisorId,
@@ -178,7 +177,6 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
   ) async =>
       Left(ServerFailure());
 
-  @override
   Future<Either<Failure, OfOrder>> assignProductionLine(
     String orderId,
     String productionLine,
@@ -198,7 +196,6 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
   Future<Either<Failure, OfOrderStats>> getStatistics() async =>
       Left(ServerFailure());
 
-  @override
   Future<Either<Failure, List<OfOrder>>> getByMaterial(
           String materialReference) async =>
       Left(ServerFailure());
@@ -207,27 +204,22 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
   Future<Either<Failure, Map<OfOrderStatus, int>>> getCountByStatus() async =>
       Left(ServerFailure());
 
-  @override
   Future<Either<Failure, Map<OfOrderPriority, int>>>
       getCountByPriority() async => Left(ServerFailure());
 
-  @override
   Future<Either<Failure, List<OfOrder>>> getByProgressRange(
           int minProgress, int maxProgress) async =>
       Left(ServerFailure());
 
-  @override
   Future<Either<Failure, double>> getAverageCompletionTime() async =>
       Left(ServerFailure());
 
-  @override
   Future<Either<Failure, List<OfOrder>>> getCompletedInDateRange(
     DateTime startDate,
     DateTime endDate,
   ) async =>
       Left(ServerFailure());
 
-  @override
   Future<Either<Failure, int>> archiveCompleted(int daysOld) async =>
       Left(ServerFailure());
 
