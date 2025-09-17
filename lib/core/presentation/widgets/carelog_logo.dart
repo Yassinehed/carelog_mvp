@@ -7,11 +7,11 @@ class CareLogLogo extends StatelessWidget {
   final Color accentColor;
 
   const CareLogLogo({
-    Key? key,
+    super.key,
     this.size = 96,
     this.primaryColor = const Color(0xFF0A66C2), // primaryBlue
     this.accentColor = const Color(0xFFFF8A00), // accentOrange
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +45,9 @@ class _CareLogLogoPainter extends CustomPainter {
     final radius = size.width * 0.36;
 
     // Draw stylized 'C' arc
+    const startAngle = -3.14 / 2 - 0.2;
+    const sweepAngle = 3.14 * 1.4;
     final rect = Rect.fromCircle(center: Offset(cx, cy), radius: radius);
-    final startAngle = -3.14 / 2 - 0.2;
-    final sweepAngle = 3.14 * 1.4;
     canvas.drawArc(rect, startAngle, sweepAngle, false, paint);
 
     // Draw check/flow mark using accent color

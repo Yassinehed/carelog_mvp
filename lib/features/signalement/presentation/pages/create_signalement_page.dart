@@ -303,7 +303,7 @@ class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
 
               // Info aggiuntive
               Card(
-                color: theme.colorScheme.surfaceVariant.withOpacity(0.5),
+                color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Column(

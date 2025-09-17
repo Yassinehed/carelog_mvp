@@ -62,7 +62,7 @@ void main() {
 
     // Point Firestore to emulator
     try {
-      FirebaseFirestore.instance.settings = Settings(
+      FirebaseFirestore.instance.settings = const Settings(
         host: firestoreHost,
         sslEnabled: false,
         persistenceEnabled: false,
@@ -89,14 +89,11 @@ void main() {
     }
 
     // Create test user on the Auth emulator
-    final testEmail = 'test.user+emulator@example.com';
-    final testPassword = 'password123';
+    const testEmail = 'test.user+emulator@example.com';
+    const testPassword = 'password123';
 
     try {
-      // Ensure no existing user remains
-      for (final _ in await FirebaseAuth.instance.fetchSignInMethodsForEmail(testEmail)) {
-        // no-op; we just want to attempt signIn if exists
-      }
+      // Test user creation - skip email existence check for security
     } catch (_) {}
 
     // Create user

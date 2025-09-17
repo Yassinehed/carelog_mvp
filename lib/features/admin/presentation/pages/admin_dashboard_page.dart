@@ -594,7 +594,7 @@ class _AdminDashboardPageState extends ConsumerState<AdminDashboardPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '💡 ' + AppLocalizations.of(context)!.testingHeader,
+                    '💡 ${AppLocalizations.of(context)!.testingHeader}',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 14,

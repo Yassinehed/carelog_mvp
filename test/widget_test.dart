@@ -8,12 +8,7 @@
 // - Firebase emulator integration
 
 import 'package:carelog_mvp/core/presentation/widgets/carelog_logo.dart';
-import 'package:carelog_mvp/features/auth/presentation/pages/login_page.dart';
-import 'package:carelog_mvp/features/auth/presentation/providers/auth_providers.dart';
-import 'package:carelog_mvp/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Fake use case implementations for testing

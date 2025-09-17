@@ -228,8 +228,9 @@ class OfOrder with _$OfOrder {
 
   /// Checks if delivery is overdue
   bool get isDeliveryOverdue {
-    if (deliveryDeadline == null || status == OfOrderStatus.delivered)
+    if (deliveryDeadline == null || status == OfOrderStatus.delivered) {
       return false;
+    }
     return DateTime.now().isAfter(deliveryDeadline!);
   }
 
