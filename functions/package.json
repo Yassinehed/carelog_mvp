@@ -1,0 +1,32 @@
+{
+  "name": "carelog-functions",
+  "description": "Cloud Functions for CareLog MVP - Cost Control System",
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^5.0.0"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^3.0.0",
+    "chai": "^4.3.7",
+    "firebase-functions-test": "^3.1.0",
+    "mocha": "^10.2.0",
+    "sinon": "^21.0.0"
+  },
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "test:functions": "mocha --timeout 10000 test/functions.test.js",
+    "test:admin": "mocha --timeout 10000 test/admin-manager.test.js",
+    "test:rules": "node test-rules/rules_validation.js",
+    "test:emulator": "npm run test:functions && npm run test:rules",
+    "test:all": "npm run test:functions && npm run test:admin"
+  },
+  "private": true
+}

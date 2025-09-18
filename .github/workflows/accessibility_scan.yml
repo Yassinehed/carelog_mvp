@@ -24,12 +24,12 @@ jobs:
       - name: Build web
         run: flutter build web --web-renderer html
 
-      - name: Install http-server
-        run: npm install -g http-server
+      - name: Install http-server and pa11y-ci
+        run: |
+          npm install -g http-server pa11y-ci
 
       - name: Run accessibility scan
         run: |
-          # serve the built web then run pa11y-ci (via npx) against it
-          npx pa11y-ci --version || npm i -g pa11y-ci
+          # serve the built web then run pa11y-ci against it
           http-server build/web -p 8080 &
           npx pa11y-ci --config .pa11yci.json || true

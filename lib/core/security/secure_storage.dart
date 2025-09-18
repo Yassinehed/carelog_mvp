@@ -4,7 +4,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 /// Minimal wrapper around flutter_secure_storage.
 /// On web, flutter_secure_storage is not available; use an in-memory fallback.
 class SecureStorage {
-  final FlutterSecureStorage? _storage = kIsWeb ? null : const FlutterSecureStorage();
+  final FlutterSecureStorage? _storage =
+      kIsWeb ? null : const FlutterSecureStorage();
   final Map<String, String> _inMemory = {};
 
   Future<void> write(String key, String value) async {
