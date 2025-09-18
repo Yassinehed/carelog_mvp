@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Cache Pub
         uses: actions/cache@v4
@@ -45,7 +45,7 @@ jobs:
     if: false  # Temporarily disabled - can be re-enabled when needed
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Cache Pub
         uses: actions/cache@v4
@@ -72,7 +72,7 @@ jobs:
     if: false  # Temporarily disabled due to flutter_secure_storage namespace issue
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Cache Pub
         uses: actions/cache@v4
