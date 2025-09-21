@@ -34,24 +34,23 @@ describe('Cloud Functions', () => {
       doc: () => mockDoc
     };
 
-    const mockFirestore = {
-      collection: (name) => {
-        console.log('Mock firestore.collection called with:', name);
-        return mockCollection;
-      },
-      FieldValue: {
-        serverTimestamp: () => 'mock-timestamp'
-      }
+    const mockFirestore = function() {
+      return {
+        collection: (name) => {
+          console.log('Mock firestore.collection called with:', name);
+          return mockCollection;
+        },
+        FieldValue: {
+          serverTimestamp: () => 'mock-timestamp'
+        }
+      };
     };
 
-    // Replace admin.firestore getter with our mock
+    // Replace admin.firestore function with our mock function
     admin.firestore = mockFirestore;
 
     // Now import functions after the mock is set up
     myFunctions = require('..');
-
-    // Re-apply the mock AFTER importing functions to ensure it takes effect
-    admin.firestore = mockFirestore;
   });
 
   after(() => {
