@@ -56,7 +56,7 @@ jobs:
             firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'node scripts/seed_firestore.js && flutter test integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
           else
             echo "No seeder script found; running tests directly"
-            firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'flutter test integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
+            firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'flutter test --platform=chrome integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
           fi
 
       - name: Upload emulator logs (always)
