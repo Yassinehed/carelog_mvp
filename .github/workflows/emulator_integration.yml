@@ -9,6 +9,8 @@ on:
 jobs:
   emulator-integration:
     runs-on: ubuntu-latest
+    env:
+      TEST_PLATFORM: chrome
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,6 +27,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+
+      - name: Cache Firebase emulators
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/firebase/emulators
+          key: ${{ runner.os }}-firebase-emulators-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-firebase-emulators-
 
       - name: Install Firebase CLI
         run: |
@@ -56,7 +67,7 @@ jobs:
             firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'node scripts/seed_firestore.js && flutter test integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
           else
             echo "No seeder script found; running tests directly"
-            firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'flutter test --platform=chrome integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
+            firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'flutter test --platform=$TEST_PLATFORM integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
           fi
 
       - name: Upload emulator logs (always)
