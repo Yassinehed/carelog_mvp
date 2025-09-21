@@ -9,6 +9,8 @@ on:
 jobs:
   emulator-integration:
     runs-on: ubuntu-latest
+    env:
+      TEST_PLATFORM: chrome
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,15 +21,26 @@ jobs:
           path: |
             ~/.pub-cache
             ~/.pub-cache/hosted
-          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+          key: ubuntu-latest-pub-${{ hashFiles('**/pubspec.yaml') }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
+      - name: Cache Firebase emulators
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/firebase/emulators
+          key: ${{ runner.os }}-firebase-emulators-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-firebase-emulators-
+
       - name: Install Firebase CLI
-        run: npm install -g firebase-tools
+        run: |
+          npm install -g firebase-tools --no-audit --no-fund --silent --unsafe-perm=true
+          firebase --version || true
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -35,29 +48,33 @@ jobs:
           flutter-version: '3.32.5'
 
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          flutter pub get
 
       - name: Run emulator-backed integration tests
         id: run-tests
         env:
-          # Ensure Admin SDK picks up a project id for seeding against the emulators
           GCLOUD_PROJECT: carelog-mv
           GOOGLE_CLOUD_PROJECT: carelog-mv
         run: |
-          # Use emulators:exec which starts emulators, runs the command, then stops them
-          # The inner command runs the seeder (if present) then the flutter integration test.
-          # We use bash -lc to ensure the compound command is interpreted correctly.
+          set -x
+          echo "Runner OS: $RUNNER_OS"
           if [ -f scripts/seed_emulator.sh ]; then
             echo "Found seeder: scripts/seed_emulator.sh"
             firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'bash scripts/seed_emulator.sh && flutter test integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
+          elif [ -f scripts/seed_firestore.js ]; then
+            echo "Found node seeder: scripts/seed_firestore.js"
+            firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'node scripts/seed_firestore.js && flutter test integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
           else
             echo "No seeder script found; running tests directly"
-            firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'flutter test integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
+            firebase emulators:exec --only auth,firestore --project=carelog-mv "bash -lc 'flutter test --platform=$TEST_PLATFORM integration_test/emulator_integration_test.dart'" 2>&1 | tee emulators-local.log
           fi
 
-      - name: Upload emulator logs on failure
-        if: failure()
+      - name: Upload emulator logs (always)
         uses: actions/upload-artifact@v4
         with:
           name: emulator-logs
-          path: emulators-local.log
+          path: |
+            emulators-local.log
+            firebase-debug.log
+            emulators/**/debug.log
