@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+﻿import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../domain/core/entities.dart';
@@ -9,7 +9,7 @@ import '../mappers/signalement_mapper.dart' as signalement_mapper;
 import '../models/signalement_model.dart' as model;
 
 /// Implementation of SignalementRepository using Firebase
-@Injectable()
+@Injectable(as: SignalementRepository)
 class SignalementRepositoryImpl implements SignalementRepository {
   final FirestoreDataSource _firestoreDataSource;
 
@@ -22,14 +22,14 @@ class SignalementRepositoryImpl implements SignalementRepository {
     try {
       final doc = await _firestoreDataSource.getDocument(_collection, id);
       if (!doc.exists) {
-        return Left(ServerFailure());
+        return const Left(ServerFailure());
       }
       final signalementModel = model.Signalement.fromJson(doc.data()!);
       final signalement =
           signalement_mapper.SignalementMapper.toDomain(signalementModel);
       return Right(signalement);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -43,7 +43,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
           .toList();
       return Right(signalements);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -56,7 +56,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
           _collection, signalement.id, signalementModel.toJson());
       return Right(signalement);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -69,7 +69,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
           _collection, signalement.id, signalementModel.toJson());
       return Right(signalement);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -79,17 +79,17 @@ class SignalementRepositoryImpl implements SignalementRepository {
       await _firestoreDataSource.deleteDocument(_collection, id);
       return const Right(unit);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
   @override
   Future<Either<Failure, int>> count({Map<String, dynamic>? filters}) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, bool>> exists(String id) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Signalement>>> getPaginated({
@@ -97,11 +97,11 @@ class SignalementRepositoryImpl implements SignalementRepository {
     String? startAfter,
     Map<String, dynamic>? filters,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Signalement>>> search(String query) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   // SignalementRepository specific methods
   @override
@@ -120,7 +120,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
           .toList();
       return Right(signalements);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -141,7 +141,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
           .toList();
       return Right(signalements);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -159,7 +159,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
           .toList();
       return Right(signalements);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -176,7 +176,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
           .toList();
       return Right(signalements);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -194,7 +194,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
           .toList();
       return Right(signalements);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -221,7 +221,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
         },
       );
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -248,7 +248,7 @@ class SignalementRepositoryImpl implements SignalementRepository {
         },
       );
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -258,26 +258,26 @@ class SignalementRepositoryImpl implements SignalementRepository {
     String comment,
     String authorId,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Signalement>>> getDueToday() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Signalement>>> getOverdue() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Signalement>>> getByDateRange(
     DateTime startDate,
     DateTime endDate,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, SignalementStats>> getStatistics() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Signalement>>> searchWithFilters({
@@ -289,13 +289,15 @@ class SignalementRepositoryImpl implements SignalementRepository {
     DateTime? startDate,
     DateTime? endDate,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Map<SignalementStatus, int>>>
-      getCountByStatus() async => Left(ServerFailure());
+      getCountByStatus() async => const Left(ServerFailure());
 
   @override
   Future<Either<Failure, int>> archiveOldCompleted(int daysOld) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 }
+
+
