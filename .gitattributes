@@ -1,0 +1,46 @@
+# Git attributes for a Flutter project
+# Normalize line endings to LF for text files and ensure UTF-8 where possible.
+# Mark typical binary/artifacts as binary to avoid EOL conversions.
+
+# Default: treat all files as text and normalize to LF unless overridden.
+* text=auto eol=lf
+
+# Dart/Flutter source files — use LF and ensure UTF-8
+*.dart text working-tree-encoding=UTF-8 eol=lf
+*.yaml text working-tree-encoding=UTF-8 eol=lf
+*.yml text working-tree-encoding=UTF-8 eol=lf
+*.json text working-tree-encoding=UTF-8 eol=lf
+*.md text working-tree-encoding=UTF-8 eol=lf
+*.txt text working-tree-encoding=UTF-8 eol=lf
+
+# Shell scripts — keep LF
+*.sh text eol=lf
+
+# Windows scripts — keep CRLF
+*.ps1 text eol=crlf
+
+# Ignore EOL conversion for binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.jar binary
+*.war binary
+*.exe binary
+*.dll binary
+*.so binary
+
+# Flutter/engine artifacts and generated files — keep binary
+android/gradle-wrapper.jar binary
+ios/Flutter/Flutter.framework binary
+ios/Flutter/Flutter.podspec binary
+**/generated_plugin_registrant.* binary
+
+# Editor/project files — prefer not to normalize; keep as-is
+*.iml binary
+.idea/** binary
+
+# Ensure Git doesn't attempt EOL conversions on these
+.github/** text=auto eol=lf
