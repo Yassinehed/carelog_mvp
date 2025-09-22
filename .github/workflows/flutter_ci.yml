@@ -37,7 +37,10 @@ jobs:
         run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
       - name: Run tests
-        run: flutter test --coverage test/widget_test.dart test/features/
+        run: |
+          # Run unit and smoke tests including DI smoke test
+          flutter test --coverage test/widget_test.dart test/features/
+          flutter test test/di_smoke_test.dart
 
   build-web:
     runs-on: ubuntu-latest
