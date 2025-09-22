@@ -1,0 +1,51 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null",
+    "of_orders": {
+      ".indexOn": ["status", "createdAt", "updatedAt"],
+      "$orderId": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        ".validate": "newData.hasChildren(['status', 'updatedAt'])"
+      }
+    },
+    "signalements": {
+      ".indexOn": ["status", "priority", "createdAt", "updatedAt"],
+      "$signalementId": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        ".validate": "newData.hasChildren(['status', 'updatedAt'])"
+      }
+    },
+    "materials": {
+      ".indexOn": ["currentStock", "minimumStock", "updatedAt"],
+      "$materialId": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        ".validate": "newData.hasChildren(['currentStock', 'updatedAt'])"
+      }
+    },
+    "notifications": {
+      ".indexOn": ["userId", "createdAt", "read"],
+      "$notificationId": {
+        ".read": "auth != null && auth.uid == data.child('userId').val()",
+        ".write": "auth != null",
+        ".validate": "newData.hasChildren(['userId', 'type', 'message', 'createdAt'])"
+      }
+    },
+    "live_stats": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "of_orders": {
+        ".validate": "newData.isNumber()"
+      },
+      "signalements": {
+        ".validate": "newData.isNumber()"
+      },
+      "materials": {
+        ".validate": "newData.isNumber()"
+      }
+    }
+  }
+}

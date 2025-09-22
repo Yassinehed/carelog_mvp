@@ -47,7 +47,7 @@ class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Errore: ${e.toString()}')),
+          SnackBar(content: Text('Erreur: ${e.toString()}')),
         );
       }
     } finally {

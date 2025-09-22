@@ -49,6 +49,8 @@ import 'package:carelog_mvp/features/auth/domain/usecases/sign_up.dart'
     as _i154;
 import 'package:carelog_mvp/features/of_order/data/datasources/of_order_firestore_datasource.dart'
     as _i767;
+import 'package:carelog_mvp/features/of_order/data/repositories/of_order_repository.dart'
+    as _i799;
 import 'package:carelog_mvp/features/of_order/domain/repositories/i_of_order_repository.dart'
     as _i479;
 import 'package:carelog_mvp/features/of_order/domain/usecases/create_of_order.dart'
@@ -81,6 +83,9 @@ extension GetItInjectableX on _i174.GetIt {
     final registerModule = _$RegisterModule();
     gh.singleton<_i974.FirebaseFirestore>(() => registerModule.firestore);
     gh.singleton<_i59.FirebaseAuth>(() => registerModule.firebaseAuth);
+    gh.lazySingleton<_i290.PdfServiceImpl>(() => _i290.PdfServiceImpl());
+    gh.lazySingleton<_i290.RealTimeTrackingServiceImpl>(
+        () => _i290.RealTimeTrackingServiceImpl());
     gh.factory<_i737.SignalementFirestoreDatasource>(() =>
         _i737.SignalementFirestoreDatasource(gh<_i974.FirebaseFirestore>()));
     gh.factory<_i290.SignalementFirestoreDatasourceImpl>(() =>
@@ -90,6 +95,42 @@ extension GetItInjectableX on _i174.GetIt {
         _i290.OfOrderFirestoreDatasourceImpl(gh<_i974.FirebaseFirestore>()));
     gh.factory<_i290.FirebaseAuthDatasourceImpl>(
         () => _i290.FirebaseAuthDatasourceImpl(gh<_i59.FirebaseAuth>()));
+    gh.lazySingleton<_i608.ISignalementRepository>(() =>
+        _i290.FirestoreSignalementRepositoryImpl(
+            gh<_i737.SignalementFirestoreDatasource>()));
+    gh.factory<_i462.FirestoreDataSource>(
+        () => _i462.FirestoreDataSource(gh<_i974.FirebaseFirestore>()));
+    gh.factory<_i767.OfOrderFirestoreDatasource>(
+        () => _i767.OfOrderFirestoreDatasource(gh<_i974.FirebaseFirestore>()));
+    gh.factory<_i894.FirebaseAuthDatasource>(
+        () => _i894.FirebaseAuthDatasource(gh<_i59.FirebaseAuth>()));
+    gh.factory<_i132.SignalementRepository>(
+        () => _i57.SignalementRepositoryImpl(gh<_i462.FirestoreDataSource>()));
+    gh.factory<_i400.MaterialRepositoryImpl>(
+        () => _i400.MaterialRepositoryImpl(gh<_i462.FirestoreDataSource>()));
+    gh.factory<_i725.UserRepositoryImpl>(
+        () => _i725.UserRepositoryImpl(gh<_i462.FirestoreDataSource>()));
+    gh.factory<_i174.OfOrderRepository>(
+        () => _i392.OfOrderRepositoryImpl(gh<_i462.FirestoreDataSource>()));
+    gh.lazySingleton<_i290.SignalementRepositoryImplInjection>(
+        () => _i290.SignalementRepositoryImplInjection(gh<dynamic>()));
+    gh.lazySingleton<_i462.IAuthRepository>(
+        () => _i290.AuthRepositoryImpl(gh<_i894.FirebaseAuthDatasource>()));
+    gh.factory<_i1054.GetCurrentUserUseCase>(
+        () => _i1054.GetCurrentUserUseCase(gh<_i462.IAuthRepository>()));
+    gh.factory<_i1045.ResetPasswordUseCase>(
+        () => _i1045.ResetPasswordUseCase(gh<_i462.IAuthRepository>()));
+    gh.factory<_i923.SignInUseCase>(
+        () => _i923.SignInUseCase(gh<_i462.IAuthRepository>()));
+    gh.factory<_i413.SignOutUseCase>(
+        () => _i413.SignOutUseCase(gh<_i462.IAuthRepository>()));
+    gh.factory<_i154.SignUpUseCase>(
+        () => _i154.SignUpUseCase(gh<_i462.IAuthRepository>()));
+    gh.lazySingleton<_i799.OfOrderRepository>(() =>
+        _i290.OfOrderRepositoryDomainInjection(
+            gh<_i767.OfOrderFirestoreDatasource>()));
+    gh.lazySingleton<_i174.MaterialRepository>(() =>
+        _i290.MaterialRepositoryImplInjection(gh<_i462.FirestoreDataSource>()));
     gh.factory<_i559.GetSignalementById>(
         () => _i559.GetSignalementById(gh<_i132.SignalementRepository>()));
     gh.factory<_i559.GetAllSignalements>(
@@ -118,6 +159,28 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i559.GetSignalementsDueToday(gh<_i132.SignalementRepository>()));
     gh.factory<_i559.GetOverdueSignalements>(
         () => _i559.GetOverdueSignalements(gh<_i132.SignalementRepository>()));
+    gh.lazySingleton<_i372.UserRepository>(() =>
+        _i290.UserRepositoryImplInjection(gh<_i462.FirestoreDataSource>()));
+    gh.factory<_i180.GetCurrentUser>(
+        () => _i180.GetCurrentUser(gh<_i372.UserRepository>()));
+    gh.factory<_i180.GetUserById>(
+        () => _i180.GetUserById(gh<_i372.UserRepository>()));
+    gh.factory<_i180.GetUserByEmail>(
+        () => _i180.GetUserByEmail(gh<_i372.UserRepository>()));
+    gh.factory<_i180.CheckEmailAvailability>(
+        () => _i180.CheckEmailAvailability(gh<_i372.UserRepository>()));
+    gh.factory<_i180.UpdateUserProfile>(
+        () => _i180.UpdateUserProfile(gh<_i372.UserRepository>()));
+    gh.factory<_i180.UpdateUserRole>(
+        () => _i180.UpdateUserRole(gh<_i372.UserRepository>()));
+    gh.factory<_i180.GetUsersByRole>(
+        () => _i180.GetUsersByRole(gh<_i372.UserRepository>()));
+    gh.factory<_i180.GetAdminUsers>(
+        () => _i180.GetAdminUsers(gh<_i372.UserRepository>()));
+    gh.factory<_i180.SearchUsers>(
+        () => _i180.SearchUsers(gh<_i372.UserRepository>()));
+    gh.factory<_i180.GetActiveUsersCount>(
+        () => _i180.GetActiveUsersCount(gh<_i372.UserRepository>()));
     gh.factory<_i572.GetOfOrderById>(
         () => _i572.GetOfOrderById(gh<_i174.OfOrderRepository>()));
     gh.factory<_i572.GetAllOfOrders>(
@@ -148,59 +211,6 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i572.GetOfOrdersDueToday(gh<_i174.OfOrderRepository>()));
     gh.factory<_i572.GetOverdueOfOrders>(
         () => _i572.GetOverdueOfOrders(gh<_i174.OfOrderRepository>()));
-    gh.lazySingleton<_i608.ISignalementRepository>(() =>
-        _i290.FirestoreSignalementRepositoryImpl(
-            gh<_i737.SignalementFirestoreDatasource>()));
-    gh.factory<_i767.OfOrderFirestoreDatasource>(
-        () => _i767.OfOrderFirestoreDatasource(gh<_i974.FirebaseFirestore>()));
-    gh.factory<_i462.FirestoreDataSource>(
-        () => _i462.FirestoreDataSource(gh<_i974.FirebaseFirestore>()));
-    gh.factory<_i894.FirebaseAuthDatasource>(
-        () => _i894.FirebaseAuthDatasource(gh<_i59.FirebaseAuth>()));
-    gh.factory<_i400.MaterialRepositoryImpl>(
-        () => _i400.MaterialRepositoryImpl(gh<_i462.FirestoreDataSource>()));
-    gh.factory<_i392.OfOrderRepositoryImpl>(
-        () => _i392.OfOrderRepositoryImpl(gh<_i462.FirestoreDataSource>()));
-    gh.factory<_i57.SignalementRepositoryImpl>(
-        () => _i57.SignalementRepositoryImpl(gh<_i462.FirestoreDataSource>()));
-    gh.factory<_i725.UserRepositoryImpl>(
-        () => _i725.UserRepositoryImpl(gh<_i462.FirestoreDataSource>()));
-    gh.lazySingleton<_i462.IAuthRepository>(
-        () => _i290.AuthRepositoryImpl(gh<_i894.FirebaseAuthDatasource>()));
-    gh.factory<_i1054.GetCurrentUserUseCase>(
-        () => _i1054.GetCurrentUserUseCase(gh<_i462.IAuthRepository>()));
-    gh.factory<_i1045.ResetPasswordUseCase>(
-        () => _i1045.ResetPasswordUseCase(gh<_i462.IAuthRepository>()));
-    gh.factory<_i923.SignInUseCase>(
-        () => _i923.SignInUseCase(gh<_i462.IAuthRepository>()));
-    gh.factory<_i413.SignOutUseCase>(
-        () => _i413.SignOutUseCase(gh<_i462.IAuthRepository>()));
-    gh.factory<_i154.SignUpUseCase>(
-        () => _i154.SignUpUseCase(gh<_i462.IAuthRepository>()));
-    gh.lazySingleton<_i174.MaterialRepository>(() =>
-        _i290.MaterialRepositoryImplInjection(gh<_i462.FirestoreDataSource>()));
-    gh.lazySingleton<_i372.UserRepository>(() =>
-        _i290.UserRepositoryImplInjection(gh<_i462.FirestoreDataSource>()));
-    gh.factory<_i180.GetCurrentUser>(
-        () => _i180.GetCurrentUser(gh<_i372.UserRepository>()));
-    gh.factory<_i180.GetUserById>(
-        () => _i180.GetUserById(gh<_i372.UserRepository>()));
-    gh.factory<_i180.GetUserByEmail>(
-        () => _i180.GetUserByEmail(gh<_i372.UserRepository>()));
-    gh.factory<_i180.CheckEmailAvailability>(
-        () => _i180.CheckEmailAvailability(gh<_i372.UserRepository>()));
-    gh.factory<_i180.UpdateUserProfile>(
-        () => _i180.UpdateUserProfile(gh<_i372.UserRepository>()));
-    gh.factory<_i180.UpdateUserRole>(
-        () => _i180.UpdateUserRole(gh<_i372.UserRepository>()));
-    gh.factory<_i180.GetUsersByRole>(
-        () => _i180.GetUsersByRole(gh<_i372.UserRepository>()));
-    gh.factory<_i180.GetAdminUsers>(
-        () => _i180.GetAdminUsers(gh<_i372.UserRepository>()));
-    gh.factory<_i180.SearchUsers>(
-        () => _i180.SearchUsers(gh<_i372.UserRepository>()));
-    gh.factory<_i180.GetActiveUsersCount>(
-        () => _i180.GetActiveUsersCount(gh<_i372.UserRepository>()));
     gh.factory<_i8.GetMaterialById>(
         () => _i8.GetMaterialById(gh<_i174.MaterialRepository>()));
     gh.factory<_i8.GetAllMaterials>(

@@ -1,0 +1,50 @@
+{{
+
+  "hosting": {  "hosting": {
+
+    "public": "build/web",    "public": "build/web",
+
+    "ignore": ["firebase.json","**/.*","**/node_modules/**"],    "ignore": [
+
+    "rewrites": [{"source": "**","destination": "/index.html"}]      "firebase.json",
+
+  },      "**/.*",
+
+  "emulators": {      "**/node_modules/**"
+
+    "auth": {"port": 9099},    ],
+
+    "firestore": {"port": 8080},    "rewrites": [
+
+    "functions": {"port": 5001},      {
+
+    "ui": {"enabled": true}        "source": "**",
+
+  }        "destination": "/index.html"
+
+}      }
+
+    ]
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "database": {
+      "port": 9000
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true,
+    "hosting": {
+      "port": 5000
+    }
+  }
+}

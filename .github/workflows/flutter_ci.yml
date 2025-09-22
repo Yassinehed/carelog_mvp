@@ -92,3 +92,50 @@ jobs:
 
       - name: Build APK (debug)
         run: flutter build apk --debug
+  
+  integration-emulator:
+    runs-on: ubuntu-latest
+    needs: analyze-test
+    if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Cache Pub
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            ~/.pub-cache/hosted
+          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.5'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run integration tests with Firebase Emulator Suite
+        run: |
+          # Use firebase emulators:exec to start emulators, run a command, then stop them (more robust than backgrounding)
+          # If a seeding script exists, run it before tests.
+          firebase emulators:exec --only auth,firestore --project=carelog-mv -- bash -lc "if [ -f scripts/seed_emulator.sh ]; then echo 'Running emulator seed...'; bash scripts/seed_emulator.sh; fi && flutter test integration_test/emulator_integration_test.dart"
+
+      - name: Upload emulator logs (if any)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: emulator-logs
+          path: |
+            emulators.log
+            firebase-debug.log

@@ -21,6 +21,8 @@ import 'data/repositories/material_repository_impl.dart';
 import 'domain/repositories/material_repository.dart';
 import 'data/repositories/user_repository_impl.dart';
 import 'domain/repositories/user_repository.dart';
+import 'core/services/pdf_service.dart';
+import 'core/services/real_time_tracking_service.dart';
 import 'injection.config.dart';
 
 final getIt = GetIt.instance;
@@ -41,6 +43,12 @@ abstract class RegisterModule {
 class FirestoreSignalementRepositoryImpl
     extends FirestoreSignalementRepository {
   FirestoreSignalementRepositoryImpl(super.datasource);
+}
+
+// Register concrete domain-level SignalementRepository type expected by usecases
+@LazySingleton(as: SignalementRepository)
+class SignalementRepositoryImplInjection extends SignalementRepositoryImpl {
+  SignalementRepositoryImplInjection(super.firestoreDataSource);
 }
 
 @injectable
@@ -68,6 +76,12 @@ class UpdateSignalementStatusUseCaseImpl
 @LazySingleton(as: IOfOrderRepository)
 class OfOrderRepositoryImpl extends OfOrderRepository {
   OfOrderRepositoryImpl(super.datasource);
+}
+
+// Register concrete domain-level OfOrderRepository type expected by usecases
+@LazySingleton(as: OfOrderRepository)
+class OfOrderRepositoryDomainInjection extends OfOrderRepositoryImpl {
+  OfOrderRepositoryDomainInjection(super._firestoreDataSource);
 }
 
 @injectable
@@ -108,4 +122,14 @@ class MaterialRepositoryImplInjection extends MaterialRepositoryImpl {
 @LazySingleton(as: UserRepository)
 class UserRepositoryImplInjection extends UserRepositoryImpl {
   UserRepositoryImplInjection(super.firestoreDataSource);
+}
+
+@LazySingleton()
+class PdfServiceImpl extends PdfService {
+  PdfServiceImpl() : super();
+}
+
+@LazySingleton()
+class RealTimeTrackingServiceImpl extends RealTimeTrackingService {
+  RealTimeTrackingServiceImpl() : super();
 }

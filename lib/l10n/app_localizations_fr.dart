@@ -12,8 +12,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get appTitle => 'CareLog MVP';
 
   @override
-  String get homeWelcome =>
-      'Bienvenue dans CareLog MVP. Cette application est en configuration initiale.';
+  String get homeWelcome => 'Bienvenue dans CareLog MVP. Cette application est en configuration initiale.';
 
   @override
   String get homeDashboard => 'CareLog - Tableau de bord';
@@ -31,8 +30,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get enterPassword => 'Veuillez entrer votre mot de passe';
 
   @override
-  String get passwordMinChars =>
-      'Le mot de passe doit contenir au moins 6 caractères';
+  String get passwordMinChars => 'Le mot de passe doit contenir au moins 6 caractères';
 
   @override
   String get signIn => 'Se connecter';
@@ -52,15 +50,13 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get resetCheckSpam =>
-      'Vérifiez aussi le dossier spam si vous ne voyez pas l\'email.';
+  String get resetCheckSpam => 'Vérifiez aussi le dossier spam si vous ne voyez pas l\'email.';
 
   @override
   String get resetPasswordTitle => 'Réinitialiser le mot de passe';
 
   @override
-  String get resetPasswordDescription =>
-      'Entrez votre adresse email et nous vous enverrons les instructions pour réinitialiser votre mot de passe.';
+  String get resetPasswordDescription => 'Entrez votre adresse email et nous vous enverrons les instructions pour réinitialiser votre mot de passe.';
 
   @override
   String get sendResetEmail => 'Envoyer l\'email de réinitialisation';
@@ -81,12 +77,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get adminDashboardTitle => 'Tableau de bord administrateur';
 
   @override
-  String get readOnlyUpdatedSuccess =>
-      'Mode lecture seule mis à jour avec succès';
+  String get readOnlyUpdatedSuccess => 'Mode lecture seule mis à jour avec succès';
 
   @override
-  String get simulateActivatedMessage =>
-      '✅ Simulation activée : Budget dépassé - Système en lecture seule';
+  String get simulateActivatedMessage => '✅ Simulation activée : Budget dépassé - Système en lecture seule';
 
   @override
   String simulateError(Object error) {
@@ -94,8 +88,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get resetSimulationSuccess =>
-      '✅ Simulation désactivée : Système restauré';
+  String get resetSimulationSuccess => '✅ Simulation désactivée : Système restauré';
 
   @override
   String resetSimulationError(Object error) {
@@ -133,8 +126,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get adminToggleButtonLabel => 'Basculer lecture seule';
 
   @override
-  String get adminNote =>
-      'Remarque : Ce bouton appelle la Cloud Function pour réinitialiser le mode lecture seule.';
+  String get adminNote => 'Remarque : Ce bouton appelle la Cloud Function pour réinitialiser le mode lecture seule.';
 
   @override
   String get systemStatsTitle => 'Statistiques du système';
@@ -176,12 +168,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get testingHeader => 'Simulation de budget et tests';
 
   @override
-  String get testingInfo =>
-      'Outils pour tester le système de contrôle des coûts sans dépenser d\'argent réel :';
+  String get testingInfo => 'Outils pour tester le système de contrôle des coûts sans dépenser d\'argent réel :';
 
   @override
-  String get testingInstructions =>
-      '1. Cliquez sur \"Simuler Budget Dépassé\" pour activer la lecture seule\n2. Vérifiez que les boutons de la page d\'accueil sont désactivés\n3. Vérifiez que la bannière de maintenance apparaît\n4. Utilisez \"Restaurer Normal\" pour revenir à l\'état normal';
+  String get testingInstructions => '1. Cliquez sur \"Simuler Budget Dépassé\" pour activer la lecture seule\n2. Vérifiez que les boutons de la page d\'accueil sont désactivés\n3. Vérifiez que la bannière de maintenance apparaît\n4. Utilisez \"Restaurer Normal\" pour revenir à l\'état normal';
 
   @override
   String get simulationControlsLabel => 'Contrôles de simulation :';
@@ -208,8 +198,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get restoreButtonShort => 'Restaurer Normal';
 
   @override
-  String get readOnlyTooltip =>
-      'Le système est en mode maintenance. Opération non disponible.';
+  String get readOnlyTooltip => 'Le système est en mode maintenance. Opération non disponible.';
 
   @override
   String genericError(Object error) {
@@ -254,8 +243,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get signalementDescriptionRequired => 'La description est obligatoire';
 
   @override
-  String get signalementDescriptionMin =>
-      'La description doit contenir au moins 10 caractères';
+  String get signalementDescriptionMin => 'La description doit contenir au moins 10 caractères';
 
   @override
   String get signalementCreating => 'Création...';
@@ -303,8 +291,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clientRequired => 'Le client est obligatoire';
 
   @override
-  String get clientMinLength =>
-      'Le nom du client doit contenir au moins 2 caractères';
+  String get clientMinLength => 'Le nom du client doit contenir au moins 2 caractères';
 
   @override
   String get productLabel => 'Produit';
@@ -316,8 +303,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get productRequired => 'Le produit est obligatoire';
 
   @override
-  String get productMinLength =>
-      'Le nom du produit doit contenir au moins 2 caractères';
+  String get productMinLength => 'Le nom du produit doit contenir au moins 2 caractères';
 
   @override
   String get quantityLabel => 'Quantité';
@@ -565,13 +551,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String materialDetailTitle(Object id) {
-    return 'Matériel $id';
-  }
-
-  @override
-  String get materialDetailComingSoon =>
-      'Page de détail du matériel - Bientôt disponible';
+  String get materialDetailComingSoon => 'Page de détail du matériel - Bientôt disponible';
 
   @override
   String ofOrderNumber(Object id) {
@@ -637,4 +617,176 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ofOrderStatus_cancelled => 'Annulé';
+
+  @override
+  String get cancelledLabel => 'Annulé';
+
+  @override
+  String get newStatusLabel => 'Nouveau statut';
+
+  @override
+  String get cancelButton => 'Annuler';
+
+  @override
+  String get reportsLabel => 'Rapports';
+
+  @override
+  String urgentReportsMessage(Object count) {
+    return '$count rapports urgents nécessitent une attention';
+  }
+
+  @override
+  String errorLoadingOrders(Object error) {
+    return 'Erreur lors du chargement des ordres : $error';
+  }
+
+  @override
+  String errorCreatingOrder(Object error) {
+    return 'Erreur lors de la création de l\'ordre : $error';
+  }
+
+  @override
+  String errorUpdatingStatus(Object error) {
+    return 'Erreur lors de la mise à jour du statut : $error';
+  }
+
+  @override
+  String get tooManyAttempts => 'Trop de tentatives. Réessayez plus tard';
+
+  @override
+  String get connectionError => 'Erreur de connexion. Vérifiez votre connexion internet';
+
+  @override
+  String get filtersLabel => 'Filtres';
+
+  @override
+  String get clearFiltersLabel => 'Effacer les filtres';
+
+  @override
+  String get searchOrdersLabel => 'Rechercher des ordres';
+
+  @override
+  String get searchOrdersHint => 'Rechercher par client ou produit';
+
+  @override
+  String get filterByStatusLabel => 'Filtrer par statut';
+
+  @override
+  String get allStatusesLabel => 'Tous les statuts';
+
+  @override
+  String get updateOrderStatusTitle => 'Mettre à jour le statut de l\'ordre';
+
+  @override
+  String get currentStatusLabel => 'Statut actuel';
+
+  @override
+  String get updateStatusButton => 'Mettre à jour le statut';
+
+  @override
+  String get unitsLabel => 'unités';
+
+  @override
+  String get createdOnLabel => 'Créé le';
+
+  @override
+  String get updatedOnLabel => 'Mis à jour le';
+
+  @override
+  String get materialsUsedTitle => 'Matériaux utilisés';
+
+  @override
+  String materialsCount(Object count) {
+    return '$count matériaux';
+  }
+
+  @override
+  String get noMaterialsAssociated => 'Aucun matériau associé';
+
+  @override
+  String get materialsWillBeShown => 'Les matériaux seront affichés lorsqu\'ils seront associés à la commande';
+
+  @override
+  String get requiredLabel => 'requis';
+
+  @override
+  String get materialStatus_available => 'Disponible';
+
+  @override
+  String get materialStatus_low_stock => 'Stock faible';
+
+  @override
+  String get materialStatus_out_of_stock => 'Rupture de stock';
+
+  @override
+  String get materialStatus_unknown => 'Inconnu';
+
+  @override
+  String get materialDetailTitle => 'Détails du Matériel';
+
+  @override
+  String get editLabel => 'Modifier';
+
+  @override
+  String get materialEditComingSoon => 'Fonctionnalité de modification à venir';
+
+  @override
+  String get materialNotFound => 'Matériel Non Trouvé';
+
+  @override
+  String get materialNotFoundDescription => 'Le matériel demandé n\'existe pas ou a été supprimé.';
+
+  @override
+  String get backLabel => 'Retour';
+
+  @override
+  String get stockInformation => 'Informations de Stock';
+
+  @override
+  String get currentStock => 'Stock Actuel';
+
+  @override
+  String get maximumStock => 'Stock Maximum';
+
+  @override
+  String get stockLevel => 'Niveau de Stock';
+
+  @override
+  String get detailsLabel => 'Détails';
+
+  @override
+  String get categoryLabel => 'Catégorie';
+
+  @override
+  String get supplierLabel => 'Fournisseur';
+
+  @override
+  String get notSpecified => 'Non spécifié';
+
+  @override
+  String get actionsLabel => 'Actions';
+
+  @override
+  String get adjustStock => 'Ajuster le Stock';
+
+  @override
+  String get stockAdjustmentComingSoon => 'Ajustement du stock à venir';
+
+  @override
+  String get reorderLabel => 'Réapprovisionner';
+
+  @override
+  String get reorderComingSoon => 'Fonctionnalité de réapprovisionnement à venir';
+
+  @override
+  String get productionOrders => 'Ordres de Production';
+
+  @override
+  String get reports => 'Signalements';
+
+  @override
+  String get materials => 'Matériaux';
+
+  @override
+  String get seeAll => 'Voir tout';
 }

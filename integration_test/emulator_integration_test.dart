@@ -7,7 +7,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:carelog_mvp/main.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:carelog_mvp/firebase_options.dart';
+import 'package:carelog_mvp/injection.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -33,9 +35,16 @@ void main() {
 
       await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
+      // Configure dependency injection so GetIt registrations are available in the test.
+      try {
+        configureDependencies();
+      } catch (_) {
+        // If configureDependencies was already called elsewhere, ignore.
+      }
+
       FirebaseAuth.instance.useAuthEmulator('localhost', authPort);
 
-      FirebaseFirestore.instance.settings = Settings(
+      FirebaseFirestore.instance.settings = const Settings(
         host: 'localhost:$firestorePort',
         sslEnabled: false,
         persistenceEnabled: false,
@@ -48,8 +57,8 @@ void main() {
         return;
       }
 
-      final email = 'integ.user+emulator@example.com';
-      final password = 'testpassword';
+      const email = 'integ.user+emulator@example.com';
+      const password = 'testpassword';
 
       try {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
@@ -57,8 +66,8 @@ void main() {
 
       await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
 
-      // Run the app
-      await tester.pumpWidget(const MyApp());
+  // Run the app wrapped with ProviderScope for Riverpod
+  await tester.pumpWidget(const ProviderScope(child: MyApp()));
       await tester.pumpAndSettle(const Duration(seconds: 5));
 
       // Expect the HomePage admin icon to be visible

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import '../../domain/entities/of_order.dart';
 import '../providers/of_order_providers.dart';
+import 'of_order_detail_page.dart';
 import 'package:carelog_mvp/l10n/app_localizations.dart';
 
 class OfOrderListPage extends ConsumerWidget {
@@ -28,7 +29,7 @@ class OfOrderListPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.ofOrdersPageTitle),
+        title: const Text('Orders'),
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       ),
       body: ofOrdersState.isLoading
@@ -53,22 +54,22 @@ class OfOrderListPage extends ConsumerWidget {
                               .read(ofOrdersNotifierProvider.notifier)
                               .loadOfOrders();
                         },
-                        child: Text(AppLocalizations.of(context)!.retryLabel),
+                        child: const Text('Retry'),
                       ),
                     ],
                   ),
                 )
               : ofOrdersState.orders.isEmpty
-                  ? Center(
+                  ? const Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.inventory_2_outlined,
+                          Icon(Icons.inventory_2_outlined,
                               size: 64, color: Colors.grey),
-                          const SizedBox(height: 16),
+                          SizedBox(height: 16),
                           Text(
-                            AppLocalizations.of(context)!.noOfOrdersFound,
-                            style: const TextStyle(
+                            'No orders found',
+                            style: TextStyle(
                                 color: Colors.grey, fontSize: 16),
                           ),
                         ],
@@ -87,84 +88,70 @@ class OfOrderListPage extends ConsumerWidget {
                           final ofOrder = ofOrdersState.orders[index];
                           return Card(
                             margin: const EdgeInsets.only(bottom: 12),
-                            child: Padding(
-                              padding: const EdgeInsets.all(16),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          AppLocalizations.of(context)!
-                                              .ofOrderNumber(ofOrder.id),
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .titleMedium
-                                              ?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                              ),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => OfOrderDetailPage(
+                                      ofOrderId: ofOrder.id,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(16),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: Text(
+                                            'Order #${ofOrder.id}',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .titleMedium
+                                                ?.copyWith(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                          ),
                                         ),
-                                      ),
-                                      _buildStatusChip(context, ofOrder.status),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    AppLocalizations.of(context)!
-                                        .ofOrderClient(ofOrder.client),
-                                    style:
-                                        Theme.of(context).textTheme.bodyLarge,
-                                  ),
-                                  const SizedBox(height: 4),
-                                  Text(
-                                    AppLocalizations.of(context)!
-                                        .ofOrderProduct(ofOrder.product),
-                                    style:
-                                        Theme.of(context).textTheme.bodyMedium,
-                                  ),
-                                  const SizedBox(height: 4),
-                                  Text(
-                                    AppLocalizations.of(context)!
-                                        .ofOrderQuantity(
-                                            ofOrder.quantity.toString()),
-                                    style:
-                                        Theme.of(context).textTheme.bodyMedium,
-                                  ),
-                                  if (ofOrder.description != null) ...[
+                                        _buildStatusChip(context, ofOrder.status),
+                                      ],
+                                    ),
                                     const SizedBox(height: 8),
                                     Text(
-                                      AppLocalizations.of(context)!
-                                          .ofOrderDescription(
-                                              ofOrder.description!),
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodySmall
-                                          ?.copyWith(
-                                            fontStyle: FontStyle.italic,
-                                          ),
+                                      'Client: ${ofOrder.client}',
+                                      style:
+                                          Theme.of(context).textTheme.bodyLarge,
                                     ),
-                                  ],
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    AppLocalizations.of(context)!
-                                        .ofOrderCreated(
-                                            DateFormat('dd/MM/yyyy HH:mm')
-                                                .format(ofOrder.createdAt)),
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall
-                                        ?.copyWith(
-                                          color: Colors.grey,
-                                        ),
-                                  ),
-                                  if (ofOrder.updatedAt != null) ...[
                                     const SizedBox(height: 4),
                                     Text(
-                                      AppLocalizations.of(context)!
-                                          .ofOrderUpdated(
-                                              DateFormat('dd/MM/yyyy HH:mm')
-                                                  .format(ofOrder.updatedAt!)),
+                                      'Product: ${ofOrder.product}',
+                                      style:
+                                          Theme.of(context).textTheme.bodyMedium,
+                                    ),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      'Quantity: ${ofOrder.quantity}',
+                                      style:
+                                          Theme.of(context).textTheme.bodyMedium,
+                                    ),
+                                    if (ofOrder.description != null) ...[
+                                      const SizedBox(height: 8),
+                                      Text(
+                                        'Description: ${ofOrder.description}',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall
+                                            ?.copyWith(
+                                              fontStyle: FontStyle.italic,
+                                            ),
+                                      ),
+                                    ],
+                                    const SizedBox(height: 8),
+                                    Text(
+                                      'Created: ${DateFormat('dd/MM/yyyy HH:mm').format(ofOrder.createdAt)}',
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodySmall
@@ -172,8 +159,20 @@ class OfOrderListPage extends ConsumerWidget {
                                             color: Colors.grey,
                                           ),
                                     ),
+                                    if (ofOrder.updatedAt != null) ...[
+                                      const SizedBox(height: 4),
+                                      Text(
+                                        'Updated: ${DateFormat('dd/MM/yyyy HH:mm').format(ofOrder.updatedAt!)}',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall
+                                            ?.copyWith(
+                                              color: Colors.grey,
+                                            ),
+                                      ),
+                                    ],
                                   ],
-                                ],
+                                ),
                               ),
                             ),
                           );

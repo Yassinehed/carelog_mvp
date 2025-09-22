@@ -1,8 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:carelog_mvp/features/of_order/domain/entities/of_order.dart';
 import 'package:carelog_mvp/features/of_order/domain/usecases/create_of_order.dart';
+import 'package:carelog_mvp/features/of_order/domain/usecases/get_of_order_by_id.dart';
 import 'package:carelog_mvp/features/of_order/domain/usecases/list_of_orders.dart';
 import 'package:carelog_mvp/features/of_order/domain/usecases/update_of_order_status.dart';
+import 'package:carelog_mvp/core/services/real_time_tracking_service.dart';
 import 'package:carelog_mvp/injection.dart';
 
 /// Provider per il caso d'uso GetOfOrdersUseCase
@@ -11,6 +13,11 @@ final getOfOrdersUseCaseProvider = Provider<GetOfOrdersUseCase>((ref) {
   // Request the concrete implementation from GetIt and return it as the
   // abstract base type expected by consumers.
   return getIt<GetOfOrdersUseCase>();
+});
+
+/// Provider per il caso d'uso GetOfOrderByIdUseCase
+final getOfOrderByIdUseCaseProvider = Provider<GetOfOrderByIdUseCase>((ref) {
+  return getIt<GetOfOrderByIdUseCase>();
 });
 
 /// Provider per il caso d'uso CreateOfOrderUseCase
@@ -139,4 +146,20 @@ final ofOrdersNotifierProvider =
     createOfOrderUseCase,
     updateOfOrderStatusUseCase,
   );
+});
+
+/// Provider per recuperare un singolo ordine di produzione per ID
+final ofOrderProvider = FutureProvider.family<OfOrder?, String>((ref, id) async {
+  final getOfOrderByIdUseCase = ref.watch(getOfOrderByIdUseCaseProvider);
+  final result = await getOfOrderByIdUseCase.call(id);
+  
+  return result.fold(
+    (failure) => null, // In caso di errore, restituisce null
+    (ofOrder) => ofOrder,
+  );
+});
+
+/// Provider per il servizio di tracking in tempo reale
+final realTimeTrackingServiceProvider = Provider<RealTimeTrackingService>((ref) {
+  return getIt<RealTimeTrackingService>();
 });

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
+import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'firebase_options.dart';
@@ -11,20 +12,40 @@ import 'package:carelog_mvp/features/of_order/domain/usecases/update_of_order_st
 import 'package:carelog_mvp/features/signalement/domain/usecases/list_signalements.dart';
 import 'package:carelog_mvp/features/signalement/domain/usecases/create_signalement.dart';
 import 'package:carelog_mvp/features/signalement/domain/usecases/update_signalement_status.dart';
-import 'core/presentation/pages/home_page.dart';
+import 'core/presentation/pages/dashboard_screen.dart';
 import 'features/auth/presentation/pages/login_page.dart';
 import 'features/auth/presentation/pages/reset_password_page.dart';
 import 'features/material/presentation/pages/material_list_page.dart';
 import 'features/material/presentation/pages/create_material_page.dart';
+import 'features/material/presentation/pages/material_detail_page.dart';
 import 'features/signalement/presentation/pages/signalement_list_page.dart';
 import 'features/signalement/presentation/pages/create_signalement_page.dart';
+import 'features/signalement/presentation/pages/signalement_detail_page.dart';
 import 'features/of_order/presentation/pages/of_order_list_page.dart';
 import 'features/of_order/presentation/pages/create_of_order_page.dart';
+import 'features/of_order/presentation/pages/of_order_detail_page.dart';
 import 'features/admin/presentation/pages/admin_dashboard_page.dart';
 import 'l10n/app_localizations.dart';
 import 'features/auth/presentation/providers/auth_providers.dart';
 
-void main() {
+void main() async {
+  // If SENTRY_DSN is provided via environment, initialize Sentry and run the app inside it.
+  const sentryDsn = String.fromEnvironment('SENTRY_DSN', defaultValue: '');
+
+  if (sentryDsn.isNotEmpty) {
+    await SentryFlutter.init(
+      (options) {
+        options.dsn = sentryDsn;
+        options.tracesSampleRate = 0.1; // low sample rate by default
+      },
+      appRunner: () => _startApp(),
+    );
+  } else {
+    _startApp();
+  }
+}
+
+void _startApp() {
   // Install Flutter error handler early
   FlutterError.onError = (FlutterErrorDetails details) {
     // ignore: avoid_print
@@ -175,11 +196,12 @@ class MyApp extends ConsumerWidget {
       ],
       // The app default language should be French; English remains optional.
       locale: const Locale('fr'),
-      home: isAuthenticated ? const HomePage() : const LoginPage(),
+      home: isAuthenticated ? const DashboardScreen() : const LoginPage(),
       routes: {
         '/login': (context) => const LoginPage(),
         '/reset-password': (context) => const ResetPasswordPage(),
-        '/home': (context) => const HomePage(),
+        '/home': (context) => const DashboardScreen(),
+        '/dashboard': (context) => const DashboardScreen(),
         '/materials': (context) => const MaterialListPage(),
         '/materials/create': (context) => const CreateMaterialPage(),
         '/signalements': (context) => const SignalementListPage(),
@@ -193,19 +215,38 @@ class MyApp extends ConsumerWidget {
         if (settings.name?.startsWith('/materials/') == true) {
           final materialId = settings.name!.substring('/materials/'.length);
           if (materialId.isNotEmpty && materialId != 'create') {
-            // TODO: Implement MaterialDetailPage
             return MaterialPageRoute(
-              builder: (context) => Scaffold(
-                appBar: AppBar(
-                    title: Text(AppLocalizations.of(context)!
-                        .materialDetailTitle(materialId))),
-                body: Center(
-                    child: Text(AppLocalizations.of(context)!
-                        .materialDetailComingSoon)),
+              builder: (context) => MaterialDetailPage(
+                materialId: materialId,
               ),
             );
           }
         }
+
+        // Handle signalement detail routes like /signalements/{id}
+        if (settings.name?.startsWith('/signalements/') == true) {
+          final signalementId = settings.name!.substring('/signalements/'.length);
+          if (signalementId.isNotEmpty && signalementId != 'create') {
+            return MaterialPageRoute(
+              builder: (context) => SignalementDetailPage(
+                signalementId: signalementId,
+              ),
+            );
+          }
+        }
+
+        // Handle of_order detail routes like /of_orders/{id}
+        if (settings.name?.startsWith('/of_orders/') == true) {
+          final ofOrderId = settings.name!.substring('/of_orders/'.length);
+          if (ofOrderId.isNotEmpty && ofOrderId != 'create') {
+            return MaterialPageRoute(
+              builder: (context) => OfOrderDetailPage(
+                ofOrderId: ofOrderId,
+              ),
+            );
+          }
+        }
+
         return null;
       },
     );

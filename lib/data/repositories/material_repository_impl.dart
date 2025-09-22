@@ -1,4 +1,4 @@
-﻿import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
@@ -28,7 +28,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
       }).toList();
       return Right(materials);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -37,13 +37,13 @@ class MaterialRepositoryImpl implements MaterialRepository {
     try {
       final doc = await _firestoreDataSource.getDocument(_collection, id);
       if (!doc.exists) {
-        return Left(ServerFailure());
+        return const Left(ServerFailure());
       }
       final modelMaterial = model.Material.fromJson(doc.data()!);
       final material = material_mapper.MaterialMapper.toDomain(modelMaterial);
       return Right(material);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -56,7 +56,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
       final createdMaterial = material.copyWith(reference: docRef.id);
       return Right(createdMaterial);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -68,7 +68,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
           _collection, material.id, modelMaterial.toJson());
       return Right(material);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -78,7 +78,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
       await _firestoreDataSource.deleteDocument(_collection, id);
       return const Right(unit);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -88,7 +88,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
       final doc = await _firestoreDataSource.getDocument(_collection, id);
       return Right(doc.exists);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -115,7 +115,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
         return Right(snapshot.docs.length);
       }
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -125,11 +125,11 @@ class MaterialRepositoryImpl implements MaterialRepository {
     String? startAfter,
     Map<String, dynamic>? filters,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> search(String query) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> getByType(MaterialType type) async {
@@ -144,44 +144,44 @@ class MaterialRepositoryImpl implements MaterialRepository {
       }).toList();
       return Right(materials);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
   @override
   Future<Either<Failure, List<Material>>> getByCategory(
           String category) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> getBySupplier(
           String supplierId) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> getByStockStatus(
           StockStatus status) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> getLowStock() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> getOutOfStock() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> getNeedingReorder() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> getExpired() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> getExpiringSoon() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Material>> updateStock(
@@ -193,7 +193,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
     String? reference,
     Map<String, dynamic>? metadata,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Material>> adjustStock(
@@ -203,7 +203,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
     String userId, {
     Map<String, dynamic>? metadata,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Material>> stockIn(
@@ -214,7 +214,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
     String? reference,
     Map<String, dynamic>? metadata,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Material>> stockOut(
@@ -225,7 +225,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
     String? reference,
     Map<String, dynamic>? metadata,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Material>> updateInfo(
@@ -251,7 +251,7 @@ class MaterialRepositoryImpl implements MaterialRepository {
     String? updatedBy,
     Map<String, dynamic>? metadata,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<StockMovement>>> getStockMovements(
@@ -260,16 +260,16 @@ class MaterialRepositoryImpl implements MaterialRepository {
     DateTime? endDate,
     String? type,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> getCompatibleWithMachine(
           String machineId) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, MaterialStats>> getStatistics() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> searchWithFilters({
@@ -281,39 +281,40 @@ class MaterialRepositoryImpl implements MaterialRepository {
     bool? isActive,
     DateTime? expiryBefore,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Map<StockStatus, int>>> getCountByStatus() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, double>> getTotalInventoryValue() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Map<String, double>>>
-      getInventoryValueByCategory() async => Left(ServerFailure());
+      getInventoryValueByCategory() async => const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<StockAlert>>> getStockAlerts() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Material>>> bulkUpdateStock(
           List<StockUpdate> updates, String userId) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Supplier>> getSupplier(String supplierId) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<Supplier>>> getAllSuppliers() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Supplier>> updateSupplier(
           String supplierId, Supplier supplier) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 }
+

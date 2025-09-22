@@ -62,8 +62,7 @@ import 'app_localizations_fr.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -84,8 +82,7 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -1106,12 +1103,6 @@ abstract class AppLocalizations {
   /// **'Updated: {datetime}'**
   String updatedLabel(Object datetime);
 
-  /// No description provided for @materialDetailTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Material {id}'**
-  String materialDetailTitle(Object id);
-
   /// No description provided for @materialDetailComingSoon.
   ///
   /// In en, this message translates to:
@@ -1219,10 +1210,333 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancelled'**
   String get ofOrderStatus_cancelled;
+
+  /// No description provided for @cancelledLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get cancelledLabel;
+
+  /// No description provided for @newStatusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'New Status'**
+  String get newStatusLabel;
+
+  /// No description provided for @cancelButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancelButton;
+
+  /// No description provided for @reportsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports'**
+  String get reportsLabel;
+
+  /// No description provided for @urgentReportsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} urgent reports require attention'**
+  String urgentReportsMessage(Object count);
+
+  /// No description provided for @errorLoadingOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading orders: {error}'**
+  String errorLoadingOrders(Object error);
+
+  /// No description provided for @errorCreatingOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Error creating order: {error}'**
+  String errorCreatingOrder(Object error);
+
+  /// No description provided for @errorUpdatingStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Error updating status: {error}'**
+  String errorUpdatingStatus(Object error);
+
+  /// No description provided for @tooManyAttempts.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Try again later'**
+  String get tooManyAttempts;
+
+  /// No description provided for @connectionError.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection error. Check your internet connection'**
+  String get connectionError;
+
+  /// No description provided for @filtersLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Filters'**
+  String get filtersLabel;
+
+  /// No description provided for @clearFiltersLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Filters'**
+  String get clearFiltersLabel;
+
+  /// No description provided for @searchOrdersLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Search Orders'**
+  String get searchOrdersLabel;
+
+  /// No description provided for @searchOrdersHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search by client or product'**
+  String get searchOrdersHint;
+
+  /// No description provided for @filterByStatusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by Status'**
+  String get filterByStatusLabel;
+
+  /// No description provided for @allStatusesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'All Statuses'**
+  String get allStatusesLabel;
+
+  /// No description provided for @updateOrderStatusTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Order Status'**
+  String get updateOrderStatusTitle;
+
+  /// No description provided for @currentStatusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Status'**
+  String get currentStatusLabel;
+
+  /// No description provided for @updateStatusButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Status'**
+  String get updateStatusButton;
+
+  /// No description provided for @unitsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'units'**
+  String get unitsLabel;
+
+  /// No description provided for @createdOnLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Created on'**
+  String get createdOnLabel;
+
+  /// No description provided for @updatedOnLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated on'**
+  String get updatedOnLabel;
+
+  /// No description provided for @materialsUsedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Materials Used'**
+  String get materialsUsedTitle;
+
+  /// No description provided for @materialsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} materials'**
+  String materialsCount(Object count);
+
+  /// No description provided for @noMaterialsAssociated.
+  ///
+  /// In en, this message translates to:
+  /// **'No materials associated'**
+  String get noMaterialsAssociated;
+
+  /// No description provided for @materialsWillBeShown.
+  ///
+  /// In en, this message translates to:
+  /// **'Materials will be shown when they are associated with the order'**
+  String get materialsWillBeShown;
+
+  /// No description provided for @requiredLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'required'**
+  String get requiredLabel;
+
+  /// No description provided for @materialStatus_available.
+  ///
+  /// In en, this message translates to:
+  /// **'Available'**
+  String get materialStatus_available;
+
+  /// No description provided for @materialStatus_low_stock.
+  ///
+  /// In en, this message translates to:
+  /// **'Low stock'**
+  String get materialStatus_low_stock;
+
+  /// No description provided for @materialStatus_out_of_stock.
+  ///
+  /// In en, this message translates to:
+  /// **'Out of stock'**
+  String get materialStatus_out_of_stock;
+
+  /// No description provided for @materialStatus_unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get materialStatus_unknown;
+
+  /// No description provided for @materialDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Material Details'**
+  String get materialDetailTitle;
+
+  /// No description provided for @editLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get editLabel;
+
+  /// No description provided for @materialEditComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit functionality coming soon'**
+  String get materialEditComingSoon;
+
+  /// No description provided for @materialNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Material Not Found'**
+  String get materialNotFound;
+
+  /// No description provided for @materialNotFoundDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The requested material does not exist or has been deleted.'**
+  String get materialNotFoundDescription;
+
+  /// No description provided for @backLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get backLabel;
+
+  /// No description provided for @stockInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock Information'**
+  String get stockInformation;
+
+  /// No description provided for @currentStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Stock'**
+  String get currentStock;
+
+  /// No description provided for @maximumStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum Stock'**
+  String get maximumStock;
+
+  /// No description provided for @stockLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock Level'**
+  String get stockLevel;
+
+  /// No description provided for @detailsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get detailsLabel;
+
+  /// No description provided for @categoryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get categoryLabel;
+
+  /// No description provided for @supplierLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Supplier'**
+  String get supplierLabel;
+
+  /// No description provided for @notSpecified.
+  ///
+  /// In en, this message translates to:
+  /// **'Not specified'**
+  String get notSpecified;
+
+  /// No description provided for @actionsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Actions'**
+  String get actionsLabel;
+
+  /// No description provided for @adjustStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust Stock'**
+  String get adjustStock;
+
+  /// No description provided for @stockAdjustmentComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock adjustment coming soon'**
+  String get stockAdjustmentComingSoon;
+
+  /// No description provided for @reorderLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reorder'**
+  String get reorderLabel;
+
+  /// No description provided for @reorderComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Reorder functionality coming soon'**
+  String get reorderComingSoon;
+
+  /// No description provided for @productionOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Production Orders'**
+  String get productionOrders;
+
+  /// No description provided for @reports.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports'**
+  String get reports;
+
+  /// No description provided for @materials.
+  ///
+  /// In en, this message translates to:
+  /// **'Materials'**
+  String get materials;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAll;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -1231,25 +1545,25 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'fr'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'fr'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
+
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en':
-      return AppLocalizationsEn();
-    case 'fr':
-      return AppLocalizationsFr();
+    case 'en': return AppLocalizationsEn();
+    case 'fr': return AppLocalizationsFr();
   }
 
   throw FlutterError(
-      'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.'
+  );
 }

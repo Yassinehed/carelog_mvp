@@ -17,6 +17,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
+  bool _isPasswordVisible = false;
 
   @override
   void dispose() {
@@ -178,9 +179,24 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   decoration: InputDecoration(
                     labelText: l10n.enterPassword,
                     prefixIcon: const Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _isPasswordVisible
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _isPasswordVisible = !_isPasswordVisible;
+                        });
+                      },
+                      tooltip: _isPasswordVisible
+                          ? 'Masquer le mot de passe'
+                          : 'Afficher le mot de passe',
+                    ),
                     border: const OutlineInputBorder(),
                   ),
-                  obscureText: true,
+                  obscureText: !_isPasswordVisible,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return l10n.enterPassword;

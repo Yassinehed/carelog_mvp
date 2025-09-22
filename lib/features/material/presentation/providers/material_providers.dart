@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:carelog_mvp/features/material/domain/material_domain_providers.dart';
+import 'package:carelog_mvp/core/services/real_time_tracking_service.dart';
+import 'package:carelog_mvp/injection.dart';
 
 /// Provider for all materials list
 final materialsProvider = FutureProvider((ref) async {
@@ -81,4 +83,19 @@ final stockAlertsProvider = FutureProvider((ref) async {
     (failure) => throw Exception('Failed to load stock alerts'),
     (alerts) => alerts,
   );
+});
+
+/// Provider for a single material by ID
+final materialProvider = FutureProvider.family<dynamic, String>((ref, materialId) async {
+  final useCase = ref.watch(getMaterialByIdUseCaseProvider);
+  final result = await useCase(materialId);
+  return result.fold(
+    (failure) => throw Exception('Failed to load material'),
+    (material) => material,
+  );
+});
+
+/// Provider per il servizio di tracking in tempo reale
+final realTimeTrackingServiceProvider = Provider<RealTimeTrackingService>((ref) {
+  return getIt<RealTimeTrackingService>();
 });

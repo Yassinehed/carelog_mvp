@@ -1,45 +1,9 @@
-{
-  "flutter": {
-    "platforms": {
-      "android": {
-        "default": {
-          "projectId": "carelog-mv",
-          "appId": "1:1063794817524:android:07215a15052a2410a921a1",
-          "fileOutput": "android/app/google-services.json"
-        }
-      },
-      "dart": {
-        "lib/firebase_options.dart": {
-          "projectId": "carelog-mv",
-          "configurations": {
-            "android": "1:1063794817524:android:07215a15052a2410a921a1",
-            "web": "1:1063794817524:web:d249d3be349bfbb5a921a1",
-            "windows": "1:1063794817524:web:ad2292d585874cb1a921a1"
-          }
-        }
-      }
-    }
-  },
-  "functions": {
-    "source": "functions",
-    "runtime": "nodejs18"
-  },
-  "firestore": {
-    "rules": "firestore.rules"
-  },
+﻿{
   "emulators": {
-    "auth": {
-      "port": 9099
-    },
-    "functions": {
-      "port": 5001
-    },
-    "firestore": {
-      "port": 8080
-    },
-    "ui": {
-      "enabled": true
-    },
-    "singleProjectMode": true
+    "hub": { "host": "127.0.0.1", "port": 4400 },
+    "auth": { "host": "127.0.0.1", "port": 9099 },
+    "firestore": { "host": "127.0.0.1", "port": 8080 },
+    "functions": { "host": "127.0.0.1", "port": 5001 },
+    "ui": { "enabled": true, "host": "127.0.0.1", "port": 4000 }
   }
 }

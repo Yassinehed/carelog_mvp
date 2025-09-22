@@ -9,7 +9,7 @@ import '../mappers/of_order_mapper.dart' as of_order_mapper;
 import '../models/of_order_model.dart' as model;
 
 /// Implementation of OfOrderRepository using Firebase
-@Injectable()
+@Injectable(as: OfOrderRepository)
 class OfOrderRepositoryImpl implements OfOrderRepository {
   final FirestoreDataSource _firestoreDataSource;
 
@@ -22,13 +22,13 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
     try {
       final doc = await _firestoreDataSource.getDocument(_collection, id);
       if (!doc.exists) {
-        return Left(ServerFailure());
+        return const Left(ServerFailure());
       }
       final ofOrderModel = model.OfOrder.fromJson(doc.data()!);
       final ofOrder = of_order_mapper.OfOrderMapper.toDomain(ofOrderModel);
       return Right(ofOrder);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -42,7 +42,7 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
           .toList();
       return Right(ofOrders);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -54,7 +54,7 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
           _collection, ofOrder.ofNumber, ofOrderModel.toJson());
       return Right(ofOrder);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -66,7 +66,7 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
           _collection, ofOrder.ofNumber, ofOrderModel.toJson());
       return Right(ofOrder);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -76,17 +76,17 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
       await _firestoreDataSource.deleteDocument(_collection, id);
       return const Right(unit);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
   @override
   Future<Either<Failure, int>> count({Map<String, dynamic>? filters}) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, bool>> exists(String id) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getPaginated({
@@ -94,43 +94,43 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
     String? startAfter,
     Map<String, dynamic>? filters,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> search(String query) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   // OfOrderRepository specific methods
   @override
   Future<Either<Failure, List<OfOrder>>> getByStatus(
           OfOrderStatus status) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getByPriority(
           OfOrderPriority priority) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getBySupervisor(
           String supervisorId) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getByProductionLine(
           String productionLine) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getByClient(String clientName) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getByDateRange(
     DateTime startDate,
     DateTime endDate,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, OfOrder>> updateStatus(
@@ -138,7 +138,7 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
     OfOrderStatus newStatus,
     String updatedBy,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, OfOrder>> updateProgress(
@@ -150,7 +150,7 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
     double? actualCost,
     String? updatedBy,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, OfOrder>> addProductionNote(
@@ -158,7 +158,7 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
     String note,
     String authorId,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, OfOrder>> addQualityCheck(
@@ -168,78 +168,78 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
     String inspectorId,
     String? notes,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   Future<Either<Failure, OfOrder>> assignSupervisor(
     String orderId,
     String supervisorId,
     String assignedBy,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   Future<Either<Failure, OfOrder>> assignProductionLine(
     String orderId,
     String productionLine,
     String assignedBy,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getOverdue() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getDueToday() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, OfOrderStats>> getStatistics() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   Future<Either<Failure, List<OfOrder>>> getByMaterial(
           String materialReference) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Map<OfOrderStatus, int>>> getCountByStatus() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   Future<Either<Failure, Map<OfOrderPriority, int>>>
-      getCountByPriority() async => Left(ServerFailure());
+      getCountByPriority() async => const Left(ServerFailure());
 
   Future<Either<Failure, List<OfOrder>>> getByProgressRange(
           int minProgress, int maxProgress) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   Future<Either<Failure, double>> getAverageCompletionTime() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   Future<Either<Failure, List<OfOrder>>> getCompletedInDateRange(
     DateTime startDate,
     DateTime endDate,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   Future<Either<Failure, int>> archiveCompleted(int daysOld) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Map<String, bool>>> checkMaterialAvailability(
     String orderId,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getDeliveryOverdue() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getInProgress() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getMaterialWaiting() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> searchWithFilters({
@@ -251,22 +251,23 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
     DateTime? startDate,
     DateTime? endDate,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, Map<String, double>>> getMaterialRequirements(
     List<String> orderIds,
   ) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, List<OfOrder>>> getInQualityCheck() async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 
   @override
   Future<Either<Failure, ProductionMetrics>> getProductionMetrics({
     DateTime? startDate,
     DateTime? endDate,
   }) async =>
-      Left(ServerFailure());
+      const Left(ServerFailure());
 }
+

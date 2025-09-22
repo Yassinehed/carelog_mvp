@@ -2,171 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../../../core/widgets/read_only_wrapper.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../auth/presentation/providers/auth_providers.dart';
 import '../../domain/entities/signalement.dart';
 import '../../domain/usecases/create_signalement.dart';
 import '../providers/signalement_providers.dart';
 
-class CreateSignalementPage extends ConsumerStatefulWidget {
+class CreateSignalementPage extends ConsumerWidget {
   const CreateSignalementPage({super.key});
 
   @override
-  ConsumerState<CreateSignalementPage> createState() =>
-      _CreateSignalementPageState();
-}
-
-class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
-  final _formKey = GlobalKey<FormState>();
-  final _descriptionController = TextEditingController();
-
-  SignalementType _selectedType = SignalementType.qualityIssue;
-  SignalementSeverity _selectedSeverity = SignalementSeverity.medium;
-
-  bool _isLoading = false;
-
-  @override
-  void dispose() {
-    _descriptionController.dispose();
-    super.dispose();
-  }
-
-  Future<void> _createSignalement() async {
-    if (!_formKey.currentState!.validate()) return;
-
-    setState(() => _isLoading = true);
-
-    try {
-      final currentUser = ref.read(currentUserProvider);
-      if (currentUser == null) {
-        if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-                content:
-                    Text(AppLocalizations.of(context)!.signalementNotLoggedIn)),
-          );
-        }
-        return;
-      }
-
-      final createUseCase = ref.read(createSignalementUseCaseProvider);
-      final params = CreateSignalementParams(
-        id: const Uuid().v4(),
-        type: _selectedType,
-        severity: _selectedSeverity,
-        createdBy: currentUser.email,
-        description: _descriptionController.text.trim(),
-      );
-
-      final result = await createUseCase(params);
-
-      result.fold(
-        (failure) {
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                  content: Text(AppLocalizations.of(context)!
-                      .signalementUnexpectedError(failure.toString()))),
-            );
-          }
-        },
-        (_) {
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(
-                    AppLocalizations.of(context)!.signalementCreatedSuccess),
-                backgroundColor: Colors.green,
-              ),
-            );
-            Navigator.of(context).pop(); // Torna alla pagina precedente
-          }
-        },
-      );
-    } catch (e) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-              content: Text(AppLocalizations.of(context)!
-                  .signalementUnexpectedError(e.toString()))),
-        );
-      }
-    } finally {
-      if (mounted) {
-        setState(() => _isLoading = false);
-      }
-    }
-  }
-
-  String _getTypeLabel(SignalementType type) {
-    switch (type) {
-      case SignalementType.qualityIssue:
-        return AppLocalizations.of(context)!.signalementType_qualityIssue;
-      case SignalementType.machineFailure:
-        return AppLocalizations.of(context)!.signalementType_machineFailure;
-      case SignalementType.materialIssue:
-        return AppLocalizations.of(context)!.signalementType_materialIssue;
-      case SignalementType.processIssue:
-        return AppLocalizations.of(context)!.signalementType_processIssue;
-      case SignalementType.other:
-        return AppLocalizations.of(context)!.signalementType_other;
-    }
-  }
-
-  String _getSeverityLabel(SignalementSeverity severity) {
-    switch (severity) {
-      case SignalementSeverity.low:
-        return AppLocalizations.of(context)!.severity_low;
-      case SignalementSeverity.medium:
-        return AppLocalizations.of(context)!.severity_medium;
-      case SignalementSeverity.high:
-        return AppLocalizations.of(context)!.severity_high;
-      case SignalementSeverity.critical:
-        return AppLocalizations.of(context)!.severity_critical;
-    }
-  }
-
-  Color _getSeverityColor(SignalementSeverity severity) {
-    switch (severity) {
-      case SignalementSeverity.low:
-        return Colors.green;
-      case SignalementSeverity.medium:
-        return Colors.orange;
-      case SignalementSeverity.high:
-        return Colors.red;
-      case SignalementSeverity.critical:
-        return Colors.red.shade900;
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final formState = ref.watch(signalementFormProvider);
+    final formNotifier = ref.read(signalementFormProvider.notifier);
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.signalementCreateTitle),
+        title: Text(l10n.signalementCreateTitle),
         centerTitle: true,
         backgroundColor: theme.colorScheme.primaryContainer,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Form(
-          key: _formKey,
+          key: GlobalKey<FormState>(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Tipo di signalement
               Text(
-                AppLocalizations.of(context)!.signalementTypeLabel,
+                l10n.signalementTypeLabel,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 8),
               DropdownButtonFormField<SignalementType>(
-                value: _selectedType,
+                value: formState.type,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   contentPadding:
@@ -175,17 +49,17 @@ class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
                 items: SignalementType.values.map((type) {
                   return DropdownMenuItem(
                     value: type,
-                    child: Text(_getTypeLabel(type)),
+                    child: Text(_getTypeLabel(context, type)),
                   );
                 }).toList(),
                 onChanged: (value) {
                   if (value != null) {
-                    setState(() => _selectedType = value);
+                    formNotifier.updateType(value);
                   }
                 },
                 validator: (value) {
                   if (value == null) {
-                    return AppLocalizations.of(context)!.signalementTypeLabel;
+                    return l10n.signalementTypeLabel;
                   }
                   return null;
                 },
@@ -195,14 +69,14 @@ class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
 
               // Severità
               Text(
-                AppLocalizations.of(context)!.signalementSeverityLabel,
+                l10n.signalementSeverityLabel,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 8),
               DropdownButtonFormField<SignalementSeverity>(
-                value: _selectedSeverity,
+                value: formState.severity,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   contentPadding:
@@ -219,20 +93,19 @@ class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
                           size: 16,
                         ),
                         const SizedBox(width: 8),
-                        Text(_getSeverityLabel(severity)),
+                        Text(_getSeverityLabel(context, severity)),
                       ],
                     ),
                   );
                 }).toList(),
                 onChanged: (value) {
                   if (value != null) {
-                    setState(() => _selectedSeverity = value);
+                    formNotifier.updateSeverity(value);
                   }
                 },
                 validator: (value) {
                   if (value == null) {
-                    return AppLocalizations.of(context)!
-                        .signalementSeverityLabel;
+                    return l10n.signalementSeverityLabel;
                   }
                   return null;
                 },
@@ -242,29 +115,27 @@ class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
 
               // Descrizione
               Text(
-                AppLocalizations.of(context)!.signalementDescriptionLabel,
+                l10n.signalementDescriptionLabel,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 8),
               TextFormField(
-                controller: _descriptionController,
+                initialValue: formState.description,
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
-                  hintText:
-                      AppLocalizations.of(context)!.signalementDescriptionHint,
+                  hintText: l10n.signalementDescriptionHint,
                   contentPadding: const EdgeInsets.all(16),
                 ),
                 maxLines: 5,
+                onChanged: formNotifier.updateDescription,
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return AppLocalizations.of(context)!
-                        .signalementDescriptionRequired;
+                    return l10n.signalementDescriptionRequired;
                   }
                   if (value.trim().length < 10) {
-                    return AppLocalizations.of(context)!
-                        .signalementDescriptionMin;
+                    return l10n.signalementDescriptionMin;
                   }
                   return null;
                 },
@@ -275,66 +146,143 @@ class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
               // Pulsante di creazione
               SizedBox(
                 width: double.infinity,
-                child: ReadOnlyWrapper(
-                  child: ElevatedButton.icon(
-                    onPressed: _isLoading ? null : _createSignalement,
-                    icon: _isLoading
-                        ? const SizedBox(
-                            width: 20,
-                            height: 20,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
-                        : const Icon(Icons.send),
-                    label: Text(_isLoading
-                        ? AppLocalizations.of(context)!.signalementCreating
-                        : AppLocalizations.of(context)!
-                            .signalementCreateButton),
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      textStyle: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
+                child: ElevatedButton.icon(
+                  onPressed: formState.isSubmitting ? null : () => _createSignalement(context, ref, formState),
+                  icon: formState.isSubmitting
+                      ? const SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : const Icon(Icons.send),
+                  label: Text(formState.isSubmitting
+                      ? l10n.signalementCreating
+                      : l10n.signalementCreateButton),
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    textStyle: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  tooltipMessage: AppLocalizations.of(context)!.readOnlyTooltip,
                 ),
               ),
 
-              const SizedBox(height: 16),
-
-              // Info aggiuntive
-              Card(
-                color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              if (formState.error != null) ...[
+                const SizedBox(height: 16),
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.red.shade50,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.red.shade200),
+                  ),
+                  child: Row(
                     children: [
-                      Row(
-                        children: [
-                          Icon(Icons.info_outline,
-                              color: theme.colorScheme.primary),
-                          const SizedBox(width: 8),
-                          Text(
-                            AppLocalizations.of(context)!.testingHeader,
-                            style: theme.textTheme.titleSmall?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        AppLocalizations.of(context)!.testingInfo,
-                        style: const TextStyle(fontSize: 12),
+                      Icon(Icons.error, color: Colors.red.shade600),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          formState.error!,
+                          style: TextStyle(color: Colors.red.shade600),
+                        ),
                       ),
                     ],
                   ),
                 ),
-              ),
+              ],
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<void> _createSignalement(BuildContext context, WidgetRef ref, SignalementFormState formState) async {
+    final formNotifier = ref.read(signalementFormProvider.notifier);
+    final l10n = AppLocalizations.of(context)!;
+
+    formNotifier.setSubmitting(true);
+    formNotifier.setError(null);
+
+    try {
+      final currentUser = ref.read(currentUserProvider);
+      if (currentUser == null) {
+        formNotifier.setError(l10n.signalementNotLoggedIn);
+        return;
+      }
+
+      final createUseCase = ref.read(createSignalementUseCaseProvider);
+      final params = CreateSignalementParams(
+        id: const Uuid().v4(),
+        type: formState.type!,
+        severity: formState.severity!,
+        createdBy: currentUser.email,
+        description: formState.description.trim(),
+      );
+
+      final result = await createUseCase(params);
+
+      result.fold(
+        (failure) {
+          formNotifier.setError(l10n.signalementUnexpectedError(failure.toString()));
+        },
+        (_) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(l10n.signalementCreatedSuccess),
+              backgroundColor: Colors.green,
+            ),
+          );
+          formNotifier.reset();
+          Navigator.of(context).pop();
+        },
+      );
+    } catch (e) {
+      formNotifier.setError(l10n.signalementUnexpectedError(e.toString()));
+    } finally {
+      formNotifier.setSubmitting(false);
+    }
+  }
+
+  String _getTypeLabel(BuildContext context, SignalementType type) {
+    final l10n = AppLocalizations.of(context)!;
+    switch (type) {
+      case SignalementType.qualityIssue:
+        return l10n.signalementType_qualityIssue;
+      case SignalementType.machineFailure:
+        return l10n.signalementType_machineFailure;
+      case SignalementType.materialIssue:
+        return l10n.signalementType_materialIssue;
+      case SignalementType.processIssue:
+        return l10n.signalementType_processIssue;
+      case SignalementType.other:
+        return l10n.signalementType_other;
+    }
+  }
+
+  String _getSeverityLabel(BuildContext context, SignalementSeverity severity) {
+    final l10n = AppLocalizations.of(context)!;
+    switch (severity) {
+      case SignalementSeverity.low:
+        return l10n.severity_low;
+      case SignalementSeverity.medium:
+        return l10n.severity_medium;
+      case SignalementSeverity.high:
+        return l10n.severity_high;
+      case SignalementSeverity.critical:
+        return l10n.severity_critical;
+    }
+  }
+
+  Color _getSeverityColor(SignalementSeverity severity) {
+    switch (severity) {
+      case SignalementSeverity.low:
+        return Colors.green;
+      case SignalementSeverity.medium:
+        return Colors.orange;
+      case SignalementSeverity.high:
+        return Colors.red;
+      case SignalementSeverity.critical:
+        return Colors.red.shade900;
+    }
   }
 }

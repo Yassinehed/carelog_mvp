@@ -91,7 +91,7 @@ class DashboardStatsNotifier extends StateNotifier<DashboardStats> {
     state = state.copyWith(isLoading: true, error: null);
 
     try {
-      // Carica signalements attivi (tutti tranne resolved e closed)
+      // Charge les signalements actifs (tous sauf resolved et closed)
       final signalementsResult = await _signalementRepository.getSignalements();
       final activeSignalements = signalementsResult.fold(
         (failure) => 0,

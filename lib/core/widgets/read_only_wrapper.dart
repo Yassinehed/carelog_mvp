@@ -31,9 +31,9 @@ class ReadOnlyWrapper extends ConsumerWidget {
 
     // Altrimenti, disabilitiamo il child originale
     return _DisabledWidget(
-      child: child,
       tooltipMessage:
           tooltipMessage ?? AppLocalizations.of(context)!.readOnlyTooltip,
+      child: child,
     );
   }
 }
@@ -69,9 +69,9 @@ extension ReadOnlyExtension on Widget {
     String? tooltipMessage,
   }) {
     return ReadOnlyWrapper(
-      child: this,
       disabledChild: disabledChild,
       tooltipMessage: tooltipMessage,
+      child: this,
     );
   }
 }

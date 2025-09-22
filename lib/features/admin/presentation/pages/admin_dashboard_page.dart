@@ -4,6 +4,7 @@ import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/presentation/widgets/live_stats_dashboard.dart';
 import '../../../../core/providers/system_status_provider.dart';
 import '../../../auth/presentation/providers/auth_providers.dart';
 
@@ -243,6 +244,11 @@ class _AdminDashboardPageState extends ConsumerState<AdminDashboardPage> {
           children: [
             // Header con stato sistema
             _buildSystemStatusCard(systemStatus, isReadOnly),
+
+            const SizedBox(height: 24),
+
+            // Statistiche live
+            const LiveStatsDashboard(),
 
             const SizedBox(height: 24),
 
