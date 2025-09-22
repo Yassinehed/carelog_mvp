@@ -170,6 +170,47 @@ Add screenshots of UI changes
 - Check test data and mocks
 - Verify Firebase emulator setup
 
+## 🧾 Generated files policy
+
+We use code generation (build_runner, injectable, freezed, json_serializable) for several parts of the project.
+
+Policy (recommended): DO NOT commit generated files to the repository by default.
+
+- Rationale: committing generated files often leads to merge conflicts, accidental encoding/EOL issues, and duplicated sources of truth. The CI is responsible for running code generation on PRs and validating the result.
+- Exceptions: small projects or generated artifacts that are expensive to build on every machine may be committed, but only after an explicit team agreement.
+
+Local developer workflow:
+
+1. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+2. Generate code locally when you change annotated sources:
+   ```bash
+   dart run build_runner build --delete-conflicting-outputs
+   # or
+   flutter pub run build_runner build --delete-conflicting-outputs
+   ```
+3. Run tests and linting locally before opening a PR:
+   ```bash
+   flutter analyze
+   flutter test
+   ```
+
+How to handle merge conflicts on generated files (recommended):
+
+- Do NOT manually edit generated files. Instead:
+  1. Rebase your branch on the latest `main`.
+  2. Re-run `build_runner` to regenerate artifacts.
+  3. Commit only your source changes (not generated files) and open a PR. CI will run generation and fail the PR if generation would produce different outputs.
+
+Encoding and EOL
+- Add or keep a `.gitattributes` file to normalize EOL (recommend: `* text=auto eol=lf`). This prevents encoding-related build_runner failures across OSes.
+
+Optional pre-commit hook (recommended):
+
+- A light pre-commit hook can run `dart analyze` and a fast `build_runner` dry-run to catch obvious problems before pushing. Keep it lightweight to avoid blocking developer flow.
+
 ## 📚 Resources
 
 - [Flutter Documentation](https://flutter.dev/docs)
