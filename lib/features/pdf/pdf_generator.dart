@@ -1,4 +1,6 @@
 import 'dart:typed_data';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:image/image.dart' as img;
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
@@ -22,7 +24,26 @@ class SignalementPdfModel {
 /// Generates a PDF document for a Signalement model and returns bytes.
 Future<Uint8List> generateSignalementPdf(SignalementPdfModel model) async {
   final pdf = pw.Document();
-  // Build header with inline CareLog logo rendered from widget painter
+  // Load CareLog PNG asset for header logo (if available)
+  pw.Widget logoWidget = pw.Container(width: 60, height: 60, color: PdfColors.grey300);
+  try {
+    final bytes = await rootBundle.load('assets/images/carelog_logo.png');
+    final list = bytes.buffer.asUint8List();
+    // validate PNG bytes by attempting to decode with `package:image`
+    try {
+      final decoded = img.decodeImage(list);
+      if (decoded != null) {
+        final memImage = pw.MemoryImage(list);
+        logoWidget = pw.Container(width: 60, height: 60, child: pw.Image(memImage, fit: pw.BoxFit.contain));
+      }
+    } catch (e) {
+      // If decoding fails, keep placeholder
+    }
+  } catch (e) {
+    // keep placeholder if asset not found
+  }
+
+  // Build header with CareLog logo
   final header = pw.Row(
     mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
     children: [
@@ -33,8 +54,7 @@ Future<Uint8List> generateSignalementPdf(SignalementPdfModel model) async {
           pw.Text('ID: ${model.id}'),
         ],
       ),
-      // Placeholder for logo; we will attempt to render a simple colored square as logo if conversion isn't possible
-      pw.Container(width: 60, height: 60, color: PdfColors.grey300),
+      logoWidget,
     ],
   );
 
@@ -47,7 +67,8 @@ Future<Uint8List> generateSignalementPdf(SignalementPdfModel model) async {
 
       // Details table
       children.add(pw.SizedBox(height: 8));
-      children.add(pw.Table.fromTextArray(
+      children.add(pw.TableHelper.fromTextArray(
+        context: context,
         headers: ['Field', 'Value'],
         data: [
           ['ID', model.id],
@@ -70,6 +91,11 @@ Future<Uint8List> generateSignalementPdf(SignalementPdfModel model) async {
         final imageWidgets = <pw.Widget>[];
         for (final imgBytes in model.images!) {
           try {
+            // validate image bytes decode before handing to pw.MemoryImage -
+            // package:pdf decodes images during Document.save which can throw
+            // and fail the whole PDF generation. Use package:image to pre-validate.
+            final decoded = img.decodeImage(imgBytes);
+            if (decoded == null) continue;
             final image = pw.MemoryImage(imgBytes);
             imageWidgets.add(pw.Container(
               margin: const pw.EdgeInsets.only(bottom: 8),
