@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/signalement_providers.dart';
+import 'signalement_detail_page.dart';
 import '../../../../l10n/app_localizations.dart';
 
 class SignalementListPage extends ConsumerWidget {
@@ -25,6 +26,11 @@ class SignalementListPage extends ConsumerWidget {
               subtitle:
                   Text('${l10n.systemStatusLabel}: ${signalement.status.name}'),
               trailing: Text(signalement.severity.name.toUpperCase()),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => SignalementDetailPage(signalement: signalement),
+                ));
+              },
             );
           },
         ),
