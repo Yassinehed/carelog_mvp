@@ -637,4 +637,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get ofOrderStatus_cancelled => 'Annulé';
+
+  @override
+  String get exportPdfButtonLabel => 'Esporta PDF';
 }

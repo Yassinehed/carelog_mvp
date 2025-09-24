@@ -1219,6 +1219,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancelled'**
   String get ofOrderStatus_cancelled;
+
+  /// No description provided for @exportPdfButtonLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Esporta PDF'**
+  String get exportPdfButtonLabel;
 }
 
 class _AppLocalizationsDelegate

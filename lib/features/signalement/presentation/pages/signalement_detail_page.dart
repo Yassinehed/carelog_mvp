@@ -24,28 +24,23 @@ class SignalementDetailPage extends StatelessWidget {
             Text('Type: ${signalement.type.name}'),
             Text('Severity: ${signalement.severity.name}'),
             Text('Status: ${signalement.status.name}'),
-            const Spacer(),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton.icon(
-                icon: const Icon(Icons.picture_as_pdf),
-                label: Text('Esporta PDF'),
-                onPressed: () {
-                  // Map domain Signalement to PDF model
-                  final pdfModel = SignalementPdfModel(
-                    id: signalement.id,
-                    title: 'Signalement ${signalement.id}',
-                    description: signalement.description,
-                    createdAt: signalement.createdAt,
-                  );
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => PdfPreviewPage(model: pdfModel),
-                  ));
-                },
-              ),
-            )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          final pdfModel = SignalementPdfModel(
+            id: signalement.id,
+            title: 'Signalement ${signalement.id}',
+            description: signalement.description,
+            createdAt: signalement.createdAt,
+          );
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (_) => PdfPreviewPage(model: pdfModel),
+          ));
+        },
+        icon: const Icon(Icons.picture_as_pdf),
+        label: Text(l10n.exportPdfButtonLabel),
       ),
     );
   }

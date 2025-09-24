@@ -204,4 +204,6 @@
   "ofOrderStatus_shipment": "Expédition",
   "ofOrderStatus_completed": "Terminée",
   "ofOrderStatus_cancelled": "Annulé"
+  ,
+  "exportPdfButtonLabel": "Esporta PDF"
 }
