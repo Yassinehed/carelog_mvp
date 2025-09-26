@@ -1,7 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+import 'features/machine/data/datasources/machine_api_datasource.dart';
+import 'features/machine/data/repositories/machine_repository_impl.dart';
+import 'features/machine/domain/repositories/i_machine_repository.dart';
+import 'features/machine/domain/usecases/get_machine_status.dart';
 import 'features/signalement/data/datasources/signalement_firestore_datasource.dart';
 import 'features/signalement/data/repositories/firestore_signalement_repository.dart';
 import 'features/signalement/domain/repositories/i_signalement_repository.dart';
@@ -35,6 +40,9 @@ abstract class RegisterModule {
 
   @singleton
   FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
+
+  @singleton
+  Dio get dio => Dio(BaseOptions(baseUrl: 'http://localhost:3000'));
 }
 
 @LazySingleton(as: ISignalementRepository)
@@ -108,4 +116,19 @@ class MaterialRepositoryImplInjection extends MaterialRepositoryImpl {
 @LazySingleton(as: UserRepository)
 class UserRepositoryImplInjection extends UserRepositoryImpl {
   UserRepositoryImplInjection(super.firestoreDataSource);
+}
+
+@LazySingleton(as: MachineApiDatasource)
+class MachineApiDatasourceImpl extends MachineApiDatasource {
+  MachineApiDatasourceImpl(Dio dio) : super(dio);
+}
+
+@LazySingleton(as: IMachineRepository)
+class MachineRepositoryInjection extends MachineRepositoryImpl {
+  MachineRepositoryInjection(super.datasource);
+}
+
+@LazySingleton(as: GetMachineStatus)
+class GetMachineStatusInjection extends GetMachineStatus {
+  GetMachineStatusInjection(super.repository);
 }
