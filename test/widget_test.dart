@@ -54,7 +54,10 @@ class TestLoginWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CareLogLogo(size: 80, primaryColor: Color(0xFF0A66C2), accentColor: Color(0xFFFF8A00)),
+            const CareLogLogo(
+                size: 80,
+                primaryColor: Color(0xFF0A66C2),
+                accentColor: Color(0xFFFF8A00)),
             const SizedBox(height: 32),
             TextFormField(
               decoration: const InputDecoration(
@@ -96,7 +99,7 @@ class TestLoginWidget extends StatelessWidget {
 class AuthUser {
   final String id;
   final String email;
-  
+
   AuthUser({required this.id, required this.email});
 }
 
@@ -105,20 +108,20 @@ class AuthFailure {}
 class SignInParams {
   final String email;
   final String password;
-  
+
   SignInParams({required this.email, required this.password});
 }
 
 class SignUpParams {
   final String email;
   final String password;
-  
+
   SignUpParams({required this.email, required this.password});
 }
 
 class ResetPasswordParams {
   final String email;
-  
+
   ResetPasswordParams({required this.email});
 }
 
@@ -128,9 +131,9 @@ class Either<L, R> {
   final L? left;
   final R? right;
   final bool isLeft;
-  
+
   Either._(this.left, this.right, this.isLeft);
-  
+
   factory Either.left(L value) = Left<L, R>;
   factory Either.right(R value) = Right<L, R>;
 }
@@ -180,8 +183,7 @@ void main() {
       expect(find.byType(Scaffold), findsOneWidget);
     });
 
-    testWidgets('LoginPage shows form fields',
-        (WidgetTester tester) async {
+    testWidgets('LoginPage shows form fields', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: TestLoginWidget(),
@@ -191,11 +193,11 @@ void main() {
       await tester.pumpAndSettle();
 
       // Check if form fields are present
-      expect(find.byType(TextFormField), findsNWidgets(2)); // Email and password fields
+      expect(find.byType(TextFormField),
+          findsNWidgets(2)); // Email and password fields
     });
 
-    testWidgets('LoginPage shows buttons',
-        (WidgetTester tester) async {
+    testWidgets('LoginPage shows buttons', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: TestLoginWidget(),
@@ -210,8 +212,7 @@ void main() {
       expect(find.byType(TextButton), findsOneWidget); // Forgot Password button
     });
 
-    testWidgets('LoginPage shows CareLogLogo',
-        (WidgetTester tester) async {
+    testWidgets('LoginPage shows CareLogLogo', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: TestLoginWidget(),

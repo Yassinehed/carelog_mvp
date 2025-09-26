@@ -1,13 +1,13 @@
 import 'dart:io';
 
-import 'package:integration_test/integration_test.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:carelog_mvp/main.dart';
 import 'package:carelog_mvp/firebase_options.dart';
+import 'package:carelog_mvp/main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +22,8 @@ void main() {
     setUpAll(() async {
       // Probe the auth emulator port
       try {
-        final socket = await Socket.connect('localhost', authPort, timeout: const Duration(seconds: 1));
+        final socket = await Socket.connect('localhost', authPort,
+            timeout: const Duration(seconds: 1));
         socket.destroy();
         emulatorAvailable = true;
       } catch (_) {
@@ -31,11 +32,12 @@ void main() {
 
       if (!emulatorAvailable) return;
 
-      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+      await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform);
 
       FirebaseAuth.instance.useAuthEmulator('localhost', authPort);
 
-      FirebaseFirestore.instance.settings = Settings(
+      FirebaseFirestore.instance.settings = const Settings(
         host: 'localhost:$firestorePort',
         sslEnabled: false,
         persistenceEnabled: false,
@@ -48,14 +50,16 @@ void main() {
         return;
       }
 
-      final email = 'integ.user+emulator@example.com';
-      final password = 'testpassword';
+      const email = 'integ.user+emulator@example.com';
+      const password = 'testpassword';
 
       try {
-        await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+        await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: email, password: password);
       } catch (_) {}
 
-      await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
 
       // Run the app
       await tester.pumpWidget(const MyApp());

@@ -30,6 +30,7 @@ dependencies:
   dartz: ^0.10.1
   equatable: ^2.0.5
   uuid: ^4.2.1
+  dio: ^5.2.1
 
   # Navigation & Localization
   go_router: ^14.1.0
@@ -53,6 +54,7 @@ dev_dependencies:
   freezed: ^2.5.2
   json_serializable: ^6.8.0
   injectable_generator: ^2.6.1
+  mockito: ^5.4.0
 
 flutter:
   generate: true

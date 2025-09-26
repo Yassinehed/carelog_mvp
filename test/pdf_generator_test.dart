@@ -1,6 +1,7 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:carelog_mvp/features/pdf/pdf_generator.dart';
 import 'dart:convert';
+
+import 'package:carelog_mvp/features/pdf/pdf_generator.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('generateSignalementPdf returns non-empty bytes', () async {
