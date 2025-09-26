@@ -37,7 +37,7 @@ dependencies:
   intl: ^0.20.2
 
   # Security & Storage
-  flutter_secure_storage: ^4.2.1
+  flutter_secure_storage: ^9.2.4
   # PDF generation & printing
   pdf: ^3.11.3
   printing: ^5.14.2
