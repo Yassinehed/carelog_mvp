@@ -10,6 +10,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  // Skip emulator tests by default unless explicitly enabled via env var.
+  final runEmulatorTests = Platform.environment['EMULATOR_TESTS'] == 'true';
+  if (!runEmulatorTests) {
+    // ignore: avoid_print
+    print('EMULATOR_TESTS not enabled - skipping emulator-backed integration tests');
+    return;
+  }
   // These host/port values assume the emulator runs on localhost with default ports.
   const firestoreHost = 'localhost:8080';
 
