@@ -270,5 +270,3 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
   }) async =>
       const Left(ServerFailure());
 }
-
-

@@ -28,7 +28,8 @@ class SignalementListPage extends ConsumerWidget {
               trailing: Text(signalement.severity.name.toUpperCase()),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (_) => SignalementDetailPage(signalement: signalement),
+                  builder: (_) =>
+                      SignalementDetailPage(signalement: signalement),
                 ));
               },
             );

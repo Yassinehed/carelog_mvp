@@ -299,5 +299,3 @@ class SignalementRepositoryImpl implements SignalementRepository {
   Future<Either<Failure, int>> archiveOldCompleted(int daysOld) async =>
       const Left(ServerFailure());
 }
-
-

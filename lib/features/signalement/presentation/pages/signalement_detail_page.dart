@@ -7,7 +7,7 @@ import '../../../../l10n/app_localizations.dart';
 class SignalementDetailPage extends StatelessWidget {
   final Signalement signalement;
 
-  const SignalementDetailPage({Key? key, required this.signalement}) : super(key: key);
+  const SignalementDetailPage({super.key, required this.signalement});
 
   @override
   Widget build(BuildContext context) {

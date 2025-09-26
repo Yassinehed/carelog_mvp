@@ -1,14 +1,13 @@
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'package:carelog_mvp/main.dart';
 import 'package:carelog_mvp/firebase_options.dart';
+import 'package:carelog_mvp/main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   // These host/port values assume the emulator runs on localhost with default ports.
@@ -24,7 +23,8 @@ void main() {
     // platform channel errors when emulator/plugins are unavailable.
     bool authReachable = false;
     try {
-      final socket = await Socket.connect('localhost', 9099, timeout: const Duration(seconds: 1));
+      final socket = await Socket.connect('localhost', 9099,
+          timeout: const Duration(seconds: 1));
       socket.destroy();
       authReachable = true;
     } catch (_) {
@@ -78,7 +78,8 @@ void main() {
     // Skip test early if emulator ports are not open to avoid long timeouts
     bool authOpen = false;
     try {
-      final socket = await Socket.connect('localhost', 9099, timeout: const Duration(seconds: 1));
+      final socket = await Socket.connect('localhost', 9099,
+          timeout: const Duration(seconds: 1));
       socket.destroy();
       authOpen = true;
     } catch (_) {}
@@ -86,7 +87,8 @@ void main() {
     if (skipEmulatorTests || !authOpen) {
       // Skip the test gracefully when emulator isn't running or initialization failed.
       // ignore: avoid_print
-      print('Skipping emulator test - Firebase emulator not available in CI/CD environment');
+      print(
+          'Skipping emulator test - Firebase emulator not available in CI/CD environment');
       return;
     }
 
@@ -133,6 +135,6 @@ void main() {
     // At this point, if the app recognizes the auth state, it should show HomePage.
     // Check for presence of the admin IconButton which is part of HomePage AppBar actions.
     expect(find.byIcon(Icons.admin_panel_settings), findsWidgets,
-      reason: 'Home page should show admin icon when authenticated');
+        reason: 'Home page should show admin icon when authenticated');
   }, timeout: const Timeout(Duration(seconds: 30)));
 }

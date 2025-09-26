@@ -276,6 +276,7 @@ class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
               SizedBox(
                 width: double.infinity,
                 child: ReadOnlyWrapper(
+                  tooltipMessage: AppLocalizations.of(context)!.readOnlyTooltip,
                   child: ElevatedButton.icon(
                     onPressed: _isLoading ? null : _createSignalement,
                     icon: _isLoading
@@ -295,7 +296,6 @@ class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
                           fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  tooltipMessage: AppLocalizations.of(context)!.readOnlyTooltip,
                 ),
               ),
 
@@ -303,7 +303,8 @@ class _CreateSignalementPageState extends ConsumerState<CreateSignalementPage> {
 
               // Info aggiuntive
               Card(
-                color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+                color: theme.colorScheme.surfaceContainerHighest
+                    .withValues(alpha: 0.5),
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Column(
