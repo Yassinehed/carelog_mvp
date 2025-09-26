@@ -23,13 +23,13 @@ class UserRepositoryImpl implements UserRepository {
     try {
       final doc = await _firestoreDataSource.getDocument(_collection, id);
       if (!doc.exists) {
-        return Left(ServerFailure());
+        return const Left(ServerFailure());
       }
       final userModel = model.User.fromJson(doc.data()!);
       final user = user_mapper.UserMapper.toDomain(userModel);
       return Right(user);
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 
@@ -43,7 +43,7 @@ class UserRepositoryImpl implements UserRepository {
           .toList();
       return Right(users);
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 
@@ -58,7 +58,7 @@ class UserRepositoryImpl implements UserRepository {
       );
       return Right(user);
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 
@@ -73,7 +73,7 @@ class UserRepositoryImpl implements UserRepository {
       );
       return Right(user);
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 
@@ -83,7 +83,7 @@ class UserRepositoryImpl implements UserRepository {
       await _firestoreDataSource.deleteDocument(_collection, id);
       return const Right(unit);
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 
@@ -110,7 +110,7 @@ class UserRepositoryImpl implements UserRepository {
         return Right(snapshot.docs.length);
       }
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 
@@ -120,7 +120,7 @@ class UserRepositoryImpl implements UserRepository {
       final doc = await _firestoreDataSource.getDocument(_collection, id);
       return Right(doc.exists);
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 
@@ -155,7 +155,7 @@ class UserRepositoryImpl implements UserRepository {
 
       return Right(users);
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 
@@ -168,13 +168,13 @@ class UserRepositoryImpl implements UserRepository {
         (query) => query.where('email', isEqualTo: email),
       );
       if (snapshot.docs.isEmpty) {
-        return Left(ServerFailure());
+        return const Left(ServerFailure());
       }
       final userModel = model.User.fromJson(snapshot.docs.first.data());
       final user = user_mapper.UserMapper.toDomain(userModel);
       return Right(user);
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 
@@ -192,7 +192,7 @@ class UserRepositoryImpl implements UserRepository {
           .toList();
       return Right(users);
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -212,7 +212,7 @@ class UserRepositoryImpl implements UserRepository {
         },
       );
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
@@ -221,16 +221,16 @@ class UserRepositoryImpl implements UserRepository {
     try {
       final result = await getByEmail(email);
       return result.fold(
-        (failure) => Right(true), // Email is available if getByEmail fails
-        (user) => Right(false), // Email is not available if user exists
+        (failure) => const Right(true), // Email is available if getByEmail fails
+        (user) => const Right(false), // Email is not available if user exists
       );
     } catch (e) {
-      return Left(ServerFailure());
+      return const Left(ServerFailure());
     }
   }
 
   @override
-  Future<Either<Failure, User>> getCurrentUser() async => Left(ServerFailure());
+  Future<Either<Failure, User>> getCurrentUser() async => const Left(ServerFailure());
 
   @override
   Future<Either<Failure, User>> updateProfile(User user) async {
@@ -259,7 +259,7 @@ class UserRepositoryImpl implements UserRepository {
 
       return Right(users);
     } catch (e) {
-      return Left(ServerFailure());
+  return const Left(ServerFailure());
     }
   }
 

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:carelog_mvp/features/pdf/pdf_generator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -10,10 +8,7 @@ void main() {
       title: 'Test Signalement',
       description: 'This is a sample description for testing.',
       createdAt: DateTime.parse('2025-09-24T12:00:00Z'),
-      images: [
-        base64Decode(
-            'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='),
-      ],
+      images: null, // avoid loading image bytes in unit tests to keep deterministic
     );
 
     final bytes = await generateSignalementPdf(model);

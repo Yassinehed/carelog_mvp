@@ -224,6 +224,7 @@ class _CreateOfOrderPageState extends ConsumerState<CreateOfOrderPage> {
               SizedBox(
                 width: double.infinity,
                 child: ReadOnlyWrapper(
+                  tooltipMessage: AppLocalizations.of(context)!.readOnlyTooltip,
                   child: ElevatedButton.icon(
                     icon: _isLoading
                         ? const SizedBox(
@@ -242,7 +243,6 @@ class _CreateOfOrderPageState extends ConsumerState<CreateOfOrderPage> {
                           fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  tooltipMessage: AppLocalizations.of(context)!.readOnlyTooltip,
                 ),
               ),
 

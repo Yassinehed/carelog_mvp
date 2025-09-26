@@ -120,7 +120,7 @@ class UserRepositoryImplInjection extends UserRepositoryImpl {
 
 @LazySingleton(as: MachineApiDatasource)
 class MachineApiDatasourceImpl extends MachineApiDatasource {
-  MachineApiDatasourceImpl(Dio dio) : super(dio);
+  MachineApiDatasourceImpl(super.dio);
 }
 
 @LazySingleton(as: IMachineRepository)

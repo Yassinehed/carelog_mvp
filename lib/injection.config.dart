@@ -47,6 +47,12 @@ import 'package:carelog_mvp/features/auth/domain/usecases/sign_out.dart'
     as _i413;
 import 'package:carelog_mvp/features/auth/domain/usecases/sign_up.dart'
     as _i154;
+import 'package:carelog_mvp/features/machine/data/datasources/machine_api_datasource.dart'
+    as _i691;
+import 'package:carelog_mvp/features/machine/domain/repositories/i_machine_repository.dart'
+    as _i82;
+import 'package:carelog_mvp/features/machine/domain/usecases/get_machine_status.dart'
+    as _i704;
 import 'package:carelog_mvp/features/of_order/data/datasources/of_order_firestore_datasource.dart'
     as _i767;
 import 'package:carelog_mvp/features/of_order/domain/repositories/i_of_order_repository.dart'
@@ -63,6 +69,7 @@ import 'package:carelog_mvp/features/signalement/domain/repositories/i_signaleme
     as _i608;
 import 'package:carelog_mvp/injection.dart' as _i290;
 import 'package:cloud_firestore/cloud_firestore.dart' as _i974;
+import 'package:dio/dio.dart' as _i361;
 import 'package:firebase_auth/firebase_auth.dart' as _i59;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
@@ -81,6 +88,7 @@ extension GetItInjectableX on _i174.GetIt {
     final registerModule = _$RegisterModule();
     gh.singleton<_i974.FirebaseFirestore>(() => registerModule.firestore);
     gh.singleton<_i59.FirebaseAuth>(() => registerModule.firebaseAuth);
+    gh.singleton<_i361.Dio>(() => registerModule.dio);
     gh.factory<_i737.SignalementFirestoreDatasource>(() =>
         _i737.SignalementFirestoreDatasource(gh<_i974.FirebaseFirestore>()));
     gh.factory<_i290.SignalementFirestoreDatasourceImpl>(() =>
@@ -88,8 +96,12 @@ extension GetItInjectableX on _i174.GetIt {
             gh<_i974.FirebaseFirestore>()));
     gh.factory<_i290.OfOrderFirestoreDatasourceImpl>(() =>
         _i290.OfOrderFirestoreDatasourceImpl(gh<_i974.FirebaseFirestore>()));
+    gh.lazySingleton<_i691.MachineApiDatasource>(
+        () => _i290.MachineApiDatasourceImpl(gh<_i361.Dio>()));
     gh.factory<_i290.FirebaseAuthDatasourceImpl>(
         () => _i290.FirebaseAuthDatasourceImpl(gh<_i59.FirebaseAuth>()));
+    gh.lazySingleton<_i82.IMachineRepository>(() =>
+        _i290.MachineRepositoryInjection(gh<_i691.MachineApiDatasource>()));
     gh.lazySingleton<_i608.ISignalementRepository>(() =>
         _i290.FirestoreSignalementRepositoryImpl(
             gh<_i737.SignalementFirestoreDatasource>()));
@@ -107,6 +119,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i725.UserRepositoryImpl(gh<_i462.FirestoreDataSource>()));
     gh.factory<_i174.OfOrderRepository>(
         () => _i392.OfOrderRepositoryImpl(gh<_i462.FirestoreDataSource>()));
+    gh.lazySingleton<_i704.GetMachineStatus>(
+        () => _i290.GetMachineStatusInjection(gh<_i82.IMachineRepository>()));
     gh.lazySingleton<_i462.IAuthRepository>(
         () => _i290.AuthRepositoryImpl(gh<_i894.FirebaseAuthDatasource>()));
     gh.factory<_i1054.GetCurrentUserUseCase>(
