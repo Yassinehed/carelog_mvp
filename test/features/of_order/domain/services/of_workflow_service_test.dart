@@ -17,10 +17,16 @@ class _FakeRepo implements IOfOrderRepository {
   Future<Either<OfOrderFailure, List<OfOrder>>> getOfOrders() async => Right(_order == null ? [] : [_order!]);
 
   @override
-  Future<Either<OfOrderFailure, Unit>> updateOfOrderStatus(String ofOrderId, OfOrderStatus newStatus) async {
+  Future<Either<OfOrderFailure, Unit>> updateOfOrderStatus(String ofOrderId, OfOrderStatus newStatus, {String? updatedBy}) async {
     if (_order == null || _order!.id != ofOrderId) return const Left(NotFoundFailure());
     _order = _order!.copyWith(status: newStatus, updatedAt: DateTime.now());
     return const Right(unit);
+  }
+
+  @override
+  Future<Either<OfOrderFailure, bool>> isChecklistComplete(String ofOrderId) async {
+    // For tests, assume checklist is complete
+    return const Right(true);
   }
 
   @override

@@ -43,8 +43,23 @@ class OfWorkflowService {
         return const Left(PermissionDeniedFailure());
       }
 
-      // perform update
-      final updateRes = await repository.updateOfOrderStatus(ofId, newStatus);
+      // Block transition to productionTest/control/shipment/completed if checklist incomplete
+      final requiresChecklist = [
+        OfOrderStatus.productionTest,
+        OfOrderStatus.control,
+        OfOrderStatus.shipment,
+        OfOrderStatus.completed,
+      ];
+
+      if (requiresChecklist.contains(newStatus)) {
+        final checklistRes = await repository.isChecklistComplete(ofId);
+        final checklistOk = await checklistRes.fold((f) async => false, (ok) async => ok);
+        if (!checklistOk) {
+          return const Left(PermissionDeniedFailure());
+        }
+      }
+      // perform update (pass updatedBy through)
+      final updateRes = await repository.updateOfOrderStatus(ofId, newStatus, updatedBy: updatedBy);
       return await updateRes.fold((f) async => Left(f), (_) async {
         // fetch fresh copy
         final refreshed = await repository.getOfOrderById(ofId);

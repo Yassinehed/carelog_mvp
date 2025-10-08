@@ -33,10 +33,21 @@ class OfOrderRepository implements IOfOrderRepository {
   Future<Either<OfOrderFailure, Unit>> updateOfOrderStatus(
     String ofOrderId,
     OfOrderStatus newStatus,
+    {String? updatedBy}
   ) async {
     try {
-      await _datasource.updateOfOrderStatus(ofOrderId, newStatus);
+      await _datasource.updateOfOrderStatus(ofOrderId, newStatus, updatedBy: updatedBy);
       return const Right(unit);
+    } catch (e) {
+      return Left(OfOrderFailure.unknown());
+    }
+  }
+
+  @override
+  Future<Either<OfOrderFailure, bool>> isChecklistComplete(String ofOrderId) async {
+    try {
+      final result = await _datasource.isChecklistComplete(ofOrderId);
+      return Right(result);
     } catch (e) {
       return Left(OfOrderFailure.unknown());
     }
