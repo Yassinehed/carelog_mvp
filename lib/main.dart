@@ -5,12 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'firebase_options.dart';
 import 'injection.dart';
-import 'package:carelog_mvp/features/of_order/domain/usecases/list_of_orders.dart';
-import 'package:carelog_mvp/features/of_order/domain/usecases/create_of_order.dart';
-import 'package:carelog_mvp/features/of_order/domain/usecases/update_of_order_status.dart';
-import 'package:carelog_mvp/features/signalement/domain/usecases/list_signalements.dart';
-import 'package:carelog_mvp/features/signalement/domain/usecases/create_signalement.dart';
-import 'package:carelog_mvp/features/signalement/domain/usecases/update_signalement_status.dart';
+// Usecases are registered and injected via DI; concrete imports are not required here.
 import 'core/presentation/pages/home_page.dart';
 import 'features/auth/presentation/pages/login_page.dart';
 import 'features/auth/presentation/pages/reset_password_page.dart';
@@ -60,58 +55,7 @@ void main() {
       rethrow;
     }
 
-    // Consolidated alias registrations for abstract->concrete usecases
-    // (lightweight fallbacks when consumers ask for abstract types).
-    try {
-      // OF usecases
-      if (!getIt.isRegistered<GetOfOrdersUseCase>()) {
-        if (getIt.isRegistered<GetOfOrdersUseCaseImpl>()) {
-          getIt.registerFactory<GetOfOrdersUseCase>(
-              () => getIt<GetOfOrdersUseCaseImpl>());
-        }
-      }
-      if (!getIt.isRegistered<CreateOfOrderUseCase>()) {
-        if (getIt.isRegistered<CreateOfOrderUseCaseImpl>()) {
-          getIt.registerFactory<CreateOfOrderUseCase>(
-              () => getIt<CreateOfOrderUseCaseImpl>());
-        }
-      }
-      if (!getIt.isRegistered<UpdateOfOrderStatusUseCase>()) {
-        if (getIt.isRegistered<UpdateOfOrderStatusUseCaseImpl>()) {
-          getIt.registerFactory<UpdateOfOrderStatusUseCase>(
-              () => getIt<UpdateOfOrderStatusUseCaseImpl>());
-        }
-      }
-
-      // Signalement usecases
-      if (!getIt.isRegistered<ListSignalementsUseCase>()) {
-        if (getIt.isRegistered<ListSignalementsUseCaseImpl>()) {
-          getIt.registerFactory<ListSignalementsUseCase>(
-              () => getIt<ListSignalementsUseCaseImpl>());
-        }
-      }
-      if (!getIt.isRegistered<CreateSignalementUseCase>()) {
-        if (getIt.isRegistered<CreateSignalementUseCaseImpl>()) {
-          getIt.registerFactory<CreateSignalementUseCase>(
-              () => getIt<CreateSignalementUseCaseImpl>());
-        }
-      }
-      if (!getIt.isRegistered<UpdateSignalementStatusUseCase>()) {
-        if (getIt.isRegistered<UpdateSignalementStatusUseCaseImpl>()) {
-          getIt.registerFactory<UpdateSignalementStatusUseCase>(
-              () => getIt<UpdateSignalementStatusUseCaseImpl>());
-        }
-      }
-
-      // Log a compact summary of the important registration status
-      debugPrint(
-          'DI summary: GetOfOrdersUseCase registered=${getIt.isRegistered<GetOfOrdersUseCase>()}, impl=${getIt.isRegistered<GetOfOrdersUseCaseImpl>()}');
-      debugPrint(
-          'DI summary: ListSignalementsUseCase registered=${getIt.isRegistered<ListSignalementsUseCase>()}, impl=${getIt.isRegistered<ListSignalementsUseCaseImpl>()}');
-    } catch (e, st) {
-      debugPrint('Error during alias registration: $e');
-      debugPrint(st.toString());
-    }
+    // DI registrations are handled by injectable-generated code (injection.config.dart).
 
     // Run the app now that Firebase is initialized and DI is configured
     runApp(const ProviderScope(child: MyApp()));

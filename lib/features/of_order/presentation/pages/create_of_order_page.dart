@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
-import '../../domain/usecases/create_of_order.dart';
-import '../providers/of_order_providers.dart';
+
 import '../../../../core/widgets/read_only_wrapper.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../domain/usecases/create_of_order.dart';
+import '../providers/of_order_providers.dart';
 
 class CreateOfOrderPage extends ConsumerStatefulWidget {
   const CreateOfOrderPage({super.key});
@@ -224,6 +225,7 @@ class _CreateOfOrderPageState extends ConsumerState<CreateOfOrderPage> {
               SizedBox(
                 width: double.infinity,
                 child: ReadOnlyWrapper(
+                  tooltipMessage: AppLocalizations.of(context)!.readOnlyTooltip,
                   child: ElevatedButton.icon(
                     icon: _isLoading
                         ? const SizedBox(
@@ -242,7 +244,6 @@ class _CreateOfOrderPageState extends ConsumerState<CreateOfOrderPage> {
                           fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  tooltipMessage: AppLocalizations.of(context)!.readOnlyTooltip,
                 ),
               ),
 

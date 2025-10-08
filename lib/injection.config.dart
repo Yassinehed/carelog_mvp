@@ -51,10 +51,14 @@ import 'package:carelog_mvp/features/of_order/data/datasources/of_order_firestor
     as _i767;
 import 'package:carelog_mvp/features/of_order/domain/repositories/i_of_order_repository.dart'
     as _i479;
+import 'package:carelog_mvp/features/of_order/domain/services/of_workflow_service.dart'
+    as _i714;
 import 'package:carelog_mvp/features/of_order/domain/usecases/create_of_order.dart'
     as _i868;
 import 'package:carelog_mvp/features/of_order/domain/usecases/list_of_orders.dart'
     as _i125;
+import 'package:carelog_mvp/features/of_order/domain/usecases/transition_of_order.dart'
+    as _i234;
 import 'package:carelog_mvp/features/of_order/domain/usecases/update_of_order_status.dart'
     as _i58;
 import 'package:carelog_mvp/features/signalement/data/datasources/signalement_firestore_datasource.dart'
@@ -248,8 +252,12 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i290.CreateOfOrderUseCaseImpl(gh<_i479.IOfOrderRepository>()));
     gh.lazySingleton<_i125.GetOfOrdersUseCase>(
         () => _i290.GetOfOrdersUseCaseImpl(gh<_i479.IOfOrderRepository>()));
-    gh.lazySingleton<_i58.UpdateOfOrderStatusUseCase>(() =>
-        _i290.UpdateOfOrderStatusUseCaseImpl(gh<_i479.IOfOrderRepository>()));
+    gh.lazySingleton<_i714.OfWorkflowService>(
+        () => _i714.OfWorkflowService(gh<_i479.IOfOrderRepository>()));
+    gh.factory<_i234.TransitionOfOrderUseCase>(
+        () => _i234.TransitionOfOrderUseCase(gh<_i714.OfWorkflowService>()));
+    gh.factory<_i58.UpdateOfOrderStatusUseCase>(() =>
+        _i58.UpdateOfOrderStatusUseCase(gh<_i234.TransitionOfOrderUseCase>()));
     return this;
   }
 }

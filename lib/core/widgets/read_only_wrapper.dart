@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../core/providers/system_status_provider.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -31,9 +32,9 @@ class ReadOnlyWrapper extends ConsumerWidget {
 
     // Altrimenti, disabilitiamo il child originale
     return _DisabledWidget(
-      child: child,
       tooltipMessage:
           tooltipMessage ?? AppLocalizations.of(context)!.readOnlyTooltip,
+      child: child,
     );
   }
 }
@@ -69,9 +70,9 @@ extension ReadOnlyExtension on Widget {
     String? tooltipMessage,
   }) {
     return ReadOnlyWrapper(
-      child: this,
       disabledChild: disabledChild,
       tooltipMessage: tooltipMessage,
+      child: this,
     );
   }
 }
