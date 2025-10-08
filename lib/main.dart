@@ -15,6 +15,7 @@ import 'features/signalement/presentation/pages/signalement_list_page.dart';
 import 'features/signalement/presentation/pages/create_signalement_page.dart';
 import 'features/of_order/presentation/pages/of_order_list_page.dart';
 import 'features/of_order/presentation/pages/create_of_order_page.dart';
+import 'features/of_order/presentation/pages/of_status_update_page.dart';
 import 'features/admin/presentation/pages/admin_dashboard_page.dart';
 import 'l10n/app_localizations.dart';
 import 'features/auth/presentation/providers/auth_providers.dart';
@@ -130,6 +131,12 @@ class MyApp extends ConsumerWidget {
         '/signalements/create': (context) => const CreateSignalementPage(),
         '/of_orders': (context) => const OfOrderListPage(),
         '/of_orders/create': (context) => const CreateOfOrderPage(),
+        '/of_operator': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments;
+          String ofId = '';
+          if (args is String) ofId = args;
+          return OfStatusUpdatePage(ofId: ofId, onStatusSelected: (s) {});
+        },
         '/admin': (context) => const AdminDashboardPage(),
       },
       onGenerateRoute: (settings) {

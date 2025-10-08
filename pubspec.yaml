@@ -41,6 +41,10 @@ dependencies:
   # PDF generation & printing
   pdf: ^3.11.3
   printing: ^5.14.2
+  # QR scanning
+  mobile_scanner: ^2.0.0
+  # Text to speech
+  flutter_tts: ^4.2.3
 
 dev_dependencies:
   flutter_test:
