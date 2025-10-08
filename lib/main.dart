@@ -135,7 +135,7 @@ class MyApp extends ConsumerWidget {
           final args = ModalRoute.of(context)?.settings.arguments;
           String ofId = '';
           if (args is String) ofId = args;
-          return OfStatusUpdatePage(ofId: ofId, onStatusSelected: (s) {});
+          return OfStatusUpdatePage(ofId: ofId);
         },
         '/admin': (context) => const AdminDashboardPage(),
       },
