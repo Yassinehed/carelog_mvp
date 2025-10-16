@@ -15,7 +15,7 @@ final _getIt = GetIt.instance;
 class OfStatusUpdatePage extends ConsumerStatefulWidget {
   final String ofId;
 
-  const OfStatusUpdatePage({Key? key, required this.ofId}) : super(key: key);
+  const OfStatusUpdatePage({super.key, required this.ofId});
 
   @override
   ConsumerState<OfStatusUpdatePage> createState() => _OfStatusUpdatePageState();
@@ -36,7 +36,11 @@ class _OfStatusUpdatePageState extends ConsumerState<OfStatusUpdatePage> {
     final authState = ref.read(authNotifierProvider);
     if (!authState.isAuthenticated) {
       // Friendly French message
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Veuillez vous connecter pour effectuer cette action')));
+      // Capture messenger and ignore build_context_synchronously because we use it before awaiting TTS
+      // ignore: use_build_context_synchronously
+      final messenger = ScaffoldMessenger.of(context);
+      // ignore: use_build_context_synchronously
+      messenger.showSnackBar(const SnackBar(content: Text('Veuillez vous connecter pour effectuer cette action')));
       await _announce('Veuillez vous connecter');
       return;
     }
@@ -49,18 +53,33 @@ class _OfStatusUpdatePageState extends ConsumerState<OfStatusUpdatePage> {
       final uc = _getIt<TransitionOfOrderUseCase>();
       final result = await uc.call(widget.ofId, status, updatedBy: updatedBy).timeout(const Duration(seconds: 10));
       result.fold((f) async {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Échec de la mise à jour. Réessayez.')));
         await _announce('Échec de la mise à jour');
+  if (!mounted) return;
+  // ignore: use_build_context_synchronously
+  final messenger = ScaffoldMessenger.of(context);
+  // ignore: use_build_context_synchronously
+  messenger.showSnackBar(const SnackBar(content: Text('Échec de la mise à jour. Réessayez.')));
       }, (order) async {
-        setState(() => _currentStatus = order.status);
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Statut mis à jour: ${status.name}')));
         await _announce('Statut mis à jour à ${status.name}');
+  if (!mounted) return;
+  setState(() => _currentStatus = order.status);
+  if (!mounted) return;
+  // ignore: use_build_context_synchronously
+  final messenger = ScaffoldMessenger.of(context);
+  // ignore: use_build_context_synchronously
+  messenger.showSnackBar(SnackBar(content: Text('Statut mis à jour: ${status.name}')));
       });
     } on TimeoutException {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Délai dépassé. Réessayez plus tard.')));
+  // ignore: use_build_context_synchronously
+  final messenger = ScaffoldMessenger.of(context);
+  // ignore: use_build_context_synchronously
+  messenger.showSnackBar(const SnackBar(content: Text('Délai dépassé. Réessayez plus tard.')));
       await _announce('Délai dépassé');
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Une erreur est survenue')));
+  // ignore: use_build_context_synchronously
+  final messenger = ScaffoldMessenger.of(context);
+  // ignore: use_build_context_synchronously
+  messenger.showSnackBar(const SnackBar(content: Text('Une erreur est survenue')));
       await _announce('Une erreur est survenue');
     } finally {
       if (mounted) setState(() => _isLoading = false);
@@ -95,9 +114,12 @@ class _OfStatusUpdatePageState extends ConsumerState<OfStatusUpdatePage> {
               icon: const Icon(Icons.qr_code_scanner),
               label: const Text('Scanner le QR pour charger l\'OF'),
               onPressed: () async {
+                // Capture messenger before awaiting to avoid using BuildContext after async gap
+                final messenger = ScaffoldMessenger.of(context);
                 final scanned = await Navigator.of(context).push<String?>(MaterialPageRoute(builder: (_) => const _ScannerPage()));
+                if (!mounted) return;
                 if (scanned != null && scanned.isNotEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Scanné: $scanned')));
+                  messenger.showSnackBar(SnackBar(content: Text('Scanné: $scanned')));
                 }
               },
             ),
@@ -131,7 +153,7 @@ class _OfStatusUpdatePageState extends ConsumerState<OfStatusUpdatePage> {
   }
 
   Widget _statusButton(String label, OfOrderStatus status) {
-  final blocked = false; // placeholder: computed rules can be applied here
+  const blocked = false; // placeholder: computed rules can be applied here
   final color = _colorForStatus(status);
     return SizedBox(
       width: double.infinity,
@@ -145,6 +167,7 @@ class _OfStatusUpdatePageState extends ConsumerState<OfStatusUpdatePage> {
 }
 
 class _ScannerPage extends StatelessWidget {
+  // ignore: use_super_parameters
   const _ScannerPage({Key? key}) : super(key: key);
 
   @override

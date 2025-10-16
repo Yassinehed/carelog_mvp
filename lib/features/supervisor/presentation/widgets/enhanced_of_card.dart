@@ -38,7 +38,7 @@ class EnhancedOFCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),
-          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 16, offset: const Offset(0, 6))],
+          boxShadow: [BoxShadow(color: Colors.black.withAlpha((0.08 * 255).toInt()), blurRadius: 16, offset: const Offset(0, 6))],
           border: Border.all(color: statusColor, width: 3),
         ),
         child: Column(
@@ -50,7 +50,7 @@ class EnhancedOFCard extends StatelessWidget {
               label: '${order.client} — ${order.product}',
               child: Container(
                 padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(color: statusColor.withOpacity(0.08), borderRadius: const BorderRadius.vertical(top: Radius.circular(9))),
+                decoration: BoxDecoration(color: statusColor.withAlpha((0.08 * 255).toInt()), borderRadius: const BorderRadius.vertical(top: Radius.circular(9))),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

@@ -22,7 +22,7 @@ final _currentDomainUserProvider = FutureProvider.family<domain_user.User?, Stri
 });
 
 class SupervisorDashboardPage extends ConsumerStatefulWidget {
-  const SupervisorDashboardPage({Key? key}) : super(key: key);
+  const SupervisorDashboardPage({super.key});
 
   @override
   ConsumerState<SupervisorDashboardPage> createState() => _SupervisorDashboardPageState();
@@ -92,11 +92,11 @@ class _SupervisorDashboardPageState extends ConsumerState<SupervisorDashboardPag
                           selected: isSelected,
                           onSelected: (sel) => setState(() => _filters = sel ? {'status': s.name} : null),
                           backgroundColor: Colors.grey[100],
-                          selectedColor: _statusColor(s).withOpacity(0.18),
+                          selectedColor: _statusColor(s).withAlpha((0.18 * 255).toInt()),
                           checkmarkColor: _statusColor(s),
                         ),
                       );
-                    }).toList(),
+                    }),
                     const SizedBox(width: 12),
                     SizedBox(width: 200, child: _zoneFilter()),
                     const SizedBox(width: 8),
@@ -119,13 +119,18 @@ class _SupervisorDashboardPageState extends ConsumerState<SupervisorDashboardPag
                         final item = list.removeAt(oldIndex);
                         list.insert(newIndex > oldIndex ? newIndex - 1 : newIndex, item);
                         setState(() {});
+                        // Capture messenger before async gap to avoid using BuildContext after await
+                        final messenger = ScaffoldMessenger.of(context);
                         try {
                           await _persistPriorityOrder(list);
+                          if (!mounted) return;
                           HapticFeedback.lightImpact();
                           // success feedback
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.prioritiesUpdated), backgroundColor: Colors.green));
+                          messenger.showSnackBar(SnackBar(content: Text(l10n.prioritiesUpdated), backgroundColor: Colors.green));
                         } catch (e) {
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${l10n.genericError(e.toString())}')));
+                          if (!mounted) return;
+                          // use interpolation rather than nested string building
+                          messenger.showSnackBar(SnackBar(content: Text(l10n.genericError(e.toString()))));
                         }
                       },
                       itemBuilder: (context, index) {
@@ -140,7 +145,7 @@ class _SupervisorDashboardPageState extends ConsumerState<SupervisorDashboardPag
                     );
                   },
                   loading: () => const Center(child: CircularProgressIndicator()),
-                  error: (e, st) => Center(child: Text('${l10n.errorLabel}: $e')),
+                  error: (e, st) => Center(child: Text('${l10n.errorLabel}: ${e.toString()}')),
                 ),
               ),
             ],
@@ -257,6 +262,8 @@ class _SupervisorDashboardPageState extends ConsumerState<SupervisorDashboardPag
     if (selected != null) {
       await FirebaseFirestore.instance.collection('of_orders').doc(orderWithMeta.docId).update({'assignedOperator': selected, 'assignedAt': FieldValue.serverTimestamp()});
       // TODO: Notification via FCM or functions
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.prioritiesUpdated)));
     }
   }
 }

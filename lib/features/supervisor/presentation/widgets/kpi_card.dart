@@ -6,7 +6,6 @@ class KPICard extends StatelessWidget {
   final String value;
   final String? trend;
   final Color color;
-
   const KPICard({super.key, required this.icon, required this.label, required this.value, this.trend, required this.color});
 
   @override
@@ -16,9 +15,9 @@ class KPICard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [color.withOpacity(0.95), color.withOpacity(0.75)]),
+  gradient: LinearGradient(colors: [color.withAlpha((0.95 * 255).toInt()), color.withAlpha((0.75 * 255).toInt())]),
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.12), blurRadius: 12, offset: const Offset(0, 6))],
+  boxShadow: [BoxShadow(color: Colors.black.withAlpha((0.12 * 255).toInt()), blurRadius: 12, offset: const Offset(0, 6))],
       ),
       child: Semantics(
         label: '$label: $value${trend != null ? ', tendance $trend' : ''}',
@@ -26,7 +25,7 @@ class KPICard extends StatelessWidget {
           children: [
             Tooltip(message: label, child: Container(
               padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(color: Colors.white.withOpacity(0.15), shape: BoxShape.circle),
+              decoration: BoxDecoration(color: Colors.white.withAlpha((0.15 * 255).toInt()), shape: BoxShape.circle),
               child: Icon(icon, color: Colors.white, size: 28),
             )),
             const SizedBox(width: 12),
