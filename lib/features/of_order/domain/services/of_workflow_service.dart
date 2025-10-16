@@ -11,6 +11,12 @@ class OfWorkflowService {
 
   OfWorkflowService(this.repository);
 
+  /// Zones for V2.1 feature.
+  /// Percage: drilling
+  /// Coupe: cutting
+  /// Production: assembly/production
+  static const List<String> zoneNames = ['percage', 'coupe', 'production'];
+
   // Define allowed state transitions for feature-specific statuses
   static const Map<OfOrderStatus, List<OfOrderStatus>> _allowed = {
     OfOrderStatus.materialReception: [OfOrderStatus.materialPreparation, OfOrderStatus.cancelled],
@@ -35,6 +41,7 @@ class OfWorkflowService {
     String ofId,
     OfOrderStatus newStatus, {
     String? updatedBy,
+    String? zone, // optional zone name (percage/coupe/production)
   }) async {
     final currentRes = await repository.getOfOrderById(ofId);
     return await currentRes.fold((failure) async => Left(failure), (order) async {
@@ -56,6 +63,18 @@ class OfWorkflowService {
         final checklistOk = await checklistRes.fold((f) async => false, (ok) async => ok);
         if (!checklistOk) {
           return const Left(PermissionDeniedFailure());
+        }
+      }
+
+      // Zone enforcement: certain statuses are expected to occur within specific zones.
+      if (zone != null) {
+        final z = zone.toLowerCase();
+        if (newStatus == OfOrderStatus.productionCoupe && z != 'coupe') return const Left(PermissionDeniedFailure());
+        if (newStatus == OfOrderStatus.productionProd && z != 'production') return const Left(PermissionDeniedFailure());
+        if (newStatus == OfOrderStatus.productionTest && z != 'production') return const Left(PermissionDeniedFailure());
+        // Percage is required for specific upstream steps
+        if (newStatus == OfOrderStatus.materialPreparation && z == 'percage') {
+          // allow, no-op
         }
       }
       // perform update (pass updatedBy through)
