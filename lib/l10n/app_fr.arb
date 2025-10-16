@@ -205,5 +205,20 @@
   "ofOrderStatus_completed": "Terminée",
   "ofOrderStatus_cancelled": "Annulé"
   ,
-  "exportPdfButtonLabel": "Esporta PDF"
+  "supervisorDashboardTitle": "Tableau de bord superviseur",
+  "kpi_production_label": "Production",
+  "kpi_alerts_label": "Alertes",
+  "kpi_operators_label": "Opérateurs",
+  "kpi_avg_time_label": "Temps Moyen",
+  "filter_reset": "Réinitialiser",
+  "noActiveOf": "Aucune OF active",
+  "accessDeniedSupervisor": "Accès réservé aux superviseurs et administrateurs",
+  "prioritiesUpdated": "Priorités mises à jour",
+  "assignOperatorForZone": "Attribuer un opérateur pour zone : {zone}",
+  "assignDialogCalculating": "Calcul...",
+  "exportPdfButtonLabel": "Esporta PDF",
+  "zoneLabel": "Zone"
+  ,
+  "workloadLabel": "Charge: {w}",
+  "errorLabel": "Erreur"
 }

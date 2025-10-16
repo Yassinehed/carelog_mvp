@@ -138,7 +138,55 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
     OfOrderStatus newStatus,
     String updatedBy,
   ) async =>
-      const Left(ServerFailure());
+      await _updateStatusTransactional(orderId, newStatus, updatedBy);
+
+  Future<Either<Failure, OfOrder>> _updateStatusTransactional(
+    String orderId,
+    OfOrderStatus newStatus,
+    String updatedBy,
+  ) async {
+    try {
+      final docRef = _firestoreDataSource.getDocumentRef(_collection, orderId);
+      // Return the updated model from the transaction and wrap into Either here
+      final updatedModel = await _firestoreDataSource.executeTransaction<model.OfOrder>(
+        (txn) async {
+          final snapshot = await txn.get(docRef);
+          if (!snapshot.exists) {
+            throw Exception('not_found');
+          }
+
+          final data = snapshot.data()!;
+          final currentStatus = data['status'] as String? ?? '';
+
+          final now = DateTime.now().toIso8601String();
+
+          final history = List.from(data['statusUpdateHistory'] ?? []);
+          history.add({
+            'from': currentStatus,
+            'to': newStatus.name,
+            'timestamp': now,
+            'updatedBy': updatedBy,
+          });
+
+          txn.update(docRef, {
+            'status': newStatus.name,
+            'updatedAt': now,
+            'updatedBy': updatedBy,
+            'statusUpdateHistory': history,
+          });
+
+          final refreshed = await txn.get(docRef);
+          return model.OfOrder.fromJson(refreshed.data()!);
+        },
+      );
+
+      final domain = of_order_mapper.OfOrderMapper.toDomain(updatedModel);
+      return Right(domain);
+    } catch (e) {
+      // Map not found to ServerFailure for now; could be refined
+      return const Left(ServerFailure());
+    }
+  }
 
   @override
   Future<Either<Failure, OfOrder>> updateProgress(
@@ -252,6 +300,20 @@ class OfOrderRepositoryImpl implements OfOrderRepository {
     DateTime? endDate,
   }) async =>
       const Left(ServerFailure());
+
+  Future<Either<Failure, bool>> isChecklistComplete(String orderId) async {
+    try {
+  final subcollection = '$_collection/$orderId/quality_checklist';
+      final snapshot = await _firestoreDataSource.getDocumentsWithQuery(
+        subcollection,
+        (q) => q.where('checked', isEqualTo: false).limit(1),
+      );
+      // If any unchecked items exist, checklist is not complete
+      return Right(snapshot.docs.isEmpty);
+    } catch (e) {
+      return const Left(ServerFailure());
+    }
+  }
 
   @override
   Future<Either<Failure, Map<String, double>>> getMaterialRequirements(

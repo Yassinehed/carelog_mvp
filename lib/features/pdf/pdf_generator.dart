@@ -50,7 +50,8 @@ Future<Uint8List> generateSignalementPdf(SignalementPdfModel model) async {
 
       // Details table
       children.add(pw.SizedBox(height: 8));
-      children.add(pw.Table.fromTextArray(
+      children.add(pw.TableHelper.fromTextArray(
+        context: context,
         headers: ['Field', 'Value'],
         data: [
           ['ID', model.id],

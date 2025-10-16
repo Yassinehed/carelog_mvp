@@ -45,5 +45,7 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>L'application utilise la caméra pour scanner les codes QR des OF.</string>
 </dict>
 </plist>

@@ -13,7 +13,11 @@ abstract class IOfOrderRepository {
   Future<Either<OfOrderFailure, Unit>> updateOfOrderStatus(
     String ofOrderId,
     OfOrderStatus newStatus,
+    {String? updatedBy}
   );
+
+  /// Returns true if the quality checklist for the order is complete.
+  Future<Either<OfOrderFailure, bool>> isChecklistComplete(String ofOrderId);
 
   /// Retrieves an OfOrder by ID.
   Future<Either<OfOrderFailure, OfOrder>> getOfOrderById(String id);

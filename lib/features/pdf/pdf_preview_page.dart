@@ -5,7 +5,7 @@ import 'pdf_generator.dart';
 class PdfPreviewPage extends StatelessWidget {
   final SignalementPdfModel model;
 
-  const PdfPreviewPage({Key? key, required this.model}) : super(key: key);
+  const PdfPreviewPage({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
