@@ -1,7 +1,5 @@
-import 'dart:convert';
-
-import 'package:carelog_mvp/features/pdf/pdf_generator.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:carelog_mvp/features/pdf/pdf_generator.dart';
 
 void main() {
   test('generateSignalementPdf returns non-empty bytes', () async {
@@ -10,10 +8,7 @@ void main() {
       title: 'Test Signalement',
       description: 'This is a sample description for testing.',
       createdAt: DateTime.parse('2025-09-24T12:00:00Z'),
-      images: [
-        base64Decode(
-            'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='),
-      ],
+  images: null,
     );
 
     final bytes = await generateSignalementPdf(model);

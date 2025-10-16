@@ -635,4 +635,50 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get exportPdfButtonLabel => 'Esporta PDF';
+
+  @override
+  String get supervisorDashboardTitle => 'Supervisor Dashboard';
+
+  @override
+  String get kpi_production_label => 'Production';
+
+  @override
+  String get kpi_alerts_label => 'Alerts';
+
+  @override
+  String get kpi_operators_label => 'Operators';
+
+  @override
+  String get kpi_avg_time_label => 'Avg Time';
+
+  @override
+  String get filter_reset => 'Reset';
+
+  @override
+  String get noActiveOf => 'No active OF';
+
+  @override
+  String get accessDeniedSupervisor => 'Supervisor and admin access only';
+
+  @override
+  String get prioritiesUpdated => 'Priorities updated';
+
+  @override
+  String assignOperatorForZone(Object zone) {
+    return 'Assign an operator for zone: $zone';
+  }
+
+  @override
+  String get assignDialogCalculating => 'Calculating...';
+
+  @override
+  String get zoneLabel => 'Zone';
+
+  @override
+  String workloadLabel(Object w) {
+    return 'Workload: $w';
+  }
+
+  @override
+  String get errorLabel => 'Error';
 }

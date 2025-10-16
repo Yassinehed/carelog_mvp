@@ -640,4 +640,51 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get exportPdfButtonLabel => 'Esporta PDF';
+
+  @override
+  String get supervisorDashboardTitle => 'Tableau de bord superviseur';
+
+  @override
+  String get kpi_production_label => 'Production';
+
+  @override
+  String get kpi_alerts_label => 'Alertes';
+
+  @override
+  String get kpi_operators_label => 'Opérateurs';
+
+  @override
+  String get kpi_avg_time_label => 'Temps Moyen';
+
+  @override
+  String get filter_reset => 'Réinitialiser';
+
+  @override
+  String get noActiveOf => 'Aucune OF active';
+
+  @override
+  String get accessDeniedSupervisor =>
+      'Accès réservé aux superviseurs et administrateurs';
+
+  @override
+  String get prioritiesUpdated => 'Priorités mises à jour';
+
+  @override
+  String assignOperatorForZone(Object zone) {
+    return 'Attribuer un opérateur pour zone : $zone';
+  }
+
+  @override
+  String get assignDialogCalculating => 'Calcul...';
+
+  @override
+  String get zoneLabel => 'Zone';
+
+  @override
+  String workloadLabel(Object w) {
+    return 'Charge: $w';
+  }
+
+  @override
+  String get errorLabel => 'Erreur';
 }

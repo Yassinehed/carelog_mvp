@@ -17,6 +17,7 @@ import 'features/of_order/presentation/pages/of_order_list_page.dart';
 import 'features/of_order/presentation/pages/create_of_order_page.dart';
 import 'features/of_order/presentation/pages/of_status_update_page.dart';
 import 'features/admin/presentation/pages/admin_dashboard_page.dart';
+import 'features/supervisor/presentation/pages/supervisor_dashboard_page.dart';
 import 'l10n/app_localizations.dart';
 import 'features/auth/presentation/providers/auth_providers.dart';
 
@@ -115,10 +116,9 @@ class MyApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en'), // English
-        Locale('fr'), // French
+        Locale('fr'), // French only
       ],
-      // The app default language should be French; English remains optional.
+      // The app default language is French only.
       locale: const Locale('fr'),
       home: isAuthenticated ? const HomePage() : const LoginPage(),
       routes: {
@@ -138,6 +138,7 @@ class MyApp extends ConsumerWidget {
           return OfStatusUpdatePage(ofId: ofId);
         },
         '/admin': (context) => const AdminDashboardPage(),
+        '/supervisor': (context) => const SupervisorDashboardPage(),
       },
       onGenerateRoute: (settings) {
         // Handle dynamic routes like /materials/{id}

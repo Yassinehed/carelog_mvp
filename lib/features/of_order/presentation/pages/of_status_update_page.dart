@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../features/auth/presentation/providers/auth_providers.dart';
@@ -148,12 +149,49 @@ class _ScannerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (kIsWeb) {
+      // Web cannot access native camera via mobile_scanner reliably; provide a text input fallback
+      final controller = TextEditingController();
+      return Scaffold(
+        appBar: AppBar(title: const Text('Scanner QR')),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              const Text('Collez/entrez le code QR ici (web fallback)'),
+              const SizedBox(height: 12),
+              TextField(controller: controller, decoration: const InputDecoration(labelText: 'Code QR')),
+              const SizedBox(height: 12),
+              ElevatedButton(onPressed: () {
+                final code = controller.text.trim();
+                if (code.isNotEmpty) Navigator.of(context).pop(code);
+              }, child: const Text('Valider'))
+            ],
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(title: const Text('Scanner QR')),
       body: MobileScanner(
-        allowDuplicates: false,
-        onDetect: (Barcode barcode, MobileScannerArguments? args) {
-          final code = barcode.rawValue ?? '';
+        // new API may not have allowDuplicates/MobileScannerArguments type; use dynamic capture handling
+        onDetect: (capture) {
+          String code = '';
+          try {
+            // Try common shapes
+            if (capture is Barcode) {
+              code = (capture as dynamic).rawValue ?? '';
+            } else if ((capture as dynamic).barcodes != null) {
+              final first = (capture as dynamic).barcodes.first;
+              code = (first as dynamic).rawValue ?? '';
+            } else {
+              // Fallback to string representation
+              code = capture.toString();
+            }
+          } catch (_) {
+            code = capture.toString();
+          }
           if (code.isNotEmpty) Navigator.of(context).pop(code);
         },
       ),

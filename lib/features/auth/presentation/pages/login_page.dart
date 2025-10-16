@@ -123,12 +123,14 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
+          child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
                 // Logo and App Title
                 CareLogLogo(
                   size: 96,
@@ -263,7 +265,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                         },
                   child: Text(l10n.forgotPassword),
                 ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

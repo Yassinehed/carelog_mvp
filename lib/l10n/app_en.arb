@@ -205,5 +205,21 @@
   "ofOrderStatus_completed": "Completed",
   "ofOrderStatus_cancelled": "Cancelled"
   ,
-  "exportPdfButtonLabel": "Esporta PDF"
+  "exportPdfButtonLabel": "Esporta PDF",
+
+  "supervisorDashboardTitle": "Supervisor Dashboard",
+  "kpi_production_label": "Production",
+  "kpi_alerts_label": "Alerts",
+  "kpi_operators_label": "Operators",
+  "kpi_avg_time_label": "Avg Time",
+  "filter_reset": "Reset",
+  "noActiveOf": "No active OF",
+  "accessDeniedSupervisor": "Supervisor and admin access only",
+  "prioritiesUpdated": "Priorities updated",
+  "assignOperatorForZone": "Assign an operator for zone: {zone}",
+  "assignDialogCalculating": "Calculating...",
+  "zoneLabel": "Zone"
+  ,
+  "workloadLabel": "Workload: {w}",
+  "errorLabel": "Error"
 }

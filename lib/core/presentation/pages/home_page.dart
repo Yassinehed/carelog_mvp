@@ -98,6 +98,13 @@ class HomePage extends ConsumerWidget {
                   Colors.purple,
                   () => Navigator.of(context).pushNamed('/admin'),
                 ),
+                    _buildQuickActionCard(
+                      context,
+                      'Superviseur',
+                      Icons.dashboard_customize,
+                      Colors.teal,
+                      () => Navigator.of(context).pushNamed('/supervisor'),
+                    ),
               ],
             ),
 

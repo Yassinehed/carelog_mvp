@@ -42,7 +42,7 @@ dependencies:
   pdf: ^3.11.3
   printing: ^5.14.2
   # QR scanning
-  mobile_scanner: ^2.0.0
+  mobile_scanner: ^7.1.2
   # Text to speech
   flutter_tts: ^4.2.3
 

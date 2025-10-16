@@ -1,0 +1,1686 @@
+filepath,line_number,string_content,category,surrounding_code
+lib\firebase_options.dart,11,firebase_options.dart,UI_VISIBLE,/// import 'firebase_options.dart';
+lib\firebase_options.dart,27,DefaultFirebaseOptions have not been configured for ios - ,UI_VISIBLE,'DefaultFirebaseOptions have not been configured for ios - '
+lib\firebase_options.dart,28,you can reconfigure this by running the FlutterFire CLI again.,UI_VISIBLE,"'you can reconfigure this by running the FlutterFire CLI again.',"
+lib\firebase_options.dart,32,DefaultFirebaseOptions have not been configured for macos - ,UI_VISIBLE,'DefaultFirebaseOptions have not been configured for macos - '
+lib\firebase_options.dart,33,you can reconfigure this by running the FlutterFire CLI again.,UI_VISIBLE,"'you can reconfigure this by running the FlutterFire CLI again.',"
+lib\firebase_options.dart,39,DefaultFirebaseOptions have not been configured for linux - ,UI_VISIBLE,'DefaultFirebaseOptions have not been configured for linux - '
+lib\firebase_options.dart,40,you can reconfigure this by running the FlutterFire CLI again.,UI_VISIBLE,"'you can reconfigure this by running the FlutterFire CLI again.',"
+lib\firebase_options.dart,44,DefaultFirebaseOptions are not supported for this platform.,UI_VISIBLE,"'DefaultFirebaseOptions are not supported for this platform.',"
+lib\firebase_options.dart,50,[REDACTED_API_KEY],INTERNAL,"apiKey: '[REDACTED_API_KEY]',"
+lib\firebase_options.dart,51,1:1063794817524:web:d249d3be349bfbb5a921a1,UI_VISIBLE,"appId: '1:1063794817524:web:d249d3be349bfbb5a921a1',"
+lib\firebase_options.dart,52,1063794817524,KEYS,"messagingSenderId: '1063794817524',"
+lib\firebase_options.dart,53,carelog-mv,KEYS,"projectId: 'carelog-mv',"
+lib\firebase_options.dart,54,carelog-mv.firebaseapp.com,UI_VISIBLE,"authDomain: 'carelog-mv.firebaseapp.com',"
+lib\firebase_options.dart,55,carelog-mv.firebasestorage.app,UI_VISIBLE,"storageBucket: 'carelog-mv.firebasestorage.app',"
+lib\firebase_options.dart,59,[REDACTED_API_KEY],INTERNAL,"apiKey: '[REDACTED_API_KEY]',"
+lib\firebase_options.dart,60,1:1063794817524:android:07215a15052a2410a921a1,UI_VISIBLE,"appId: '1:1063794817524:android:07215a15052a2410a921a1',"
+lib\firebase_options.dart,61,1063794817524,KEYS,"messagingSenderId: '1063794817524',"
+lib\firebase_options.dart,62,carelog-mv,KEYS,"projectId: 'carelog-mv',"
+lib\firebase_options.dart,63,carelog-mv.firebasestorage.app,UI_VISIBLE,"storageBucket: 'carelog-mv.firebasestorage.app',"
+lib\firebase_options.dart,67,[REDACTED_API_KEY],INTERNAL,"apiKey: '[REDACTED_API_KEY]',"
+lib\firebase_options.dart,68,1:1063794817524:web:ad2292d585874cb1a921a1,UI_VISIBLE,"appId: '1:1063794817524:web:ad2292d585874cb1a921a1',"
+lib\firebase_options.dart,69,1063794817524,KEYS,"messagingSenderId: '1063794817524',"
+lib\firebase_options.dart,70,carelog-mv,KEYS,"projectId: 'carelog-mv',"
+lib\firebase_options.dart,71,carelog-mv.firebaseapp.com,UI_VISIBLE,"authDomain: 'carelog-mv.firebaseapp.com',"
+lib\firebase_options.dart,72,carelog-mv.firebasestorage.app,UI_VISIBLE,"storageBucket: 'carelog-mv.firebasestorage.app',"
+lib\main.dart,28,FlutterError.onError: ${details.exceptionAsString()},UI_VISIBLE,print('FlutterError.onError: ${details.exceptionAsString()}');
+lib\main.dart,42,Firebase initialized successfully.,UI_VISIBLE,debugPrint('Firebase initialized successfully.');
+lib\main.dart,45,Firebase.initializeApp() failed: $e,UI_VISIBLE,debugPrint('Firebase.initializeApp() failed: $e');
+lib\main.dart,53,Dependency injection configured.,UI_VISIBLE,debugPrint('Dependency injection configured.');
+lib\main.dart,55,configureDependencies() failed: $e,UI_VISIBLE,debugPrint('configureDependencies() failed: $e');
+lib\main.dart,66,Uncaught error in runZonedGuarded: $error,UI_VISIBLE,print('Uncaught error in runZonedGuarded: $error');
+lib\main.dart,109,Inter,INTERNAL,"fontFamily: 'Inter',"
+lib\main.dart,119,fr,KEYS,"Locale('fr'), // French only"
+lib\main.dart,122,fr,KEYS,"ocale: const Locale('fr'),"
+lib\main.dart,125,/login,KEYS,'/login': (context) => const
+lib\main.dart,126,/reset-password,KEYS,'/reset-password': (context) => const
+lib\main.dart,127,/home,KEYS,'/home': (context) => const
+lib\main.dart,128,/materials,KEYS,'/materials': (context) => const
+lib\main.dart,129,/materials/create,KEYS,'/materials/create': (context) => const
+lib\main.dart,130,/signalements,KEYS,'/signalements': (context) => const
+lib\main.dart,131,/signalements/create,KEYS,'/signalements/create': (context) => const
+lib\main.dart,132,/of_orders,KEYS,'/of_orders': (context) => const
+lib\main.dart,133,/of_orders/create,KEYS,'/of_orders/create': (context) => const
+lib\main.dart,134,/of_operator,KEYS,'/of_operator': (context) {
+lib\main.dart,140,/admin,KEYS,'/admin': (context) => const
+lib\main.dart,141,/supervisor,KEYS,'/supervisor': (context) => const
+lib\main.dart,145,/materials/,KEYS,gs.name?.startsWith('/materials/') == true) {
+lib\main.dart,146,/materials/,KEYS,ngs.name!.substring('/materials/'.length);
+lib\main.dart,147,create,KEYS,ty && materialId != 'create') {
+lib\core\presentation\pages\home_page.dart,30,/admin,KEYS,"(context).pushNamed('/admin'),"
+lib\core\presentation\pages\home_page.dart,37,/login,KEYS,ushReplacementNamed('/login');
+lib\core\presentation\pages\home_page.dart,55,${l10n.homeWelcome}${currentUser != null ? ,UI_VISIBLE,"'${l10n.homeWelcome}${currentUser != null ? ', ${currentUser.emai"
+lib\core\presentation\pages\home_page.dart,55, : ,UI_VISIBLE,"${currentUser.email}' : ''}',"
+lib\core\presentation\pages\home_page.dart,55,},INTERNAL,"rentUser.email}' : ''}',"
+lib\core\presentation\pages\home_page.dart,78,/materials,KEYS,"(context).pushNamed('/materials'),"
+lib\core\presentation\pages\home_page.dart,85,/signalements,KEYS,"(context).pushNamed('/signalements'),"
+lib\core\presentation\pages\home_page.dart,92,/of_orders,KEYS,"(context).pushNamed('/of_orders'),"
+lib\core\presentation\pages\home_page.dart,99,/admin,KEYS,"(context).pushNamed('/admin'),"
+lib\core\presentation\pages\home_page.dart,103,Superviseur,INTERNAL,"'Superviseur',"
+lib\core\presentation\pages\home_page.dart,106,/supervisor,KEYS,"(context).pushNamed('/supervisor'),"
+lib\core\presentation\widgets\carelog_logo.dart,3,C,INTERNAL,r CareLog: stylized 'C' with a check/flow m
+lib\core\presentation\widgets\carelog_logo.dart,47,C,INTERNAL,// Draw stylized 'C' arc
+lib\core\providers\dashboard_stats_provider.dart,132,Erreur lors du chargement des statistiques: ${e.toString()},UI_VISIBLE,"error: 'Erreur lors du chargement des statistiques: ${e.toString()}',"
+lib\core\providers\system_status_provider.dart,48,config,KEYS,.collection('config')
+lib\core\providers\system_status_provider.dart,49,system_status,KEYS,.doc('system_status')
+lib\core\providers\system_status_provider.dart,56,isReadOnly,INTERNAL,"isReadOnly: data['isReadOnly'] ?? false,"
+lib\core\providers\system_status_provider.dart,57,maintenanceMessage,INTERNAL,"enanceMessage: data['maintenanceMessage'],"
+lib\core\providers\system_status_provider.dart,58,lastUpdated,INTERNAL,lastUpdated: data['lastUpdated'] != null
+lib\core\providers\system_status_provider.dart,59,lastUpdated,INTERNAL,? (data['lastUpdated'] as Timestamp).toDa
+lib\data\mappers\material_mapper.dart,17,supplier_${modelMaterial.supplierName},UI_VISIBLE,"id: 'supplier_${modelMaterial.supplierName}', // Generate ID"
+lib\data\mappers\material_mapper.dart,19,unknown@example.com,UI_VISIBLE,"contactEmail: 'unknown@example.com', // Default"
+lib\data\models\material_model.dart,4,material_model.freezed.dart,UI_VISIBLE,part 'material_model.freezed.dart';
+lib\data\models\material_model.dart,5,material_model.g.dart,UI_VISIBLE,part 'material_model.g.dart';
+lib\data\models\material_model.dart,170,RAW,INTERNAL,"gory.rawMaterial => 'RAW',"
+lib\data\models\material_model.dart,171,CMP,INTERNAL,"tegory.component => 'CMP',"
+lib\data\models\material_model.dart,172,PKG,INTERNAL,"tegory.packaging => 'PKG',"
+lib\data\models\material_model.dart,173,CON,INTERNAL,"egory.consumable => 'CON',"
+lib\data\models\material_model.dart,174,CHM,INTERNAL,"ategory.chemical => 'CHM',"
+lib\data\models\material_model.dart,175,MAT,INTERNAL,"alCategory.other => 'MAT',"
+lib\data\models\material_model.dart,179,$prefix${DateTime.now().year}$sequence,UI_VISIBLE,return '$prefix${DateTime.now().year}$sequence';
+lib\data\models\material_model.dart,234,Matière première,UI_VISIBLE,return 'Matière première';
+lib\data\models\material_model.dart,236,Composant,INTERNAL,return 'Composant';
+lib\data\models\material_model.dart,238,Emballage,INTERNAL,return 'Emballage';
+lib\data\models\material_model.dart,240,Consommable,INTERNAL,return 'Consommable';
+lib\data\models\material_model.dart,242,Produit chimique,UI_VISIBLE,return 'Produit chimique';
+lib\data\models\material_model.dart,244,Autre,INTERNAL,return 'Autre';
+lib\data\models\material_model.dart,252,pièce,INTERNAL,return 'pièce';
+lib\data\models\material_model.dart,254,kg,KEYS,return 'kg';
+lib\data\models\material_model.dart,256,g,KEYS,return 'g';
+lib\data\models\material_model.dart,258,L,INTERNAL,return 'L';
+lib\data\models\material_model.dart,260,mL,INTERNAL,return 'mL';
+lib\data\models\material_model.dart,262,m,KEYS,return 'm';
+lib\data\models\material_model.dart,264,m²,INTERNAL,return 'm²';
+lib\data\models\material_model.dart,266,m³,INTERNAL,return 'm³';
+lib\data\models\material_model.dart,268,boîte,INTERNAL,return 'boîte';
+lib\data\models\material_model.dart,270,palette,KEYS,return 'palette';
+lib\data\models\material_model.dart,272,rouleau,KEYS,return 'rouleau';
+lib\data\models\material_model.dart,274,autre,KEYS,return 'autre';
+lib\data\models\material_model.dart,296,stockUpdateHistory,INTERNAL,'stockUpdateHistory': [
+lib\data\models\material_model.dart,297,stockUpdateHistory,INTERNAL,"...metadata['stockUpdateHistory'] ?? [],"
+lib\data\models\material_model.dart,299,currentStock,INTERNAL,"'currentStock': newCurrent,"
+lib\data\models\material_model.dart,300,reservedStock,INTERNAL,"'reservedStock': newReserved,"
+lib\data\models\material_model.dart,301,availableStock,INTERNAL,"'availableStock': newAvailable,"
+lib\data\models\material_model.dart,302,timestamp,KEYS,'timestamp': DateTime.now().toI
+lib\data\models\material_model.dart,303,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\data\models\material_model.dart,313,Insufficient stock available for reservation,UI_VISIBLE,throw Exception('Insufficient stock available for reservation');
+lib\data\models\material_model.dart,326,reservations,KEYS,'reservations': [
+lib\data\models\material_model.dart,327,reservations,KEYS,"...metadata['reservations'] ?? [],"
+lib\data\models\material_model.dart,329,orderId,INTERNAL,"'orderId': orderId,"
+lib\data\models\material_model.dart,330,quantity,KEYS,"'quantity': quantity,"
+lib\data\models\material_model.dart,331,timestamp,KEYS,'timestamp': DateTime.now().toI
+lib\data\models\material_model.dart,342,Cannot release more than reserved quantity,UI_VISIBLE,throw Exception('Cannot release more than reserved quantity');
+lib\data\models\material_model.dart,355,reservationReleases,INTERNAL,'reservationReleases': [
+lib\data\models\material_model.dart,356,reservationReleases,INTERNAL,"...metadata['reservationReleases'] ?? [],"
+lib\data\models\material_model.dart,358,orderId,INTERNAL,"'orderId': orderId,"
+lib\data\models\material_model.dart,359,quantity,KEYS,"'quantity': quantity,"
+lib\data\models\material_model.dart,360,timestamp,KEYS,'timestamp': DateTime.now().toI
+lib\data\models\material_model.dart,371,Insufficient available stock for consumption,UI_VISIBLE,throw Exception('Insufficient available stock for consumption');
+lib\data\models\material_model.dart,384,consumptionHistory,INTERNAL,'consumptionHistory': [
+lib\data\models\material_model.dart,385,consumptionHistory,INTERNAL,"...metadata['consumptionHistory'] ?? [],"
+lib\data\models\material_model.dart,387,quantity,KEYS,"'quantity': quantity,"
+lib\data\models\material_model.dart,388,reason,KEYS,"'reason': consumptionReason,"
+lib\data\models\material_model.dart,389,timestamp,KEYS,'timestamp': DateTime.now().toI
+lib\data\models\material_model.dart,390,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\data\models\material_model.dart,413,costHistory,INTERNAL,'costHistory': [
+lib\data\models\material_model.dart,414,costHistory,INTERNAL,"...metadata['costHistory'] ?? [],"
+lib\data\models\material_model.dart,416,cost,KEYS,"'cost': newUnitCost,"
+lib\data\models\material_model.dart,417,timestamp,KEYS,'timestamp': DateTime.now().toI
+lib\data\models\material_model.dart,418,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\data\models\material_model.dart,428,reference,KEYS,"'reference': reference,"
+lib\data\models\material_model.dart,429,name,KEYS,"'name': name,"
+lib\data\models\material_model.dart,430,category,KEYS,"'category': category.name,"
+lib\data\models\material_model.dart,431,unit,KEYS,"'unit': unit.name,"
+lib\data\models\material_model.dart,432,currentStock,INTERNAL,"'currentStock': currentStock,"
+lib\data\models\material_model.dart,433,availableStock,INTERNAL,"'availableStock': availableStock,"
+lib\data\models\material_model.dart,434,unitCost,INTERNAL,"'unitCost': unitCost,"
+lib\data\models\material_model.dart,435,totalValue,INTERNAL,"'totalValue': totalValue,"
+lib\data\models\material_model.dart,436,needsReorder,INTERNAL,"'needsReorder': needsReorder,"
+lib\data\models\material_model.dart,437,isCriticalStock,INTERNAL,"'isCriticalStock': isCriticalStock,"
+lib\data\models\material_model.dart,438,supplierName,INTERNAL,"'supplierName': supplierName,"
+lib\data\models\material_model.dart,446,description,KEYS,"'description': description,"
+lib\data\models\material_model.dart,447,minimumStock,INTERNAL,"'minimumStock': minimumStock,"
+lib\data\models\material_model.dart,448,maximumStock,INTERNAL,"'maximumStock': maximumStock,"
+lib\data\models\material_model.dart,449,reservedStock,INTERNAL,"'reservedStock': reservedStock,"
+lib\data\models\material_model.dart,450,supplierReference,INTERNAL,"'supplierReference': supplierReference,"
+lib\data\models\material_model.dart,451,leadTimeDays,INTERNAL,"'leadTimeDays': leadTimeDays,"
+lib\data\models\material_model.dart,452,storageLocation,INTERNAL,"'storageLocation': storageLocation,"
+lib\data\models\material_model.dart,453,safetyStock,INTERNAL,"'safetyStock': safetyStock,"
+lib\data\models\material_model.dart,454,qualitySpecifications,INTERNAL,'qualitySpecifications': qualitySpecificati
+lib\data\models\material_model.dart,455,batches,KEYS,'batches': batches.map((b) =>
+lib\data\models\material_model.dart,456,isActive,INTERNAL,"'isActive': isActive,"
+lib\data\models\material_model.dart,457,createdAt,INTERNAL,'createdAt': createdAt.toIso860
+lib\data\models\material_model.dart,458,updatedAt,INTERNAL,'updatedAt': updatedAt.toIso860
+lib\data\models\material_model.dart,459,createdBy,INTERNAL,"'createdBy': createdBy,"
+lib\data\models\material_model.dart,460,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\data\models\material_model.dart,461,version,KEYS,"'version': version,"
+lib\data\models\material_model.dart,462,metadata,KEYS,"'metadata': metadata,"
+lib\data\models\material_model.dart,559,En attente,UI_VISIBLE,return 'En attente';
+lib\data\models\material_model.dart,561,Approuvé,INTERNAL,return 'Approuvé';
+lib\data\models\material_model.dart,563,Rejeté,INTERNAL,return 'Rejeté';
+lib\data\models\material_model.dart,565,En quarantaine,UI_VISIBLE,return 'En quarantaine';
+lib\data\models\material_model.freezed.dart,6,material_model.dart,UI_VISIBLE,part of 'material_model.dart';
+lib\data\models\material_model.freezed.dart,15,It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED],UI_VISIBLE,'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED]');
+lib\data\models\material_model.freezed.dart,153,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\material_model.freezed.dart,333,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\material_model.freezed.dart,639,"Material(reference: $reference, name: $name, description: $description, category: $category, unit: $unit, minimumStock: $minimumStock, maximumStock: $maximumStock, currentStock: $currentStock, reservedStock: $reservedStock, availableStock: $availableStock, unitCost: $unitCost, supplierName: $supplierName, supplierReference: $supplierReference, leadTimeDays: $leadTimeDays, storageLocation: $storageLocation, safetyStock: $safetyStock, qualitySpecifications: $qualitySpecifications, batches: $batches, isActive: $isActive, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, updatedBy: $updatedBy, version: $version, metadata: $metadata)",UI_VISIBLE,"return 'Material(reference: $reference, name: $name, description: $description, category: $category, unit: $unit, minimumStock: $minimumStock, maximumStock: $maximumStock, currentStock: $currentStock, reservedStock: $reservedStock, availableStock: $availableStock, unitCost: $unitCost, supplierName: $supplierName, supplierReference: $supplierReference, leadTimeDays: $leadTimeDays, storageLocation: $storageLocation, safetyStock: $safetyStock, qualitySpecifications: $qualitySpecifications, batches: $batches, isActive: $isActive, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, updatedBy: $updatedBy, version: $version, metadata: $metadata)';"
+lib\data\models\material_model.freezed.dart,729,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\material_model.freezed.dart,974,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\material_model.freezed.dart,1088,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\material_model.freezed.dart,1250,"MaterialBatch(batchId: $batchId, quantity: $quantity, qualityStatus: $qualityStatus, supplierBatchId: $supplierBatchId, manufacturingDate: $manufacturingDate, expirationDate: $expirationDate, receiptDate: $receiptDate, qualityCheckDate: $qualityCheckDate, qualityInspector: $qualityInspector, qualityNotes: $qualityNotes, certificateReference: $certificateReference, storageConditions: $storageConditions, remainingQuantity: $remainingQuantity, isActive: $isActive)",UI_VISIBLE,"return 'MaterialBatch(batchId: $batchId, quantity: $quantity, qualityStatus: $qualityStatus, supplierBatchId: $supplierBatchId, manufacturingDate: $manufacturingDate, expirationDate: $expirationDate, receiptDate: $receiptDate, qualityCheckDate: $qualityCheckDate, qualityInspector: $qualityInspector, qualityNotes: $qualityNotes, certificateReference: $certificateReference, storageConditions: $storageConditions, remainingQuantity: $remainingQuantity, isActive: $isActive)';"
+lib\data\models\material_model.freezed.dart,1310,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\material_model.g.dart,3,material_model.dart,UI_VISIBLE,part of 'material_model.dart';
+lib\data\models\material_model.g.dart,11,reference,KEYS,"reference: json['reference'] as String,"
+lib\data\models\material_model.g.dart,12,name,KEYS,"name: json['name'] as String,"
+lib\data\models\material_model.g.dart,13,description,KEYS,"description: json['description'] as String,"
+lib\data\models\material_model.g.dart,14,category,KEYS,"tegoryEnumMap, json['category']),"
+lib\data\models\material_model.g.dart,15,unit,KEYS,"alUnitEnumMap, json['unit']),"
+lib\data\models\material_model.g.dart,16,minimumStock,INTERNAL,minimumStock: (json['minimumStock'] as num?)?.toInt()
+lib\data\models\material_model.g.dart,17,maximumStock,INTERNAL,"maximumStock: (json['maximumStock'] as num?)?.toInt(),"
+lib\data\models\material_model.g.dart,18,currentStock,INTERNAL,currentStock: (json['currentStock'] as num?)?.toDouble
+lib\data\models\material_model.g.dart,19,reservedStock,INTERNAL,eservedStock: (json['reservedStock'] as num?)?.toDouble
+lib\data\models\material_model.g.dart,20,availableStock,INTERNAL,ailableStock: (json['availableStock'] as num?)?.toDouble
+lib\data\models\material_model.g.dart,21,unitCost,INTERNAL,unitCost: (json['unitCost'] as num?)?.toDouble
+lib\data\models\material_model.g.dart,22,supplierName,INTERNAL,"supplierName: json['supplierName'] as String?,"
+lib\data\models\material_model.g.dart,23,supplierReference,INTERNAL,"lierReference: json['supplierReference'] as String?,"
+lib\data\models\material_model.g.dart,24,leadTimeDays,INTERNAL,"leadTimeDays: (json['leadTimeDays'] as num?)?.toInt(),"
+lib\data\models\material_model.g.dart,25,storageLocation,INTERNAL,"orageLocation: json['storageLocation'] as String?,"
+lib\data\models\material_model.g.dart,26,safetyStock,INTERNAL,safetyStock: (json['safetyStock'] as num?)?.toDouble
+lib\data\models\material_model.g.dart,27,qualitySpecifications,INTERNAL,ecifications: (json['qualitySpecifications'] as List<dynamic>?)
+lib\data\models\material_model.g.dart,31,batches,KEYS,batches: (json['batches'] as List<dynamic>?)
+lib\data\models\material_model.g.dart,35,isActive,INTERNAL,"isActive: json['isActive'] as bool? ?? true,"
+lib\data\models\material_model.g.dart,36,createdAt,INTERNAL,"DateTime.parse(json['createdAt'] as String),"
+lib\data\models\material_model.g.dart,37,updatedAt,INTERNAL,"DateTime.parse(json['updatedAt'] as String),"
+lib\data\models\material_model.g.dart,38,createdBy,INTERNAL,"createdBy: json['createdBy'] as String,"
+lib\data\models\material_model.g.dart,39,updatedBy,INTERNAL,"updatedBy: json['updatedBy'] as String?,"
+lib\data\models\material_model.g.dart,40,version,KEYS,version: (json['version'] as num?)?.toInt()
+lib\data\models\material_model.g.dart,41,metadata,KEYS,"metadata: json['metadata'] as Map<String, dyn"
+lib\data\models\material_model.g.dart,46,reference,KEYS,'reference': instance.reference
+lib\data\models\material_model.g.dart,47,name,KEYS,"'name': instance.name,"
+lib\data\models\material_model.g.dart,48,description,KEYS,'description': instance.descripti
+lib\data\models\material_model.g.dart,49,category,KEYS,'category': _$MaterialCategory
+lib\data\models\material_model.g.dart,50,unit,KEYS,'unit': _$MaterialUnitEnum
+lib\data\models\material_model.g.dart,51,minimumStock,INTERNAL,'minimumStock': instance.minimumSt
+lib\data\models\material_model.g.dart,52,maximumStock,INTERNAL,'maximumStock': instance.maximumSt
+lib\data\models\material_model.g.dart,53,currentStock,INTERNAL,'currentStock': instance.currentSt
+lib\data\models\material_model.g.dart,54,reservedStock,INTERNAL,'reservedStock': instance.reservedS
+lib\data\models\material_model.g.dart,55,availableStock,INTERNAL,'availableStock': instance.available
+lib\data\models\material_model.g.dart,56,unitCost,INTERNAL,"'unitCost': instance.unitCost,"
+lib\data\models\material_model.g.dart,57,supplierName,INTERNAL,'supplierName': instance.supplierN
+lib\data\models\material_model.g.dart,58,supplierReference,INTERNAL,'supplierReference': instance.supplierR
+lib\data\models\material_model.g.dart,59,leadTimeDays,INTERNAL,'leadTimeDays': instance.leadTimeD
+lib\data\models\material_model.g.dart,60,storageLocation,INTERNAL,'storageLocation': instance.storageLo
+lib\data\models\material_model.g.dart,61,safetyStock,INTERNAL,'safetyStock': instance.safetySto
+lib\data\models\material_model.g.dart,62,qualitySpecifications,INTERNAL,'qualitySpecifications': instance.qualitySp
+lib\data\models\material_model.g.dart,63,batches,KEYS,"'batches': instance.batches,"
+lib\data\models\material_model.g.dart,64,isActive,INTERNAL,"'isActive': instance.isActive,"
+lib\data\models\material_model.g.dart,65,createdAt,INTERNAL,'createdAt': instance.createdAt
+lib\data\models\material_model.g.dart,66,updatedAt,INTERNAL,'updatedAt': instance.updatedAt
+lib\data\models\material_model.g.dart,67,createdBy,INTERNAL,'createdBy': instance.createdBy
+lib\data\models\material_model.g.dart,68,updatedBy,INTERNAL,'updatedBy': instance.updatedBy
+lib\data\models\material_model.g.dart,69,version,KEYS,"'version': instance.version,"
+lib\data\models\material_model.g.dart,70,metadata,KEYS,"'metadata': instance.metadata,"
+lib\data\models\material_model.g.dart,74,rawMaterial,INTERNAL,"tegory.rawMaterial: 'rawMaterial',"
+lib\data\models\material_model.g.dart,75,component,KEYS,"Category.component: 'component',"
+lib\data\models\material_model.g.dart,76,packaging,KEYS,"Category.packaging: 'packaging',"
+lib\data\models\material_model.g.dart,77,consumable,KEYS,"ategory.consumable: 'consumable',"
+lib\data\models\material_model.g.dart,78,chemical,KEYS,"lCategory.chemical: 'chemical',"
+lib\data\models\material_model.g.dart,79,other,KEYS,"rialCategory.other: 'other',"
+lib\data\models\material_model.g.dart,83,piece,KEYS,"MaterialUnit.piece: 'piece',"
+lib\data\models\material_model.g.dart,84,kilogram,KEYS,"erialUnit.kilogram: 'kilogram',"
+lib\data\models\material_model.g.dart,85,gram,KEYS,"MaterialUnit.gram: 'gram',"
+lib\data\models\material_model.g.dart,86,liter,KEYS,"MaterialUnit.liter: 'liter',"
+lib\data\models\material_model.g.dart,87,milliliter,KEYS,"ialUnit.milliliter: 'milliliter',"
+lib\data\models\material_model.g.dart,88,meter,KEYS,"MaterialUnit.meter: 'meter',"
+lib\data\models\material_model.g.dart,89,squareMeter,INTERNAL,"alUnit.squareMeter: 'squareMeter',"
+lib\data\models\material_model.g.dart,90,cubicMeter,INTERNAL,"ialUnit.cubicMeter: 'cubicMeter',"
+lib\data\models\material_model.g.dart,91,box,KEYS,"MaterialUnit.box: 'box',"
+lib\data\models\material_model.g.dart,92,pallet,KEYS,"aterialUnit.pallet: 'pallet',"
+lib\data\models\material_model.g.dart,93,roll,KEYS,"MaterialUnit.roll: 'roll',"
+lib\data\models\material_model.g.dart,94,other,KEYS,"MaterialUnit.other: 'other',"
+lib\data\models\material_model.g.dart,99,batchId,INTERNAL,"batchId: json['batchId'] as String,"
+lib\data\models\material_model.g.dart,100,quantity,KEYS,quantity: (json['quantity'] as num).toDouble()
+lib\data\models\material_model.g.dart,102,qualityStatus,INTERNAL,"StatusEnumMap, json['qualityStatus']) ??"
+lib\data\models\material_model.g.dart,104,supplierBatchId,INTERNAL,"pplierBatchId: json['supplierBatchId'] as String?,"
+lib\data\models\material_model.g.dart,105,manufacturingDate,INTERNAL,facturingDate: json['manufacturingDate'] == null
+lib\data\models\material_model.g.dart,107,manufacturingDate,INTERNAL,"DateTime.parse(json['manufacturingDate'] as String),"
+lib\data\models\material_model.g.dart,108,expirationDate,INTERNAL,xpirationDate: json['expirationDate'] == null
+lib\data\models\material_model.g.dart,110,expirationDate,INTERNAL,"DateTime.parse(json['expirationDate'] as String),"
+lib\data\models\material_model.g.dart,111,receiptDate,INTERNAL,"DateTime.parse(json['receiptDate'] as String),"
+lib\data\models\material_model.g.dart,112,qualityCheckDate,INTERNAL,lityCheckDate: json['qualityCheckDate'] == null
+lib\data\models\material_model.g.dart,114,qualityCheckDate,INTERNAL,"DateTime.parse(json['qualityCheckDate'] as String),"
+lib\data\models\material_model.g.dart,115,qualityInspector,INTERNAL,"lityInspector: json['qualityInspector'] as String?,"
+lib\data\models\material_model.g.dart,116,qualityNotes,INTERNAL,"qualityNotes: json['qualityNotes'] as String?,"
+lib\data\models\material_model.g.dart,117,certificateReference,INTERNAL,"cateReference: json['certificateReference'] as String?,"
+lib\data\models\material_model.g.dart,118,storageConditions,INTERNAL,"ageConditions: json['storageConditions'] as String?,"
+lib\data\models\material_model.g.dart,119,remainingQuantity,INTERNAL,ningQuantity: (json['remainingQuantity'] as num?)?.toDouble
+lib\data\models\material_model.g.dart,120,isActive,INTERNAL,"isActive: json['isActive'] as bool? ?? true,"
+lib\data\models\material_model.g.dart,125,batchId,INTERNAL,"'batchId': instance.batchId,"
+lib\data\models\material_model.g.dart,126,quantity,KEYS,"'quantity': instance.quantity,"
+lib\data\models\material_model.g.dart,127,qualityStatus,INTERNAL,'qualityStatus': _$MaterialQualityS
+lib\data\models\material_model.g.dart,128,supplierBatchId,INTERNAL,'supplierBatchId': instance.supplierB
+lib\data\models\material_model.g.dart,129,manufacturingDate,INTERNAL,'manufacturingDate': instance.manufactu
+lib\data\models\material_model.g.dart,130,expirationDate,INTERNAL,'expirationDate': instance.expiratio
+lib\data\models\material_model.g.dart,131,receiptDate,INTERNAL,'receiptDate': instance.receiptDa
+lib\data\models\material_model.g.dart,132,qualityCheckDate,INTERNAL,'qualityCheckDate': instance.qualityCh
+lib\data\models\material_model.g.dart,133,qualityInspector,INTERNAL,'qualityInspector': instance.qualityIn
+lib\data\models\material_model.g.dart,134,qualityNotes,INTERNAL,'qualityNotes': instance.qualityNo
+lib\data\models\material_model.g.dart,135,certificateReference,INTERNAL,'certificateReference': instance.certifica
+lib\data\models\material_model.g.dart,136,storageConditions,INTERNAL,'storageConditions': instance.storageCo
+lib\data\models\material_model.g.dart,137,remainingQuantity,INTERNAL,'remainingQuantity': instance.remaining
+lib\data\models\material_model.g.dart,138,isActive,INTERNAL,"'isActive': instance.isActive,"
+lib\data\models\material_model.g.dart,142,pending,KEYS,"lityStatus.pending: 'pending',"
+lib\data\models\material_model.g.dart,143,approved,KEYS,"ityStatus.approved: 'approved',"
+lib\data\models\material_model.g.dart,144,rejected,KEYS,"ityStatus.rejected: 'rejected',"
+lib\data\models\material_model.g.dart,145,quarantined,KEYS,"Status.quarantined: 'quarantined',"
+lib\data\models\of_order_model.dart,4,of_order_model.freezed.dart,UI_VISIBLE,part 'of_order_model.freezed.dart';
+lib\data\models\of_order_model.dart,5,of_order_model.g.dart,UI_VISIBLE,part 'of_order_model.g.dart';
+lib\data\models\of_order_model.dart,192,0,KEYS,"String().padLeft(2, '0');"
+lib\data\models\of_order_model.dart,193,0,KEYS,"String().padLeft(2, '0');"
+lib\data\models\of_order_model.dart,195,OF$year$month$day$sequence,INTERNAL,return 'OF$year$month$day$sequence';
+lib\data\models\of_order_model.dart,275,Brouillon,INTERNAL,return 'Brouillon';
+lib\data\models\of_order_model.dart,277,Planifié,INTERNAL,return 'Planifié';
+lib\data\models\of_order_model.dart,279,En attente matériaux,UI_VISIBLE,return 'En attente matériaux';
+lib\data\models\of_order_model.dart,281,En cours,UI_VISIBLE,return 'En cours';
+lib\data\models\of_order_model.dart,283,Contrôle qualité,UI_VISIBLE,return 'Contrôle qualité';
+lib\data\models\of_order_model.dart,285,Terminé,INTERNAL,return 'Terminé';
+lib\data\models\of_order_model.dart,287,Livré,INTERNAL,return 'Livré';
+lib\data\models\of_order_model.dart,289,Annulé,INTERNAL,return 'Annulé';
+lib\data\models\of_order_model.dart,297,Faible,INTERNAL,return 'Faible';
+lib\data\models\of_order_model.dart,299,Normal,INTERNAL,return 'Normal';
+lib\data\models\of_order_model.dart,301,Élevé,INTERNAL,return 'Élevé';
+lib\data\models\of_order_model.dart,303,Urgent,INTERNAL,return 'Urgent';
+lib\data\models\of_order_model.dart,311,En attente,UI_VISIBLE,return 'En attente';
+lib\data\models\of_order_model.dart,313,En cours,UI_VISIBLE,return 'En cours';
+lib\data\models\of_order_model.dart,315,Réussi,INTERNAL,return 'Réussi';
+lib\data\models\of_order_model.dart,317,Échoué,INTERNAL,return 'Échoué';
+lib\data\models\of_order_model.dart,319,Retravaillé,INTERNAL,return 'Retravaillé';
+lib\data\models\of_order_model.dart,349,statusUpdateHistory,INTERNAL,'statusUpdateHistory': [
+lib\data\models\of_order_model.dart,350,statusUpdateHistory,INTERNAL,"...metadata['statusUpdateHistory'] ?? [],"
+lib\data\models\of_order_model.dart,352,from,KEYS,"'from': status.name,"
+lib\data\models\of_order_model.dart,353,to,KEYS,"'to': newStatus.name,"
+lib\data\models\of_order_model.dart,354,timestamp,KEYS,'timestamp': now.toIso8601Strin
+lib\data\models\of_order_model.dart,355,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\data\models\of_order_model.dart,415,ofNumber,INTERNAL,"'ofNumber': ofNumber,"
+lib\data\models\of_order_model.dart,416,title,KEYS,"'title': title,"
+lib\data\models\of_order_model.dart,417,clientName,INTERNAL,"'clientName': clientName,"
+lib\data\models\of_order_model.dart,418,productReference,INTERNAL,"'productReference': productReference,"
+lib\data\models\of_order_model.dart,419,plannedQuantity,INTERNAL,"'plannedQuantity': plannedQuantity,"
+lib\data\models\of_order_model.dart,420,unit,KEYS,"'unit': unit,"
+lib\data\models\of_order_model.dart,421,status,KEYS,"'status': status.name,"
+lib\data\models\of_order_model.dart,422,priority,KEYS,"'priority': priority.name,"
+lib\data\models\of_order_model.dart,423,progressPercentage,INTERNAL,'progressPercentage': progressPercentage
+lib\data\models\of_order_model.dart,424,plannedCompletionDate,INTERNAL,'plannedCompletionDate': plannedCompletionD
+lib\data\models\of_order_model.dart,425,deliveryDeadline,INTERNAL,'deliveryDeadline': deliveryDeadline?.
+lib\data\models\of_order_model.dart,426,isOverdue,INTERNAL,"'isOverdue': isOverdue,"
+lib\data\models\of_order_model.dart,427,isDeliveryOverdue,INTERNAL,"'isDeliveryOverdue': isDeliveryOverdue,"
+lib\data\models\of_order_model.dart,428,efficiency,KEYS,"'efficiency': efficiency,"
+lib\data\models\of_order_model.dart,429,isWithinBudget,INTERNAL,"'isWithinBudget': isWithinBudget,"
+lib\data\models\of_order_model.dart,437,description,KEYS,"'description': description,"
+lib\data\models\of_order_model.dart,438,productionLine,INTERNAL,"'productionLine': productionLine,"
+lib\data\models\of_order_model.dart,439,supervisorId,INTERNAL,"'supervisorId': supervisorId,"
+lib\data\models\of_order_model.dart,440,plannedStartDate,INTERNAL,'plannedStartDate': plannedStartDate?.
+lib\data\models\of_order_model.dart,441,actualStartDate,INTERNAL,'actualStartDate': actualStartDate?.t
+lib\data\models\of_order_model.dart,442,actualCompletionDate,INTERNAL,'actualCompletionDate': actualCompletionDa
+lib\data\models\of_order_model.dart,443,actualDeliveryDate,INTERNAL,'actualDeliveryDate': actualDeliveryDate
+lib\data\models\of_order_model.dart,444,requiredMaterials,INTERNAL,"'requiredMaterials': requiredMaterials,"
+lib\data\models\of_order_model.dart,445,qualitySpecifications,INTERNAL,'qualitySpecifications': qualitySpecificati
+lib\data\models\of_order_model.dart,446,qualityStatus,INTERNAL,'qualityStatus': qualityStatus.name
+lib\data\models\of_order_model.dart,447,actualQuantity,INTERNAL,"'actualQuantity': actualQuantity,"
+lib\data\models\of_order_model.dart,448,goodQuantity,INTERNAL,"'goodQuantity': goodQuantity,"
+lib\data\models\of_order_model.dart,449,rejectedQuantity,INTERNAL,"'rejectedQuantity': rejectedQuantity,"
+lib\data\models\of_order_model.dart,450,allocatedBudget,INTERNAL,"'allocatedBudget': allocatedBudget,"
+lib\data\models\of_order_model.dart,451,actualCost,INTERNAL,"'actualCost': actualCost,"
+lib\data\models\of_order_model.dart,452,budgetVariance,INTERNAL,"'budgetVariance': budgetVariance,"
+lib\data\models\of_order_model.dart,453,scrapRate,INTERNAL,"'scrapRate': scrapRate,"
+lib\data\models\of_order_model.dart,454,productionNotes,INTERNAL,'productionNotes': productionNotes.ma
+lib\data\models\of_order_model.dart,455,qualityChecks,INTERNAL,'qualityChecks': qualityChecks.map(
+lib\data\models\of_order_model.dart,456,createdAt,INTERNAL,'createdAt': createdAt.toIso860
+lib\data\models\of_order_model.dart,457,updatedAt,INTERNAL,'updatedAt': updatedAt.toIso860
+lib\data\models\of_order_model.dart,458,createdBy,INTERNAL,"'createdBy': createdBy,"
+lib\data\models\of_order_model.dart,459,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\data\models\of_order_model.dart,460,version,KEYS,"'version': version,"
+lib\data\models\of_order_model.dart,461,metadata,KEYS,"'metadata': metadata,"
+lib\data\models\of_order_model.freezed.dart,6,of_order_model.dart,UI_VISIBLE,part of 'of_order_model.dart';
+lib\data\models\of_order_model.freezed.dart,15,It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED],UI_VISIBLE,'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED]');
+lib\data\models\of_order_model.freezed.dart,189,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\of_order_model.freezed.dart,422,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\of_order_model.freezed.dart,836,"OfOrder(ofNumber: $ofNumber, title: $title, description: $description, clientName: $clientName, productReference: $productReference, plannedQuantity: $plannedQuantity, unit: $unit, status: $status, priority: $priority, qualityStatus: $qualityStatus, productionLine: $productionLine, supervisorId: $supervisorId, plannedStartDate: $plannedStartDate, actualStartDate: $actualStartDate, plannedCompletionDate: $plannedCompletionDate, actualCompletionDate: $actualCompletionDate, deliveryDeadline: $deliveryDeadline, actualDeliveryDate: $actualDeliveryDate, requiredMaterials: $requiredMaterials, qualitySpecifications: $qualitySpecifications, productionNotes: $productionNotes, qualityChecks: $qualityChecks, progressPercentage: $progressPercentage, actualQuantity: $actualQuantity, goodQuantity: $goodQuantity, rejectedQuantity: $rejectedQuantity, allocatedBudget: $allocatedBudget, actualCost: $actualCost, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, updatedBy: $updatedBy, version: $version, metadata: $metadata)",UI_VISIBLE,"return 'OfOrder(ofNumber: $ofNumber, title: $title, description: $description, clientName: $clientName, productReference: $productReference, plannedQuantity: $plannedQuantity, unit: $unit, status: $status, priority: $priority, qualityStatus: $qualityStatus, productionLine: $productionLine, supervisorId: $supervisorId, plannedStartDate: $plannedStartDate, actualStartDate: $actualStartDate, plannedCompletionDate: $plannedCompletionDate, actualCompletionDate: $actualCompletionDate, deliveryDeadline: $deliveryDeadline, actualDeliveryDate: $actualDeliveryDate, requiredMaterials: $requiredMaterials, qualitySpecifications: $qualitySpecifications, productionNotes: $productionNotes, qualityChecks: $qualityChecks, progressPercentage: $progressPercentage, actualQuantity: $actualQuantity, goodQuantity: $goodQuantity, rejectedQuantity: $rejectedQuantity, allocatedBudget: $allocatedBudget, actualCost: $actualCost, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, updatedBy: $updatedBy, version: $version, metadata: $metadata)';"
+lib\data\models\of_order_model.freezed.dart,953,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\of_order_model.freezed.dart,1191,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\of_order_model.freezed.dart,1241,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\of_order_model.freezed.dart,1293,"ProductionNote(id: $id, content: $content, authorId: $authorId, timestamp: $timestamp)",UI_VISIBLE,"return 'ProductionNote(id: $id, content: $content, authorId: $authorId, timestamp: $timestamp)';"
+lib\data\models\of_order_model.freezed.dart,1318,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\of_order_model.freezed.dart,1408,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\of_order_model.freezed.dart,1474,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\of_order_model.freezed.dart,1542,"QualityCheck(id: $id, checkpoint: $checkpoint, passed: $passed, notes: $notes, inspectorId: $inspectorId, timestamp: $timestamp)",UI_VISIBLE,"return 'QualityCheck(id: $id, checkpoint: $checkpoint, passed: $passed, notes: $notes, inspectorId: $inspectorId, timestamp: $timestamp)';"
+lib\data\models\of_order_model.freezed.dart,1570,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\of_order_model.g.dart,3,of_order_model.dart,UI_VISIBLE,part of 'of_order_model.dart';
+lib\data\models\of_order_model.g.dart,11,ofNumber,INTERNAL,"ofNumber: json['ofNumber'] as String,"
+lib\data\models\of_order_model.g.dart,12,title,KEYS,"title: json['title'] as String,"
+lib\data\models\of_order_model.g.dart,13,description,KEYS,"description: json['description'] as String,"
+lib\data\models\of_order_model.g.dart,14,clientName,INTERNAL,"clientName: json['clientName'] as String,"
+lib\data\models\of_order_model.g.dart,15,productReference,INTERNAL,"ductReference: json['productReference'] as String,"
+lib\data\models\of_order_model.g.dart,16,plannedQuantity,INTERNAL,"nnedQuantity: (json['plannedQuantity'] as num).toInt(),"
+lib\data\models\of_order_model.g.dart,17,unit,KEYS,"unit: json['unit'] as String,"
+lib\data\models\of_order_model.g.dart,18,status,KEYS,"StatusEnumMap, json['status']),"
+lib\data\models\of_order_model.g.dart,19,priority,KEYS,"iorityEnumMap, json['priority']),"
+lib\data\models\of_order_model.g.dart,21,qualityStatus,INTERNAL,"StatusEnumMap, json['qualityStatus']) ??"
+lib\data\models\of_order_model.g.dart,23,productionLine,INTERNAL,"roductionLine: json['productionLine'] as String?,"
+lib\data\models\of_order_model.g.dart,24,supervisorId,INTERNAL,"supervisorId: json['supervisorId'] as String?,"
+lib\data\models\of_order_model.g.dart,25,plannedStartDate,INTERNAL,nnedStartDate: json['plannedStartDate'] == null
+lib\data\models\of_order_model.g.dart,27,plannedStartDate,INTERNAL,"DateTime.parse(json['plannedStartDate'] as String),"
+lib\data\models\of_order_model.g.dart,28,actualStartDate,INTERNAL,tualStartDate: json['actualStartDate'] == null
+lib\data\models\of_order_model.g.dart,30,actualStartDate,INTERNAL,"DateTime.parse(json['actualStartDate'] as String),"
+lib\data\models\of_order_model.g.dart,31,plannedCompletionDate,INTERNAL,ompletionDate: json['plannedCompletionDate'] == null
+lib\data\models\of_order_model.g.dart,33,plannedCompletionDate,INTERNAL,"DateTime.parse(json['plannedCompletionDate'] as String),"
+lib\data\models\of_order_model.g.dart,34,actualCompletionDate,INTERNAL,ompletionDate: json['actualCompletionDate'] == null
+lib\data\models\of_order_model.g.dart,36,actualCompletionDate,INTERNAL,"DateTime.parse(json['actualCompletionDate'] as String),"
+lib\data\models\of_order_model.g.dart,37,deliveryDeadline,INTERNAL,iveryDeadline: json['deliveryDeadline'] == null
+lib\data\models\of_order_model.g.dart,39,deliveryDeadline,INTERNAL,"DateTime.parse(json['deliveryDeadline'] as String),"
+lib\data\models\of_order_model.g.dart,40,actualDeliveryDate,INTERNAL,lDeliveryDate: json['actualDeliveryDate'] == null
+lib\data\models\of_order_model.g.dart,42,actualDeliveryDate,INTERNAL,"DateTime.parse(json['actualDeliveryDate'] as String),"
+lib\data\models\of_order_model.g.dart,43,requiredMaterials,INTERNAL,redMaterials: (json['requiredMaterials'] as List<dynamic>?)
+lib\data\models\of_order_model.g.dart,47,qualitySpecifications,INTERNAL,ecifications: (json['qualitySpecifications'] as List<dynamic>?)
+lib\data\models\of_order_model.g.dart,51,productionNotes,INTERNAL,ductionNotes: (json['productionNotes'] as List<dynamic>?)
+lib\data\models\of_order_model.g.dart,55,qualityChecks,INTERNAL,ualityChecks: (json['qualityChecks'] as List<dynamic>?)
+lib\data\models\of_order_model.g.dart,59,progressPercentage,INTERNAL,ssPercentage: (json['progressPercentage'] as num?)?.toInt()
+lib\data\models\of_order_model.g.dart,60,actualQuantity,INTERNAL,tualQuantity: (json['actualQuantity'] as num?)?.toInt()
+lib\data\models\of_order_model.g.dart,61,goodQuantity,INTERNAL,goodQuantity: (json['goodQuantity'] as num?)?.toInt()
+lib\data\models\of_order_model.g.dart,62,rejectedQuantity,INTERNAL,ctedQuantity: (json['rejectedQuantity'] as num?)?.toInt()
+lib\data\models\of_order_model.g.dart,63,allocatedBudget,INTERNAL,ocatedBudget: (json['allocatedBudget'] as num?)?.toDouble
+lib\data\models\of_order_model.g.dart,64,actualCost,INTERNAL,actualCost: (json['actualCost'] as num?)?.toDouble
+lib\data\models\of_order_model.g.dart,65,createdAt,INTERNAL,"DateTime.parse(json['createdAt'] as String),"
+lib\data\models\of_order_model.g.dart,66,updatedAt,INTERNAL,"DateTime.parse(json['updatedAt'] as String),"
+lib\data\models\of_order_model.g.dart,67,createdBy,INTERNAL,"createdBy: json['createdBy'] as String,"
+lib\data\models\of_order_model.g.dart,68,updatedBy,INTERNAL,"updatedBy: json['updatedBy'] as String?,"
+lib\data\models\of_order_model.g.dart,69,version,KEYS,version: (json['version'] as num?)?.toInt()
+lib\data\models\of_order_model.g.dart,70,metadata,KEYS,"metadata: json['metadata'] as Map<String, dyn"
+lib\data\models\of_order_model.g.dart,75,ofNumber,INTERNAL,"'ofNumber': instance.ofNumber,"
+lib\data\models\of_order_model.g.dart,76,title,KEYS,"'title': instance.title,"
+lib\data\models\of_order_model.g.dart,77,description,KEYS,'description': instance.descripti
+lib\data\models\of_order_model.g.dart,78,clientName,INTERNAL,'clientName': instance.clientNam
+lib\data\models\of_order_model.g.dart,79,productReference,INTERNAL,'productReference': instance.productRe
+lib\data\models\of_order_model.g.dart,80,plannedQuantity,INTERNAL,'plannedQuantity': instance.plannedQu
+lib\data\models\of_order_model.g.dart,81,unit,KEYS,"'unit': instance.unit,"
+lib\data\models\of_order_model.g.dart,82,status,KEYS,'status': _$OfOrderStatusEnu
+lib\data\models\of_order_model.g.dart,83,priority,KEYS,'priority': _$OfOrderPriorityE
+lib\data\models\of_order_model.g.dart,84,qualityStatus,INTERNAL,'qualityStatus': _$QualityStatusEnu
+lib\data\models\of_order_model.g.dart,85,productionLine,INTERNAL,'productionLine': instance.productio
+lib\data\models\of_order_model.g.dart,86,supervisorId,INTERNAL,'supervisorId': instance.superviso
+lib\data\models\of_order_model.g.dart,87,plannedStartDate,INTERNAL,'plannedStartDate': instance.plannedSt
+lib\data\models\of_order_model.g.dart,88,actualStartDate,INTERNAL,'actualStartDate': instance.actualSta
+lib\data\models\of_order_model.g.dart,89,plannedCompletionDate,INTERNAL,'plannedCompletionDate':
+lib\data\models\of_order_model.g.dart,91,actualCompletionDate,INTERNAL,'actualCompletionDate': instance.actualCom
+lib\data\models\of_order_model.g.dart,92,deliveryDeadline,INTERNAL,'deliveryDeadline': instance.deliveryD
+lib\data\models\of_order_model.g.dart,93,actualDeliveryDate,INTERNAL,'actualDeliveryDate': instance.actualDel
+lib\data\models\of_order_model.g.dart,94,requiredMaterials,INTERNAL,'requiredMaterials': instance.requiredM
+lib\data\models\of_order_model.g.dart,95,qualitySpecifications,INTERNAL,'qualitySpecifications': instance.qualitySp
+lib\data\models\of_order_model.g.dart,96,productionNotes,INTERNAL,'productionNotes': instance.productio
+lib\data\models\of_order_model.g.dart,97,qualityChecks,INTERNAL,'qualityChecks': instance.qualityCh
+lib\data\models\of_order_model.g.dart,98,progressPercentage,INTERNAL,'progressPercentage': instance.progressP
+lib\data\models\of_order_model.g.dart,99,actualQuantity,INTERNAL,'actualQuantity': instance.actualQua
+lib\data\models\of_order_model.g.dart,100,goodQuantity,INTERNAL,'goodQuantity': instance.goodQuant
+lib\data\models\of_order_model.g.dart,101,rejectedQuantity,INTERNAL,'rejectedQuantity': instance.rejectedQ
+lib\data\models\of_order_model.g.dart,102,allocatedBudget,INTERNAL,'allocatedBudget': instance.allocated
+lib\data\models\of_order_model.g.dart,103,actualCost,INTERNAL,'actualCost': instance.actualCos
+lib\data\models\of_order_model.g.dart,104,createdAt,INTERNAL,'createdAt': instance.createdAt
+lib\data\models\of_order_model.g.dart,105,updatedAt,INTERNAL,'updatedAt': instance.updatedAt
+lib\data\models\of_order_model.g.dart,106,createdBy,INTERNAL,'createdBy': instance.createdBy
+lib\data\models\of_order_model.g.dart,107,updatedBy,INTERNAL,'updatedBy': instance.updatedBy
+lib\data\models\of_order_model.g.dart,108,version,KEYS,"'version': instance.version,"
+lib\data\models\of_order_model.g.dart,109,metadata,KEYS,"'metadata': instance.metadata,"
+lib\data\models\of_order_model.g.dart,113,draft,KEYS,"fOrderStatus.draft: 'draft',"
+lib\data\models\of_order_model.g.dart,114,planned,KEYS,"rderStatus.planned: 'planned',"
+lib\data\models\of_order_model.g.dart,115,materialWaiting,INTERNAL,"us.materialWaiting: 'materialWaiting',"
+lib\data\models\of_order_model.g.dart,116,inProgress,INTERNAL,"rStatus.inProgress: 'inProgress',"
+lib\data\models\of_order_model.g.dart,117,qualityCheck,INTERNAL,"tatus.qualityCheck: 'qualityCheck',"
+lib\data\models\of_order_model.g.dart,118,completed,KEYS,"erStatus.completed: 'completed',"
+lib\data\models\of_order_model.g.dart,119,delivered,KEYS,"erStatus.delivered: 'delivered',"
+lib\data\models\of_order_model.g.dart,120,cancelled,KEYS,"erStatus.cancelled: 'cancelled',"
+lib\data\models\of_order_model.g.dart,124,low,KEYS,"fOrderPriority.low: 'low',"
+lib\data\models\of_order_model.g.dart,125,normal,KEYS,"derPriority.normal: 'normal',"
+lib\data\models\of_order_model.g.dart,126,high,KEYS,"OrderPriority.high: 'high',"
+lib\data\models\of_order_model.g.dart,127,urgent,KEYS,"derPriority.urgent: 'urgent',"
+lib\data\models\of_order_model.g.dart,131,pending,KEYS,"lityStatus.pending: 'pending',"
+lib\data\models\of_order_model.g.dart,132,inProgress,INTERNAL,"yStatus.inProgress: 'inProgress',"
+lib\data\models\of_order_model.g.dart,133,passed,KEYS,"alityStatus.passed: 'passed',"
+lib\data\models\of_order_model.g.dart,134,failed,KEYS,"alityStatus.failed: 'failed',"
+lib\data\models\of_order_model.g.dart,135,rework,KEYS,"alityStatus.rework: 'rework',"
+lib\data\models\of_order_model.g.dart,140,id,KEYS,"id: json['id'] as String,"
+lib\data\models\of_order_model.g.dart,141,content,KEYS,"content: json['content'] as String,"
+lib\data\models\of_order_model.g.dart,142,authorId,INTERNAL,"authorId: json['authorId'] as String,"
+lib\data\models\of_order_model.g.dart,143,timestamp,KEYS,"DateTime.parse(json['timestamp'] as String),"
+lib\data\models\of_order_model.g.dart,149,id,KEYS,"'id': instance.id,"
+lib\data\models\of_order_model.g.dart,150,content,KEYS,"'content': instance.content,"
+lib\data\models\of_order_model.g.dart,151,authorId,INTERNAL,"'authorId': instance.authorId,"
+lib\data\models\of_order_model.g.dart,152,timestamp,KEYS,'timestamp': instance.timestamp
+lib\data\models\of_order_model.g.dart,157,id,KEYS,"id: json['id'] as String,"
+lib\data\models\of_order_model.g.dart,158,checkpoint,KEYS,"checkpoint: json['checkpoint'] as String,"
+lib\data\models\of_order_model.g.dart,159,passed,KEYS,"passed: json['passed'] as bool,"
+lib\data\models\of_order_model.g.dart,160,notes,KEYS,"notes: json['notes'] as String?,"
+lib\data\models\of_order_model.g.dart,161,inspectorId,INTERNAL,"inspectorId: json['inspectorId'] as String,"
+lib\data\models\of_order_model.g.dart,162,timestamp,KEYS,"DateTime.parse(json['timestamp'] as String),"
+lib\data\models\of_order_model.g.dart,167,id,KEYS,"'id': instance.id,"
+lib\data\models\of_order_model.g.dart,168,checkpoint,KEYS,'checkpoint': instance.checkpoin
+lib\data\models\of_order_model.g.dart,169,passed,KEYS,"'passed': instance.passed,"
+lib\data\models\of_order_model.g.dart,170,notes,KEYS,"'notes': instance.notes,"
+lib\data\models\of_order_model.g.dart,171,inspectorId,INTERNAL,'inspectorId': instance.inspector
+lib\data\models\of_order_model.g.dart,172,timestamp,KEYS,'timestamp': instance.timestamp
+lib\data\models\signalement_model.dart,4,signalement_model.freezed.dart,UI_VISIBLE,part 'signalement_model.freezed.dart';
+lib\data\models\signalement_model.dart,5,signalement_model.g.dart,UI_VISIBLE,part 'signalement_model.g.dart';
+lib\data\models\signalement_model.dart,174,Brouillon,INTERNAL,return 'Brouillon';
+lib\data\models\signalement_model.dart,176,Soumis,INTERNAL,return 'Soumis';
+lib\data\models\signalement_model.dart,178,En cours,UI_VISIBLE,return 'En cours';
+lib\data\models\signalement_model.dart,180,Résolu,INTERNAL,return 'Résolu';
+lib\data\models\signalement_model.dart,182,Fermé,INTERNAL,return 'Fermé';
+lib\data\models\signalement_model.dart,184,Annulé,INTERNAL,return 'Annulé';
+lib\data\models\signalement_model.dart,192,Faible,INTERNAL,return 'Faible';
+lib\data\models\signalement_model.dart,194,Moyen,INTERNAL,return 'Moyen';
+lib\data\models\signalement_model.dart,196,Élevé,INTERNAL,return 'Élevé';
+lib\data\models\signalement_model.dart,198,Critique,INTERNAL,return 'Critique';
+lib\data\models\signalement_model.dart,206,Qualité,INTERNAL,return 'Qualité';
+lib\data\models\signalement_model.dart,208,Équipement,INTERNAL,return 'Équipement';
+lib\data\models\signalement_model.dart,210,Matériau,INTERNAL,return 'Matériau';
+lib\data\models\signalement_model.dart,212,Processus,INTERNAL,return 'Processus';
+lib\data\models\signalement_model.dart,214,Sécurité,INTERNAL,return 'Sécurité';
+lib\data\models\signalement_model.dart,216,Autre,INTERNAL,return 'Autre';
+lib\data\models\signalement_model.dart,232,lastStatusUpdate,INTERNAL,'lastStatusUpdate': now.toIso8601Strin
+lib\data\models\signalement_model.dart,233,lastUpdatedBy,INTERNAL,"(updatedBy != null) 'lastUpdatedBy': updatedBy,"
+lib\data\models\signalement_model.dart,245,assignedAt,INTERNAL,'assignedAt': DateTime.now().toI
+lib\data\models\signalement_model.dart,246,assignedBy,INTERNAL,"'assignedBy': userId,"
+lib\data\models\signalement_model.dart,260,resolvedAt,INTERNAL,'resolvedAt': DateTime.now().toI
+lib\data\models\signalement_model.dart,261,resolvedBy,INTERNAL,"resolvedBy != null) 'resolvedBy': resolvedBy,"
+lib\data\models\signalement_model.dart,269,id,KEYS,"'id': id,"
+lib\data\models\signalement_model.dart,270,title,KEYS,"'title': title,"
+lib\data\models\signalement_model.dart,271,priority,KEYS,"'priority': priority.name,"
+lib\data\models\signalement_model.dart,272,status,KEYS,"'status': status.name,"
+lib\data\models\signalement_model.dart,273,category,KEYS,"'category': category.name,"
+lib\data\models\signalement_model.dart,274,createdBy,INTERNAL,"'createdBy': createdBy,"
+lib\data\models\signalement_model.dart,275,assignedTo,INTERNAL,"'assignedTo': assignedTo,"
+lib\data\models\signalement_model.dart,276,ofNumber,INTERNAL,"'ofNumber': ofNumber,"
+lib\data\models\signalement_model.dart,277,createdAt,INTERNAL,'createdAt': createdAt.toIso860
+lib\data\models\signalement_model.dart,278,isOverdue,INTERNAL,"'isOverdue': isOverdue,"
+lib\data\models\signalement_model.dart,279,daysSinceCreation,INTERNAL,"'daysSinceCreation': daysSinceCreation,"
+lib\data\models\signalement_model.dart,287,description,KEYS,"'description': description,"
+lib\data\models\signalement_model.dart,288,location,KEYS,"'location': location,"
+lib\data\models\signalement_model.dart,289,equipment,KEYS,"'equipment': equipment,"
+lib\data\models\signalement_model.dart,290,materialBatch,INTERNAL,"'materialBatch': materialBatch,"
+lib\data\models\signalement_model.dart,291,expectedResolutionDate,INTERNAL,'expectedResolutionDate': expectedResolution
+lib\data\models\signalement_model.dart,292,actualResolutionDate,INTERNAL,'actualResolutionDate': actualResolutionDa
+lib\data\models\signalement_model.dart,293,resolutionNotes,INTERNAL,"'resolutionNotes': resolutionNotes,"
+lib\data\models\signalement_model.dart,294,updatedAt,INTERNAL,'updatedAt': updatedAt.toIso860
+lib\data\models\signalement_model.dart,295,version,KEYS,"'version': version,"
+lib\data\models\signalement_model.dart,296,metadata,KEYS,"'metadata': metadata,"
+lib\data\models\signalement_model.freezed.dart,6,signalement_model.dart,UI_VISIBLE,part of 'signalement_model.dart';
+lib\data\models\signalement_model.freezed.dart,15,It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED],UI_VISIBLE,'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED]');
+lib\data\models\signalement_model.freezed.dart,130,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\signalement_model.freezed.dart,274,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\signalement_model.freezed.dart,494,"Signalement(id: $id, title: $title, description: $description, priority: $priority, status: $status, category: $category, createdBy: $createdBy, assignedTo: $assignedTo, ofNumber: $ofNumber, location: $location, equipment: $equipment, materialBatch: $materialBatch, expectedResolutionDate: $expectedResolutionDate, actualResolutionDate: $actualResolutionDate, resolutionNotes: $resolutionNotes, createdAt: $createdAt, updatedAt: $updatedAt, version: $version, metadata: $metadata)",UI_VISIBLE,"return 'Signalement(id: $id, title: $title, description: $description, priority: $priority, status: $status, category: $category, createdBy: $createdBy, assignedTo: $assignedTo, ofNumber: $ofNumber, location: $location, equipment: $equipment, materialBatch: $materialBatch, expectedResolutionDate: $expectedResolutionDate, actualResolutionDate: $actualResolutionDate, resolutionNotes: $resolutionNotes, createdAt: $createdAt, updatedAt: $updatedAt, version: $version, metadata: $metadata)';"
+lib\data\models\signalement_model.freezed.dart,566,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\signalement_model.g.dart,3,signalement_model.dart,UI_VISIBLE,part of 'signalement_model.dart';
+lib\data\models\signalement_model.g.dart,11,id,KEYS,"id: json['id'] as String,"
+lib\data\models\signalement_model.g.dart,12,title,KEYS,"title: json['title'] as String,"
+lib\data\models\signalement_model.g.dart,13,description,KEYS,"description: json['description'] as String,"
+lib\data\models\signalement_model.g.dart,14,priority,KEYS,"iorityEnumMap, json['priority']),"
+lib\data\models\signalement_model.g.dart,15,status,KEYS,"StatusEnumMap, json['status']),"
+lib\data\models\signalement_model.g.dart,16,category,KEYS,"tegoryEnumMap, json['category']),"
+lib\data\models\signalement_model.g.dart,17,createdBy,INTERNAL,"createdBy: json['createdBy'] as String,"
+lib\data\models\signalement_model.g.dart,18,assignedTo,INTERNAL,"assignedTo: json['assignedTo'] as String?,"
+lib\data\models\signalement_model.g.dart,19,ofNumber,INTERNAL,"ofNumber: json['ofNumber'] as String?,"
+lib\data\models\signalement_model.g.dart,20,location,KEYS,"location: json['location'] as String?,"
+lib\data\models\signalement_model.g.dart,21,equipment,KEYS,"equipment: json['equipment'] as String?,"
+lib\data\models\signalement_model.g.dart,22,materialBatch,INTERNAL,"materialBatch: json['materialBatch'] as String?,"
+lib\data\models\signalement_model.g.dart,23,expectedResolutionDate,INTERNAL,esolutionDate: json['expectedResolutionDate'] == null
+lib\data\models\signalement_model.g.dart,25,expectedResolutionDate,INTERNAL,"DateTime.parse(json['expectedResolutionDate'] as String),"
+lib\data\models\signalement_model.g.dart,26,actualResolutionDate,INTERNAL,esolutionDate: json['actualResolutionDate'] == null
+lib\data\models\signalement_model.g.dart,28,actualResolutionDate,INTERNAL,"DateTime.parse(json['actualResolutionDate'] as String),"
+lib\data\models\signalement_model.g.dart,29,resolutionNotes,INTERNAL,"solutionNotes: json['resolutionNotes'] as String?,"
+lib\data\models\signalement_model.g.dart,30,createdAt,INTERNAL,"DateTime.parse(json['createdAt'] as String),"
+lib\data\models\signalement_model.g.dart,31,updatedAt,INTERNAL,"DateTime.parse(json['updatedAt'] as String),"
+lib\data\models\signalement_model.g.dart,32,version,KEYS,version: (json['version'] as num?)?.toInt()
+lib\data\models\signalement_model.g.dart,33,metadata,KEYS,"metadata: json['metadata'] as Map<String, dyn"
+lib\data\models\signalement_model.g.dart,38,id,KEYS,"'id': instance.id,"
+lib\data\models\signalement_model.g.dart,39,title,KEYS,"'title': instance.title,"
+lib\data\models\signalement_model.g.dart,40,description,KEYS,'description': instance.descripti
+lib\data\models\signalement_model.g.dart,41,priority,KEYS,'priority': _$SignalementPrior
+lib\data\models\signalement_model.g.dart,42,status,KEYS,'status': _$SignalementStatu
+lib\data\models\signalement_model.g.dart,43,category,KEYS,'category': _$SignalementCateg
+lib\data\models\signalement_model.g.dart,44,createdBy,INTERNAL,'createdBy': instance.createdBy
+lib\data\models\signalement_model.g.dart,45,assignedTo,INTERNAL,'assignedTo': instance.assignedT
+lib\data\models\signalement_model.g.dart,46,ofNumber,INTERNAL,"'ofNumber': instance.ofNumber,"
+lib\data\models\signalement_model.g.dart,47,location,KEYS,"'location': instance.location,"
+lib\data\models\signalement_model.g.dart,48,equipment,KEYS,'equipment': instance.equipment
+lib\data\models\signalement_model.g.dart,49,materialBatch,INTERNAL,'materialBatch': instance.materialB
+lib\data\models\signalement_model.g.dart,50,expectedResolutionDate,INTERNAL,'expectedResolutionDate':
+lib\data\models\signalement_model.g.dart,52,actualResolutionDate,INTERNAL,'actualResolutionDate': instance.actualRes
+lib\data\models\signalement_model.g.dart,53,resolutionNotes,INTERNAL,'resolutionNotes': instance.resolutio
+lib\data\models\signalement_model.g.dart,54,createdAt,INTERNAL,'createdAt': instance.createdAt
+lib\data\models\signalement_model.g.dart,55,updatedAt,INTERNAL,'updatedAt': instance.updatedAt
+lib\data\models\signalement_model.g.dart,56,version,KEYS,"'version': instance.version,"
+lib\data\models\signalement_model.g.dart,57,metadata,KEYS,"'metadata': instance.metadata,"
+lib\data\models\signalement_model.g.dart,61,low,KEYS,"lementPriority.low: 'low',"
+lib\data\models\signalement_model.g.dart,62,medium,KEYS,"entPriority.medium: 'medium',"
+lib\data\models\signalement_model.g.dart,63,high,KEYS,"ementPriority.high: 'high',"
+lib\data\models\signalement_model.g.dart,64,critical,KEYS,"tPriority.critical: 'critical',"
+lib\data\models\signalement_model.g.dart,68,draft,KEYS,"lementStatus.draft: 'draft',"
+lib\data\models\signalement_model.g.dart,69,submitted,KEYS,"ntStatus.submitted: 'submitted',"
+lib\data\models\signalement_model.g.dart,70,inProgress,INTERNAL,"tStatus.inProgress: 'inProgress',"
+lib\data\models\signalement_model.g.dart,71,resolved,KEYS,"entStatus.resolved: 'resolved',"
+lib\data\models\signalement_model.g.dart,72,closed,KEYS,"ementStatus.closed: 'closed',"
+lib\data\models\signalement_model.g.dart,73,cancelled,KEYS,"ntStatus.cancelled: 'cancelled',"
+lib\data\models\signalement_model.g.dart,77,quality,KEYS,"ntCategory.quality: 'quality',"
+lib\data\models\signalement_model.g.dart,78,equipment,KEYS,"Category.equipment: 'equipment',"
+lib\data\models\signalement_model.g.dart,79,material,KEYS,"tCategory.material: 'material',"
+lib\data\models\signalement_model.g.dart,80,process,KEYS,"ntCategory.process: 'process',"
+lib\data\models\signalement_model.g.dart,81,safety,KEYS,"entCategory.safety: 'safety',"
+lib\data\models\signalement_model.g.dart,82,other,KEYS,"mentCategory.other: 'other',"
+lib\data\models\user_model.dart,3,user_model.freezed.dart,UI_VISIBLE,part 'user_model.freezed.dart';
+lib\data\models\user_model.dart,4,user_model.g.dart,UI_VISIBLE,part 'user_model.g.dart';
+lib\data\models\user_model.freezed.dart,6,user_model.dart,UI_VISIBLE,part of 'user_model.dart';
+lib\data\models\user_model.freezed.dart,15,It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED],UI_VISIBLE,'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED]');
+lib\data\models\user_model.freezed.dart,71,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\user_model.freezed.dart,153,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\user_model.freezed.dart,255,"User(userId: $userId, displayName: $displayName, email: $email, role: $role, emailVerified: $emailVerified, createdAt: $createdAt, lastSignInAt: $lastSignInAt, version: $version, metadata: $metadata)",UI_VISIBLE,"return 'User(userId: $userId, displayName: $displayName, email: $email, role: $role, emailVerified: $emailVerified, createdAt: $createdAt, lastSignInAt: $lastSignInAt, version: $version, metadata: $metadata)';"
+lib\data\models\user_model.freezed.dart,296,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\data\models\user_model.g.dart,3,user_model.dart,UI_VISIBLE,part of 'user_model.dart';
+lib\data\models\user_model.g.dart,10,userId,INTERNAL,"userId: json['userId'] as String,"
+lib\data\models\user_model.g.dart,11,displayName,INTERNAL,"displayName: json['displayName'] as String,"
+lib\data\models\user_model.g.dart,12,email,KEYS,"email: json['email'] as String,"
+lib\data\models\user_model.g.dart,13,role,KEYS,"eModelEnumMap, json['role']),"
+lib\data\models\user_model.g.dart,14,emailVerified,INTERNAL,"emailVerified: json['emailVerified'] as bool? ?? false,"
+lib\data\models\user_model.g.dart,15,createdAt,INTERNAL,createdAt: json['createdAt'] == null
+lib\data\models\user_model.g.dart,17,createdAt,INTERNAL,"DateTime.parse(json['createdAt'] as String),"
+lib\data\models\user_model.g.dart,18,lastSignInAt,INTERNAL,lastSignInAt: json['lastSignInAt'] == null
+lib\data\models\user_model.g.dart,20,lastSignInAt,INTERNAL,"DateTime.parse(json['lastSignInAt'] as String),"
+lib\data\models\user_model.g.dart,21,version,KEYS,version: (json['version'] as num?)?.toInt()
+lib\data\models\user_model.g.dart,22,metadata,KEYS,"metadata: json['metadata'] as Map<String, dyn"
+lib\data\models\user_model.g.dart,27,userId,INTERNAL,"'userId': instance.userId,"
+lib\data\models\user_model.g.dart,28,displayName,INTERNAL,'displayName': instance.displayNa
+lib\data\models\user_model.g.dart,29,email,KEYS,"'email': instance.email,"
+lib\data\models\user_model.g.dart,30,role,KEYS,'role': _$UserRoleModelEnu
+lib\data\models\user_model.g.dart,31,emailVerified,INTERNAL,'emailVerified': instance.emailVeri
+lib\data\models\user_model.g.dart,32,createdAt,INTERNAL,'createdAt': instance.createdAt
+lib\data\models\user_model.g.dart,33,lastSignInAt,INTERNAL,'lastSignInAt': instance.lastSignI
+lib\data\models\user_model.g.dart,34,version,KEYS,"'version': instance.version,"
+lib\data\models\user_model.g.dart,35,metadata,KEYS,"'metadata': instance.metadata,"
+lib\data\models\user_model.g.dart,39,operateur,KEYS,"oleModel.operateur: 'operateur',"
+lib\data\models\user_model.g.dart,40,controle,KEYS,"RoleModel.controle: 'controle',"
+lib\data\models\user_model.g.dart,41,admin,KEYS,"serRoleModel.admin: 'admin',"
+lib\data\repositories\material_repository_impl.dart,19,materials,KEYS,tring _collection = 'materials';
+lib\data\repositories\material_repository_impl.dart,139,type,KEYS,"ery) => query.where('type', isEqualTo: type.na"
+lib\data\repositories\of_order_repository_impl.dart,1,package:dartz/dartz.dart,KEYS,﻿import 'package:dartz/dartz.dart';
+lib\data\repositories\of_order_repository_impl.dart,18,of_orders,KEYS,tring _collection = 'of_orders';
+lib\data\repositories\of_order_repository_impl.dart,155,not_found,KEYS,throw Exception('not_found');
+lib\data\repositories\of_order_repository_impl.dart,159,status,KEYS,urrentStatus = data['status'] as String? ?? '';
+lib\data\repositories\of_order_repository_impl.dart,163,statusUpdateHistory,INTERNAL,ry = List.from(data['statusUpdateHistory'] ?? []);
+lib\data\repositories\of_order_repository_impl.dart,165,from,KEYS,"'from': currentStatus,"
+lib\data\repositories\of_order_repository_impl.dart,166,to,KEYS,"'to': newStatus.name,"
+lib\data\repositories\of_order_repository_impl.dart,167,timestamp,KEYS,"'timestamp': now,"
+lib\data\repositories\of_order_repository_impl.dart,168,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\data\repositories\of_order_repository_impl.dart,172,status,KEYS,"'status': newStatus.name,"
+lib\data\repositories\of_order_repository_impl.dart,173,updatedAt,INTERNAL,"'updatedAt': now,"
+lib\data\repositories\of_order_repository_impl.dart,174,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\data\repositories\of_order_repository_impl.dart,175,statusUpdateHistory,INTERNAL,"'statusUpdateHistory': history,"
+lib\data\repositories\of_order_repository_impl.dart,306,$_collection/$orderId/quality_checklist,KEYS,nal subcollection = '$_collection/$orderId/quality_checklist';
+lib\data\repositories\of_order_repository_impl.dart,309,checked,KEYS,"(q) => q.where('checked', isEqualTo: false)."
+lib\data\repositories\signalement_repository_impl.dart,1,package:dartz/dartz.dart,KEYS,﻿import 'package:dartz/dartz.dart';
+lib\data\repositories\signalement_repository_impl.dart,18,signalements,KEYS,tring _collection = 'signalements';
+lib\data\repositories\signalement_repository_impl.dart,115,status,KEYS,"ery) => query.where('status', isEqualTo: statusM"
+lib\data\repositories\signalement_repository_impl.dart,136,priority,KEYS,"ery) => query.where('priority', isEqualTo: priorit"
+lib\data\repositories\signalement_repository_impl.dart,154,assignedTo,INTERNAL,"ery) => query.where('assignedTo', isEqualTo: userId)"
+lib\data\repositories\signalement_repository_impl.dart,171,createdBy,INTERNAL,"ery) => query.where('createdBy', isEqualTo: userId)"
+lib\data\repositories\signalement_repository_impl.dart,189,category,KEYS,"ery) => query.where('category', isEqualTo: categor"
+lib\data\repositories\user_repository_impl.dart,19,users,KEYS,tring _collection = 'users';
+lib\data\repositories\user_repository_impl.dart,168,email,KEYS,"ery) => query.where('email', isEqualTo: email),"
+lib\data\repositories\user_repository_impl.dart,187,role,KEYS,"ery) => query.where('role', isEqualTo: roleMod"
+lib\data\repositories\user_repository_impl.dart,248,displayName,INTERNAL,"(q) => q.where('displayName', isEqualTo: query),"
+lib\data\repositories\user_repository_impl.dart,253,email,KEYS,"(q) => q.where('email', isEqualTo: query),"
+lib\domain\entities\material.dart,59,in,KEYS,"nal String type; // 'in', 'out', 'adjustment"
+lib\domain\entities\material.dart,59,out,KEYS,"ring type; // 'in', 'out', 'adjustment'"
+lib\domain\entities\material.dart,59,adjustment,KEYS,"pe; // 'in', 'out', 'adjustment'"
+lib\domain\entities\material.dart,144,EUR,INTERNAL,"this.currency = 'EUR',"
+lib\domain\entities\material.dart,275,Matière première,UI_VISIBLE,return 'Matière première';
+lib\domain\entities\material.dart,277,Semi-fini,UI_VISIBLE,return 'Semi-fini';
+lib\domain\entities\material.dart,279,Produit fini,UI_VISIBLE,return 'Produit fini';
+lib\domain\entities\material.dart,281,Consommable,INTERNAL,return 'Consommable';
+lib\domain\entities\material.dart,283,Emballage,INTERNAL,return 'Emballage';
+lib\domain\entities\material.dart,285,Pièce de rechange,UI_VISIBLE,return 'Pièce de rechange';
+lib\domain\entities\material.dart,293,Pièce,INTERNAL,return 'Pièce';
+lib\domain\entities\material.dart,295,Kilogramme,INTERNAL,return 'Kilogramme';
+lib\domain\entities\material.dart,297,Litre,INTERNAL,return 'Litre';
+lib\domain\entities\material.dart,299,Mètre,INTERNAL,return 'Mètre';
+lib\domain\entities\material.dart,301,Mètre carré,UI_VISIBLE,return 'Mètre carré';
+lib\domain\entities\material.dart,303,Mètre cube,UI_VISIBLE,return 'Mètre cube';
+lib\domain\entities\material.dart,305,Heure,INTERNAL,return 'Heure';
+lib\domain\entities\material.dart,307,Jour,INTERNAL,return 'Jour';
+lib\domain\entities\material.dart,309,Boîte,INTERNAL,return 'Boîte';
+lib\domain\entities\material.dart,311,Palette,INTERNAL,return 'Palette';
+lib\domain\entities\material.dart,319,En stock,UI_VISIBLE,return 'En stock';
+lib\domain\entities\material.dart,321,Stock faible,UI_VISIBLE,return 'Stock faible';
+lib\domain\entities\material.dart,323,Rupture de stock,UI_VISIBLE,return 'Rupture de stock';
+lib\domain\entities\material.dart,325,En commande,UI_VISIBLE,return 'En commande';
+lib\domain\entities\material.dart,371,adjustment,KEYS,"type: 'adjustment',"
+lib\domain\entities\material.dart,388,in,KEYS,"type: 'in',"
+lib\domain\entities\material.dart,406,out,KEYS,"type: 'out',"
+lib\domain\entities\of_order.dart,274,Brouillon,INTERNAL,return 'Brouillon';
+lib\domain\entities\of_order.dart,276,Planifié,INTERNAL,return 'Planifié';
+lib\domain\entities\of_order.dart,278,En attente matériaux,UI_VISIBLE,return 'En attente matériaux';
+lib\domain\entities\of_order.dart,280,En cours,UI_VISIBLE,return 'En cours';
+lib\domain\entities\of_order.dart,282,Contrôle qualité,UI_VISIBLE,return 'Contrôle qualité';
+lib\domain\entities\of_order.dart,284,Terminé,INTERNAL,return 'Terminé';
+lib\domain\entities\of_order.dart,286,Livré,INTERNAL,return 'Livré';
+lib\domain\entities\of_order.dart,288,Annulé,INTERNAL,return 'Annulé';
+lib\domain\entities\of_order.dart,296,Faible,INTERNAL,return 'Faible';
+lib\domain\entities\of_order.dart,298,Normal,INTERNAL,return 'Normal';
+lib\domain\entities\of_order.dart,300,Élevé,INTERNAL,return 'Élevé';
+lib\domain\entities\of_order.dart,302,Urgent,INTERNAL,return 'Urgent';
+lib\domain\entities\of_order.dart,310,En attente,UI_VISIBLE,return 'En attente';
+lib\domain\entities\of_order.dart,312,En cours,UI_VISIBLE,return 'En cours';
+lib\domain\entities\of_order.dart,314,Réussi,INTERNAL,return 'Réussi';
+lib\domain\entities\of_order.dart,316,Échoué,INTERNAL,return 'Échoué';
+lib\domain\entities\of_order.dart,318,Retravaillé,INTERNAL,return 'Retravaillé';
+lib\domain\entities\of_order.dart,347,statusUpdateHistory,INTERNAL,'statusUpdateHistory': [
+lib\domain\entities\of_order.dart,348,statusUpdateHistory,INTERNAL,"...metadata['statusUpdateHistory'] ?? [],"
+lib\domain\entities\of_order.dart,350,from,KEYS,"'from': status.name,"
+lib\domain\entities\of_order.dart,351,to,KEYS,"'to': newStatus.name,"
+lib\domain\entities\of_order.dart,352,timestamp,KEYS,'timestamp': now.toIso8601Strin
+lib\domain\entities\of_order.dart,353,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\domain\entities\signalement.dart,144,Faible,INTERNAL,return 'Faible';
+lib\domain\entities\signalement.dart,146,Moyen,INTERNAL,return 'Moyen';
+lib\domain\entities\signalement.dart,148,Élevé,INTERNAL,return 'Élevé';
+lib\domain\entities\signalement.dart,150,Critique,INTERNAL,return 'Critique';
+lib\domain\entities\signalement.dart,158,Brouillon,INTERNAL,return 'Brouillon';
+lib\domain\entities\signalement.dart,160,Soumis,INTERNAL,return 'Soumis';
+lib\domain\entities\signalement.dart,162,En cours,UI_VISIBLE,return 'En cours';
+lib\domain\entities\signalement.dart,164,Résolu,INTERNAL,return 'Résolu';
+lib\domain\entities\signalement.dart,166,Fermé,INTERNAL,return 'Fermé';
+lib\domain\entities\signalement.dart,168,Annulé,INTERNAL,return 'Annulé';
+lib\domain\entities\signalement.dart,176,Qualité,INTERNAL,return 'Qualité';
+lib\domain\entities\signalement.dart,178,Équipement,INTERNAL,return 'Équipement';
+lib\domain\entities\signalement.dart,180,Matériau,INTERNAL,return 'Matériau';
+lib\domain\entities\signalement.dart,182,Processus,INTERNAL,return 'Processus';
+lib\domain\entities\signalement.dart,184,Sécurité,INTERNAL,return 'Sécurité';
+lib\domain\entities\signalement.dart,186,Autre,INTERNAL,return 'Autre';
+lib\domain\entities\signalement.dart,202,lastStatusUpdate,INTERNAL,'lastStatusUpdate': now.toIso8601Strin
+lib\domain\entities\signalement.dart,203,lastUpdatedBy,INTERNAL,"(updatedBy != null) 'lastUpdatedBy': updatedBy,"
+lib\domain\entities\signalement.dart,215,assignedAt,INTERNAL,'assignedAt': DateTime.now().toI
+lib\domain\entities\signalement.dart,216,assignedBy,INTERNAL,"'assignedBy': userId,"
+lib\domain\entities\signalement.dart,230,resolvedAt,INTERNAL,'resolvedAt': DateTime.now().toI
+lib\domain\entities\signalement.dart,231,resolvedBy,INTERNAL,"resolvedBy != null) 'resolvedBy': resolvedBy,"
+lib\domain\entities\user.dart,68,Administrateur,INTERNAL,return 'Administrateur';
+lib\domain\entities\user.dart,70,Contrôle,INTERNAL,return 'Contrôle';
+lib\domain\entities\user.dart,72,Opérateur,INTERNAL,return 'Opérateur';
+lib\domain\repositories\material_repository.dart,181,low_stock,KEYS,"alertType; // 'low_stock', 'out_of_stock', 'e"
+lib\domain\repositories\material_repository.dart,181,out_of_stock,KEYS,"pe; // 'low_stock', 'out_of_stock', 'expired', 'expiri"
+lib\domain\repositories\material_repository.dart,181,expired,KEYS,"k', 'out_of_stock', 'expired', 'expiring_soon'"
+lib\domain\repositories\material_repository.dart,181,expiring_soon,KEYS,"_stock', 'expired', 'expiring_soon'"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,23,admin-uid-1,KEYS,"// 'admin-uid-1',"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,24,admin-uid-2,KEYS,"// 'admin-uid-2',"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,39,resetReadOnlyMode,INTERNAL,tions.httpsCallable('resetReadOnlyMode').call();
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,41,success,KEYS,if (result.data['success']) {
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,77,config,KEYS,.collection('config')
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,78,system_status,KEYS,.doc('system_status')
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,80,isReadOnly,INTERNAL,"'isReadOnly': true,"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,81,maintenanceMessage,INTERNAL,'maintenanceMessage':
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,82,Budget mensile superato. Sistema in modalità manutenzione per proteggere i costi.,UI_VISIBLE,"'Budget mensile superato. Sistema in modalità manutenzione per proteggere i costi.',"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,83,lastUpdated,INTERNAL,'lastUpdated': FieldValue.serverT
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,84,simulated,KEYS,"'simulated': true, // Flag per"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,121,config,KEYS,.collection('config')
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,122,system_status,KEYS,.doc('system_status')
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,124,isReadOnly,INTERNAL,"'isReadOnly': false,"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,125,maintenanceMessage,INTERNAL,"'maintenanceMessage': null,"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,126,lastUpdated,INTERNAL,'lastUpdated': FieldValue.serverT
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,127,simulated,KEYS,'simulated': FieldValue.delete(
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,162,config,KEYS,.collection('config')
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,163,system_status,KEYS,.doc('system_status')
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,165,isReadOnly,INTERNAL,"'isReadOnly': true,"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,166,maintenanceMessage,INTERNAL,'maintenanceMessage':
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,167,Modalità manutenzione forzata dall\'amministratore.,UI_VISIBLE,"'Modalità manutenzione forzata dall\'amministratore.',"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,168,lastUpdated,INTERNAL,'lastUpdated': FieldValue.serverT
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,169,forced,KEYS,"'forced': true,"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,373,Budget mensile superato,UI_VISIBLE,ceMessage?.contains('Budget mensile superato') ??
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,376,forzata dall\'amministratore,UI_VISIBLE,?.contains('forzata dall\'amministratore') ??
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,421,"${systemStatus.lastUpdated!.toLocal().hour}:${systemStatus.lastUpdated!.toLocal().minute.toString().padLeft(2, ",UI_VISIBLE,"'${systemStatus.lastUpdated!.toLocal().hour}:${systemStatus.lastUpdated!.toLocal().minute.toString().padLeft(2, '0')}'),"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,421,)},UI_VISIBLE,"ring().padLeft(2, '0')}'),"
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,434,Budget mensile superato,UI_VISIBLE,ceMessage?.contains('Budget mensile superato') ??
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,437,forzata dall\'amministratore,UI_VISIBLE,?.contains('forzata dall\'amministratore') ??
+lib\features\admin\presentation\pages\admin_dashboard_page.dart,597,💡 ${AppLocalizations.of(context)!.testingHeader},UI_VISIBLE,"'💡 ${AppLocalizations.of(context)!.testingHeader}',"
+lib\features\auth\data\datasources\firebase_auth_datasource.dart,100,User not found after reload,UI_VISIBLE,throw Exception('User not found after reload');
+lib\features\auth\data\models\auth_user_model.dart,38,id,KEYS,"'id': id,"
+lib\features\auth\data\models\auth_user_model.dart,39,email,KEYS,"'email': email,"
+lib\features\auth\data\models\auth_user_model.dart,40,displayName,INTERNAL,"'displayName': displayName,"
+lib\features\auth\data\models\auth_user_model.dart,41,photoUrl,INTERNAL,"'photoUrl': photoUrl,"
+lib\features\auth\data\models\auth_user_model.dart,42,emailVerified,INTERNAL,"'emailVerified': emailVerified,"
+lib\features\auth\data\models\auth_user_model.dart,43,createdAt,INTERNAL,'createdAt': createdAt?.toIso86
+lib\features\auth\data\models\auth_user_model.dart,44,lastSignInAt,INTERNAL,'lastSignInAt': lastSignInAt?.toIs
+lib\features\auth\data\models\auth_user_model.dart,51,id,KEYS,"id: map['id'] as String,"
+lib\features\auth\data\models\auth_user_model.dart,52,email,KEYS,"email: map['email'] as String,"
+lib\features\auth\data\models\auth_user_model.dart,53,displayName,INTERNAL,"displayName: map['displayName'] as String?,"
+lib\features\auth\data\models\auth_user_model.dart,54,photoUrl,INTERNAL,"photoUrl: map['photoUrl'] as String?,"
+lib\features\auth\data\models\auth_user_model.dart,55,emailVerified,INTERNAL,"emailVerified: map['emailVerified'] as bool? ?? false,"
+lib\features\auth\data\models\auth_user_model.dart,56,createdAt,INTERNAL,createdAt: map['createdAt'] != null
+lib\features\auth\data\models\auth_user_model.dart,57,createdAt,INTERNAL,DateTime.parse(map['createdAt'] as String)
+lib\features\auth\data\models\auth_user_model.dart,59,lastSignInAt,INTERNAL,lastSignInAt: map['lastSignInAt'] != null
+lib\features\auth\data\models\auth_user_model.dart,60,lastSignInAt,INTERNAL,DateTime.parse(map['lastSignInAt'] as String)
+lib\features\auth\data\repositories\auth_repository.dart,41,signInWithEmailAndPassword error: $e,UI_VISIBLE,print('signInWithEmailAndPassword error: $e');
+lib\features\auth\data\repositories\auth_repository.dart,61,createUserWithEmailAndPassword error: $e,UI_VISIBLE,print('createUserWithEmailAndPassword error: $e');
+lib\features\auth\data\repositories\auth_repository.dart,75,signOut error: $e,UI_VISIBLE,print('signOut error: $e');
+lib\features\auth\data\repositories\auth_repository.dart,91,sendPasswordResetEmail error: $e,UI_VISIBLE,print('sendPasswordResetEmail error: $e');
+lib\features\auth\data\repositories\auth_repository.dart,105,reloadUser error: $e,UI_VISIBLE,print('reloadUser error: $e');
+lib\features\auth\data\repositories\auth_repository.dart,128,user-not-found,KEYS,toString().contains('user-not-found')) {
+lib\features\auth\data\repositories\auth_repository.dart,130,wrong-password,KEYS,toString().contains('wrong-password') ||
+lib\features\auth\data\repositories\auth_repository.dart,131,invalid-credential,KEYS,toString().contains('invalid-credential')) {
+lib\features\auth\data\repositories\auth_repository.dart,133,email-already-in-use,KEYS,toString().contains('email-already-in-use')) {
+lib\features\auth\data\repositories\auth_repository.dart,135,too-many-requests,KEYS,toString().contains('too-many-requests')) {
+lib\features\auth\data\repositories\auth_repository.dart,137,network-request-failed,KEYS,toString().contains('network-request-failed')) {
+lib\features\auth\presentation\pages\login_page.dart,40,/home,KEYS,ushReplacementNamed('/home');
+lib\features\auth\presentation\pages\login_page.dart,77,/home,KEYS,ushReplacementNamed('/home');
+lib\features\auth\presentation\pages\login_page.dart,111,/home,KEYS,ushReplacementNamed('/home');
+lib\features\auth\presentation\pages\login_page.dart,167,^[^@\s]+@[^@\s]+\.[^@\s]+$,UI_VISIBLE,mailRegex = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
+lib\features\auth\presentation\pages\reset_password_page.dart,50,Errore: ${e.toString()},UI_VISIBLE,"ckBar(content: Text('Errore: ${e.toString()}')),"
+lib\features\auth\presentation\pages\reset_password_page.dart,132,"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$",UI_VISIBLE,"if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')"
+lib\features\auth\presentation\providers\auth_providers.dart,85,Auth stream emitted user: ${user?.email ?? ,UI_VISIBLE,print('Auth stream emitted user: ${user?.email ?? 'null'}');
+lib\features\auth\presentation\providers\auth_providers.dart,85,},INTERNAL,user?.email ?? 'null'}');
+lib\features\auth\presentation\providers\auth_providers.dart,215,Email o password non valide,UI_VISIBLE,return 'Email o password non valide';
+lib\features\auth\presentation\providers\auth_providers.dart,217,Utente non trovato,UI_VISIBLE,return 'Utente non trovato';
+lib\features\auth\presentation\providers\auth_providers.dart,219,Email già in uso,UI_VISIBLE,return 'Email già in uso';
+lib\features\auth\presentation\providers\auth_providers.dart,221,Troppi tentativi. Riprova più tardi,UI_VISIBLE,return 'Troppi tentativi. Riprova più tardi';
+lib\features\auth\presentation\providers\auth_providers.dart,223,Errore di connessione. Controlla la tua connessione internet,UI_VISIBLE,return 'Errore di connessione. Controlla la tua connessione internet';
+lib\features\auth\presentation\providers\auth_providers.dart,225,Si è verificato un errore. Riprova,UI_VISIBLE,return 'Si è verificato un errore. Riprova';
+lib\features\material\presentation\pages\create_material_page.dart,22,consumable,KEYS,ing _selectedType = 'consumable';
+lib\features\material\presentation\pages\create_material_page.dart,23,pieces,KEYS,ctedUnitOfMeasure = 'pieces';
+lib\features\material\presentation\pages\create_material_page.dart,24,general,KEYS,_selectedCategory = 'general';
+lib\features\material\presentation\pages\create_material_page.dart,50,reference,KEYS,//   'reference': _referenceControll
+lib\features\material\presentation\pages\create_material_page.dart,51,name,KEYS,//   'name': _nameController.te
+lib\features\material\presentation\pages\create_material_page.dart,52,description,KEYS,//   'description': _descriptionContro
+lib\features\material\presentation\pages\create_material_page.dart,53,type,KEYS,"//   'type': _selectedType,"
+lib\features\material\presentation\pages\create_material_page.dart,54,unitOfMeasure,INTERNAL,//   'unitOfMeasure': _selectedUnitOfMea
+lib\features\material\presentation\pages\create_material_page.dart,55,category,KEYS,"//   'category': _selectedCategory,"
+lib\features\material\presentation\pages\create_material_page.dart,56,minimumStock,INTERNAL,//   'minimumStock': double.tryParse(_m
+lib\features\material\presentation\pages\create_material_page.dart,57,maximumStock,INTERNAL,//   'maximumStock': double.tryParse(_m
+lib\features\material\presentation\pages\create_material_page.dart,58,reorderPoint,INTERNAL,//   'reorderPoint': double.tryParse(_r
+lib\features\material\presentation\pages\create_material_page.dart,59,unitPrice,INTERNAL,//   'unitPrice': double.tryParse(_u
+lib\features\material\presentation\pages\create_material_page.dart,60,currentStock,INTERNAL,"//   'currentStock': 0,"
+lib\features\material\presentation\pages\create_material_page.dart,137,consumable,KEYS,"value: 'consumable',"
+lib\features\material\presentation\pages\create_material_page.dart,140,durable,KEYS,"value: 'durable',"
+lib\features\material\presentation\pages\create_material_page.dart,143,service,KEYS,"value: 'service',"
+lib\features\material\presentation\pages\create_material_page.dart,156,pieces,KEYS,"value: 'pieces',"
+lib\features\material\presentation\pages\create_material_page.dart,159,kg,KEYS,"value: 'kg',"
+lib\features\material\presentation\pages\create_material_page.dart,162,liters,KEYS,"value: 'liters',"
+lib\features\material\presentation\pages\create_material_page.dart,165,meters,KEYS,"value: 'meters',"
+lib\features\material\presentation\pages\material_list_page.dart,35,/materials/create,KEYS,(context).pushNamed('/materials/create');
+lib\features\material\presentation\pages\material_list_page.dart,97,out_of_stock,KEYS,alert.alertType == 'out_of_stock'
+lib\features\material\presentation\pages\material_list_page.dart,153,${l10n.statusLabel}: $stockStatus,UI_VISIBLE,"'${l10n.statusLabel}: $stockStatus',"
+lib\features\material\presentation\pages\material_list_page.dart,170,/materials/${material.id},KEYS,(context).pushNamed('/materials/${material.id}');
+lib\features\material\presentation\providers\material_providers.dart,9,Failed to load materials,UI_VISIBLE,"=> throw Exception('Failed to load materials'),"
+lib\features\material\presentation\providers\material_providers.dart,20,Failed to load materials by type,UI_VISIBLE,"=> throw Exception('Failed to load materials by type'),"
+lib\features\material\presentation\providers\material_providers.dart,31,Failed to load materials by category,UI_VISIBLE,"=> throw Exception('Failed to load materials by category'),"
+lib\features\material\presentation\providers\material_providers.dart,41,Failed to load low stock materials,UI_VISIBLE,"=> throw Exception('Failed to load low stock materials'),"
+lib\features\material\presentation\providers\material_providers.dart,51,Failed to load out of stock materials,UI_VISIBLE,"=> throw Exception('Failed to load out of stock materials'),"
+lib\features\material\presentation\providers\material_providers.dart,61,Failed to load materials needing reorder,UI_VISIBLE,"=> throw Exception('Failed to load materials needing reorder'),"
+lib\features\material\presentation\providers\material_providers.dart,71,Failed to load material statistics,UI_VISIBLE,"=> throw Exception('Failed to load material statistics'),"
+lib\features\material\presentation\providers\material_providers.dart,81,Failed to load stock alerts,UI_VISIBLE,"=> throw Exception('Failed to load stock alerts'),"
+lib\features\material\presentation\widgets\material_stats_widget.dart,47,\$${stats.totalInventoryValue.toStringAsFixed(2)},UI_VISIBLE,"'\$${stats.totalInventoryValue.toStringAsFixed(2)}'),"
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,28,of_orders,KEYS,tring _collection = 'of_orders';
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,54,Order not found,UI_VISIBLE,throw Exception('Order not found');
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,58,status,KEYS,rrentStatus = data?['status'] as String? ?? '';
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,60,statusUpdateHistory,INTERNAL,y = List.from(data?['statusUpdateHistory'] ?? []);
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,62,from,KEYS,"'from': currentStatus,"
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,63,to,KEYS,'to': OfOrderMapper.stat
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,64,timestamp,KEYS,'timestamp': FieldValue.serverT
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,65,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,69,status,KEYS,'status': OfOrderMapper.stat
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,70,updatedAt,INTERNAL,'updatedAt': FieldValue.serverT
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,71,updatedBy,INTERNAL,"'updatedBy': updatedBy,"
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,72,statusUpdateHistory,INTERNAL,"'statusUpdateHistory': history,"
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,82,$_collection/$id/quality_checklist,KEYS,irestore.collection('$_collection/$id/quality_checklist');
+lib\features\of_order\data\datasources\of_order_firestore_datasource.dart,83,checked,KEYS,"checklistCol.where('checked', isEqualTo: false)."
+lib\features\of_order\data\models\of_order_dto.dart,5,of_order_dto.freezed.dart,UI_VISIBLE,part 'of_order_dto.freezed.dart';
+lib\features\of_order\data\models\of_order_dto.dart,6,of_order_dto.g.dart,UI_VISIBLE,part 'of_order_dto.g.dart';
+lib\features\of_order\data\models\of_order_dto.dart,29,id,KEYS,Dto.fromJson(data..['id'] = doc.id);
+lib\features\of_order\data\models\of_order_dto.dart,32,id,KEYS,=> toJson()..remove('id');
+lib\features\of_order\data\models\of_order_dto.dart,65,materialReception,INTERNAL,case 'materialReception':
+lib\features\of_order\data\models\of_order_dto.dart,67,materialPreparation,INTERNAL,case 'materialPreparation':
+lib\features\of_order\data\models\of_order_dto.dart,69,productionCoupe,INTERNAL,case 'productionCoupe':
+lib\features\of_order\data\models\of_order_dto.dart,71,productionProd,INTERNAL,case 'productionProd':
+lib\features\of_order\data\models\of_order_dto.dart,73,productionTest,INTERNAL,case 'productionTest':
+lib\features\of_order\data\models\of_order_dto.dart,75,control,KEYS,case 'control':
+lib\features\of_order\data\models\of_order_dto.dart,77,shipment,KEYS,case 'shipment':
+lib\features\of_order\data\models\of_order_dto.dart,79,completed,KEYS,case 'completed':
+lib\features\of_order\data\models\of_order_dto.dart,81,cancelled,KEYS,case 'cancelled':
+lib\features\of_order\data\models\of_order_dto.dart,84,Invalid OfOrderStatus: $value,UI_VISIBLE,throw ArgumentError('Invalid OfOrderStatus: $value');
+lib\features\of_order\data\models\of_order_dto.dart,91,materialReception,INTERNAL,return 'materialReception';
+lib\features\of_order\data\models\of_order_dto.dart,93,materialPreparation,INTERNAL,return 'materialPreparation';
+lib\features\of_order\data\models\of_order_dto.dart,95,productionCoupe,INTERNAL,return 'productionCoupe';
+lib\features\of_order\data\models\of_order_dto.dart,97,productionProd,INTERNAL,return 'productionProd';
+lib\features\of_order\data\models\of_order_dto.dart,99,productionTest,INTERNAL,return 'productionTest';
+lib\features\of_order\data\models\of_order_dto.dart,101,control,KEYS,return 'control';
+lib\features\of_order\data\models\of_order_dto.dart,103,shipment,KEYS,return 'shipment';
+lib\features\of_order\data\models\of_order_dto.dart,105,completed,KEYS,return 'completed';
+lib\features\of_order\data\models\of_order_dto.dart,107,cancelled,KEYS,return 'cancelled';
+lib\features\of_order\data\models\of_order_dto.freezed.dart,6,of_order_dto.dart,UI_VISIBLE,part of 'of_order_dto.dart';
+lib\features\of_order\data\models\of_order_dto.freezed.dart,15,It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED],UI_VISIBLE,'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED]');
+lib\features\of_order\data\models\of_order_dto.freezed.dart,71,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\of_order\data\models\of_order_dto.freezed.dart,149,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\of_order\data\models\of_order_dto.freezed.dart,234,"OfOrderDto(id: $id, client: $client, product: $product, quantity: $quantity, status: $status, createdAt: $createdAt, description: $description, updatedAt: $updatedAt)",UI_VISIBLE,"return 'OfOrderDto(id: $id, client: $client, product: $product, quantity: $quantity, status: $status, createdAt: $createdAt, description: $description, updatedAt: $updatedAt)';"
+lib\features\of_order\data\models\of_order_dto.freezed.dart,265,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\of_order\data\models\of_order_dto.g.dart,3,of_order_dto.dart,UI_VISIBLE,part of 'of_order_dto.dart';
+lib\features\of_order\data\models\of_order_dto.g.dart,11,id,KEYS,"id: json['id'] as String,"
+lib\features\of_order\data\models\of_order_dto.g.dart,12,client,KEYS,"client: json['client'] as String,"
+lib\features\of_order\data\models\of_order_dto.g.dart,13,product,KEYS,"product: json['product'] as String,"
+lib\features\of_order\data\models\of_order_dto.g.dart,14,quantity,KEYS,"quantity: (json['quantity'] as num).toInt(),"
+lib\features\of_order\data\models\of_order_dto.g.dart,15,status,KEYS,"status: json['status'] as String,"
+lib\features\of_order\data\models\of_order_dto.g.dart,16,createdAt,INTERNAL,"DateTime.parse(json['createdAt'] as String),"
+lib\features\of_order\data\models\of_order_dto.g.dart,17,description,KEYS,"description: json['description'] as String?,"
+lib\features\of_order\data\models\of_order_dto.g.dart,18,updatedAt,INTERNAL,updatedAt: json['updatedAt'] == null
+lib\features\of_order\data\models\of_order_dto.g.dart,20,updatedAt,INTERNAL,"DateTime.parse(json['updatedAt'] as String),"
+lib\features\of_order\data\models\of_order_dto.g.dart,25,id,KEYS,"'id': instance.id,"
+lib\features\of_order\data\models\of_order_dto.g.dart,26,client,KEYS,"'client': instance.client,"
+lib\features\of_order\data\models\of_order_dto.g.dart,27,product,KEYS,"'product': instance.product,"
+lib\features\of_order\data\models\of_order_dto.g.dart,28,quantity,KEYS,"'quantity': instance.quantity,"
+lib\features\of_order\data\models\of_order_dto.g.dart,29,status,KEYS,"'status': instance.status,"
+lib\features\of_order\data\models\of_order_dto.g.dart,30,createdAt,INTERNAL,'createdAt': instance.createdAt
+lib\features\of_order\data\models\of_order_dto.g.dart,31,description,KEYS,'description': instance.descripti
+lib\features\of_order\data\models\of_order_dto.g.dart,32,updatedAt,INTERNAL,'updatedAt': instance.updatedAt
+lib\features\of_order\domain\entities\of_order.dart,3,of_order.freezed.dart,UI_VISIBLE,part 'of_order.freezed.dart';
+lib\features\of_order\domain\entities\of_order.freezed.dart,6,of_order.dart,UI_VISIBLE,part of 'of_order.dart';
+lib\features\of_order\domain\entities\of_order.freezed.dart,15,It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED],UI_VISIBLE,'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED]');
+lib\features\of_order\domain\entities\of_order.freezed.dart,62,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\of_order\domain\entities\of_order.freezed.dart,139,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\of_order\domain\entities\of_order.freezed.dart,221,"OfOrder(id: $id, client: $client, product: $product, quantity: $quantity, status: $status, createdAt: $createdAt, description: $description, updatedAt: $updatedAt)",UI_VISIBLE,"return 'OfOrder(id: $id, client: $client, product: $product, quantity: $quantity, status: $status, createdAt: $createdAt, description: $description, updatedAt: $updatedAt)';"
+lib\features\of_order\domain\entities\of_order.freezed.dart,251,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\of_order\presentation\pages\create_of_order_page.dart,59,Erreur: ${failure.toString()},UI_VISIBLE,"ckBar(content: Text('Erreur: ${failure.toString()}')),"
+lib\features\of_order\presentation\pages\create_of_order_page.dart,67,Ordre de production créé avec succès!,UI_VISIBLE,"content: Text('Ordre de production créé avec succès!'),"
+lib\features\of_order\presentation\pages\create_of_order_page.dart,78,Erreur inattendue: ${e.toString()},UI_VISIBLE,"ckBar(content: Text('Erreur inattendue: ${e.toString()}')),"
+lib\features\of_order\presentation\pages\of_order_list_page.dart,152,dd/MM/yyyy HH:mm,UI_VISIBLE,DateFormat('dd/MM/yyyy HH:mm')
+lib\features\of_order\presentation\pages\of_order_list_page.dart,166,dd/MM/yyyy HH:mm,UI_VISIBLE,DateFormat('dd/MM/yyyy HH:mm')
+lib\features\of_order\presentation\pages\of_status_update_page.dart,39,Veuillez vous connecter pour effectuer cette action,UI_VISIBLE,ckBar(content: Text('Veuillez vous connecter pour effectuer cette action')));
+lib\features\of_order\presentation\pages\of_status_update_page.dart,40,Veuillez vous connecter,UI_VISIBLE,await _announce('Veuillez vous connecter');
+lib\features\of_order\presentation\pages\of_status_update_page.dart,45,unknown,KEYS,thState.user?.id ?? 'unknown';
+lib\features\of_order\presentation\pages\of_status_update_page.dart,52,Échec de la mise à jour. Réessayez.,UI_VISIBLE,ckBar(content: Text('Échec de la mise à jour. Réessayez.')));
+lib\features\of_order\presentation\pages\of_status_update_page.dart,53,Échec de la mise à jour,UI_VISIBLE,await _announce('Échec de la mise à jour');
+lib\features\of_order\presentation\pages\of_status_update_page.dart,56,Statut mis à jour: ${status.name},UI_VISIBLE,ckBar(content: Text('Statut mis à jour: ${status.name}')));
+lib\features\of_order\presentation\pages\of_status_update_page.dart,57,Statut mis à jour à ${status.name},UI_VISIBLE,await _announce('Statut mis à jour à ${status.name}');
+lib\features\of_order\presentation\pages\of_status_update_page.dart,60,Délai dépassé. Réessayez plus tard.,UI_VISIBLE,ckBar(content: Text('Délai dépassé. Réessayez plus tard.')));
+lib\features\of_order\presentation\pages\of_status_update_page.dart,61,Délai dépassé,UI_VISIBLE,await _announce('Délai dépassé');
+lib\features\of_order\presentation\pages\of_status_update_page.dart,63,Une erreur est survenue,UI_VISIBLE,ckBar(content: Text('Une erreur est survenue')));
+lib\features\of_order\presentation\pages\of_status_update_page.dart,64,Une erreur est survenue,UI_VISIBLE,await _announce('Une erreur est survenue');
+lib\features\of_order\presentation\pages\of_status_update_page.dart,84,OF ${widget.ofId},UI_VISIBLE,"AppBar(title: Text('OF ${widget.ofId}')),"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,92,Opérateur: ${authState.user?.email ?? ,UI_VISIBLE,e.isAuthenticated ? 'Opérateur: ${authState.user?.email ?? 'inconnu'}' : 'Non au
+lib\features\of_order\presentation\pages\of_status_update_page.dart,92,},INTERNAL,r?.email ?? 'inconnu'}' : 'Non authentifié'
+lib\features\of_order\presentation\pages\of_status_update_page.dart,92,Non authentifié,UI_VISIBLE,"il ?? 'inconnu'}' : 'Non authentifié', style: const TextS"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,96,Scanner le QR pour charger l\'OF,UI_VISIBLE,"label: const Text('Scanner le QR pour charger l\'OF'),"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,100,Scanné: $scanned,UI_VISIBLE,ckBar(content: Text('Scanné: $scanned')));
+lib\features\of_order\presentation\pages\of_status_update_page.dart,107,Étape actuelle: ${_currentStatus!.name},UI_VISIBLE,"Text('Étape actuelle: ${_currentStatus!.name}', style: const TextS"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,112,Accuser réception du matériel,UI_VISIBLE,"_statusButton('Accuser réception du matériel', OfOrderStatus.mate"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,114,Marquer préparation,UI_VISIBLE,"_statusButton('Marquer préparation', OfOrderStatus.mate"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,116,Marquer coupe,UI_VISIBLE,"_statusButton('Marquer coupe', OfOrderStatus.prod"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,118,Marquer production,UI_VISIBLE,"_statusButton('Marquer production', OfOrderStatus.prod"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,120,Marquer test,UI_VISIBLE,"_statusButton('Marquer test', OfOrderStatus.prod"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,122,Contrôle,INTERNAL,"_statusButton('Contrôle', OfOrderStatus.cont"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,124,Expédition,INTERNAL,"_statusButton('Expédition', OfOrderStatus.ship"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,126,Terminé,INTERNAL,"_statusButton('Terminé', OfOrderStatus.comp"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,156,Scanner QR,UI_VISIBLE,"r(title: const Text('Scanner QR')),"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,161,Collez/entrez le code QR ici (web fallback),UI_VISIBLE,"const Text('Collez/entrez le code QR ici (web fallback)'),"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,163,Code QR,UI_VISIBLE,"coration(labelText: 'Code QR')),"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,168,Valider,INTERNAL,", child: const Text('Valider'))"
+lib\features\of_order\presentation\pages\of_status_update_page.dart,176,Scanner QR,UI_VISIBLE,"r(title: const Text('Scanner QR')),"
+lib\features\of_order\presentation\providers\of_order_providers.dart,73,Errore nel caricamento degli ordini: ${failure.toString()},UI_VISIBLE,"error: 'Errore nel caricamento degli ordini: ${failure.toString()}',"
+lib\features\of_order\presentation\providers\of_order_providers.dart,93,Errore nella creazione dell\'ordine: ${failure.toString()},UI_VISIBLE,"error: 'Errore nella creazione dell\'ordine: ${failure.toString()}',"
+lib\features\of_order\presentation\providers\of_order_providers.dart,116,Errore nell\'aggiornamento dello stato: ${failure.toString()},UI_VISIBLE,"'Errore nell\'aggiornamento dello stato: ${failure.toString()}',"
+lib\features\pdf\pdf_generator.dart,33,ID: ${model.id},UI_VISIBLE,"pw.Text('ID: ${model.id}'),"
+lib\features\pdf\pdf_generator.dart,52,Field,INTERNAL,"headers: ['Field', 'Value'],"
+lib\features\pdf\pdf_generator.dart,52,Value,INTERNAL,"headers: ['Field', 'Value'],"
+lib\features\pdf\pdf_generator.dart,54,ID,INTERNAL,"['ID', model.id],"
+lib\features\pdf\pdf_generator.dart,55,Date,INTERNAL,"['Date', model.createdAt.to"
+lib\features\pdf\pdf_generator.dart,56,Description,INTERNAL,"['Description', model.description]"
+lib\features\pdf\pdf_generator.dart,68,Images,INTERNAL,"hildren.add(pw.Text('Images', style: pw.TextStyl"
+lib\features\pdf\pdf_preview_page.dart,13,PDF Preview,UI_VISIBLE,"r(title: const Text('PDF Preview')),"
+lib\features\signalement\data\datasources\signalement_firestore_datasource.dart,9,signalements,KEYS,ng collectionPath = 'signalements';
+lib\features\signalement\data\datasources\signalement_firestore_datasource.dart,31,status,KEYS,.update({'status': newStatus});
+lib\features\signalement\data\models\signalement_dto.dart,5,signalement_dto.freezed.dart,UI_VISIBLE,part 'signalement_dto.freezed.dart';
+lib\features\signalement\data\models\signalement_dto.dart,6,signalement_dto.g.dart,UI_VISIBLE,part 'signalement_dto.g.dart';
+lib\features\signalement\data\models\signalement_dto.dart,28,id,KEYS,Dto.fromJson(data..['id'] = doc.id);
+lib\features\signalement\data\models\signalement_dto.dart,31,id,KEYS,=> toJson()..remove('id');
+lib\features\signalement\data\models\signalement_dto.dart,62,qualityIssue,INTERNAL,case 'qualityIssue':
+lib\features\signalement\data\models\signalement_dto.dart,64,machineFailure,INTERNAL,case 'machineFailure':
+lib\features\signalement\data\models\signalement_dto.dart,66,materialIssue,INTERNAL,case 'materialIssue':
+lib\features\signalement\data\models\signalement_dto.dart,68,processIssue,INTERNAL,case 'processIssue':
+lib\features\signalement\data\models\signalement_dto.dart,70,other,KEYS,case 'other':
+lib\features\signalement\data\models\signalement_dto.dart,73,Invalid SignalementType: $value,UI_VISIBLE,throw ArgumentError('Invalid SignalementType: $value');
+lib\features\signalement\data\models\signalement_dto.dart,80,qualityIssue,INTERNAL,return 'qualityIssue';
+lib\features\signalement\data\models\signalement_dto.dart,82,machineFailure,INTERNAL,return 'machineFailure';
+lib\features\signalement\data\models\signalement_dto.dart,84,materialIssue,INTERNAL,return 'materialIssue';
+lib\features\signalement\data\models\signalement_dto.dart,86,processIssue,INTERNAL,return 'processIssue';
+lib\features\signalement\data\models\signalement_dto.dart,88,other,KEYS,return 'other';
+lib\features\signalement\data\models\signalement_dto.dart,94,low,KEYS,case 'low':
+lib\features\signalement\data\models\signalement_dto.dart,96,medium,KEYS,case 'medium':
+lib\features\signalement\data\models\signalement_dto.dart,98,high,KEYS,case 'high':
+lib\features\signalement\data\models\signalement_dto.dart,100,critical,KEYS,case 'critical':
+lib\features\signalement\data\models\signalement_dto.dart,103,Invalid SignalementSeverity: $value,UI_VISIBLE,throw ArgumentError('Invalid SignalementSeverity: $value');
+lib\features\signalement\data\models\signalement_dto.dart,110,low,KEYS,return 'low';
+lib\features\signalement\data\models\signalement_dto.dart,112,medium,KEYS,return 'medium';
+lib\features\signalement\data\models\signalement_dto.dart,114,high,KEYS,return 'high';
+lib\features\signalement\data\models\signalement_dto.dart,116,critical,KEYS,return 'critical';
+lib\features\signalement\data\models\signalement_dto.dart,122,open,KEYS,case 'open':
+lib\features\signalement\data\models\signalement_dto.dart,124,inProgress,INTERNAL,case 'inProgress':
+lib\features\signalement\data\models\signalement_dto.dart,126,resolved,KEYS,case 'resolved':
+lib\features\signalement\data\models\signalement_dto.dart,128,closed,KEYS,case 'closed':
+lib\features\signalement\data\models\signalement_dto.dart,131,Invalid SignalementStatus: $value,UI_VISIBLE,throw ArgumentError('Invalid SignalementStatus: $value');
+lib\features\signalement\data\models\signalement_dto.dart,138,open,KEYS,return 'open';
+lib\features\signalement\data\models\signalement_dto.dart,140,inProgress,INTERNAL,return 'inProgress';
+lib\features\signalement\data\models\signalement_dto.dart,142,resolved,KEYS,return 'resolved';
+lib\features\signalement\data\models\signalement_dto.dart,144,closed,KEYS,return 'closed';
+lib\features\signalement\data\models\signalement_dto.freezed.dart,6,signalement_dto.dart,UI_VISIBLE,part of 'signalement_dto.dart';
+lib\features\signalement\data\models\signalement_dto.freezed.dart,15,It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED],UI_VISIBLE,'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED]');
+lib\features\signalement\data\models\signalement_dto.freezed.dart,69,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\signalement\data\models\signalement_dto.freezed.dart,141,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\signalement\data\models\signalement_dto.freezed.dart,218,"SignalementDto(id: $id, type: $type, severity: $severity, createdBy: $createdBy, createdAt: $createdAt, description: $description, status: $status)",UI_VISIBLE,"return 'SignalementDto(id: $id, type: $type, severity: $severity, createdBy: $createdBy, createdAt: $createdAt, description: $description, status: $status)';"
+lib\features\signalement\data\models\signalement_dto.freezed.dart,248,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\signalement\data\models\signalement_dto.g.dart,3,signalement_dto.dart,UI_VISIBLE,part of 'signalement_dto.dart';
+lib\features\signalement\data\models\signalement_dto.g.dart,11,id,KEYS,"id: json['id'] as String,"
+lib\features\signalement\data\models\signalement_dto.g.dart,12,type,KEYS,"type: json['type'] as String,"
+lib\features\signalement\data\models\signalement_dto.g.dart,13,severity,KEYS,"severity: json['severity'] as String,"
+lib\features\signalement\data\models\signalement_dto.g.dart,14,createdBy,INTERNAL,"createdBy: json['createdBy'] as String,"
+lib\features\signalement\data\models\signalement_dto.g.dart,15,createdAt,INTERNAL,"DateTime.parse(json['createdAt'] as String),"
+lib\features\signalement\data\models\signalement_dto.g.dart,16,description,KEYS,"description: json['description'] as String,"
+lib\features\signalement\data\models\signalement_dto.g.dart,17,status,KEYS,"status: json['status'] as String,"
+lib\features\signalement\data\models\signalement_dto.g.dart,23,id,KEYS,"'id': instance.id,"
+lib\features\signalement\data\models\signalement_dto.g.dart,24,type,KEYS,"'type': instance.type,"
+lib\features\signalement\data\models\signalement_dto.g.dart,25,severity,KEYS,"'severity': instance.severity,"
+lib\features\signalement\data\models\signalement_dto.g.dart,26,createdBy,INTERNAL,'createdBy': instance.createdBy
+lib\features\signalement\data\models\signalement_dto.g.dart,27,createdAt,INTERNAL,'createdAt': instance.createdAt
+lib\features\signalement\data\models\signalement_dto.g.dart,28,description,KEYS,'description': instance.descripti
+lib\features\signalement\data\models\signalement_dto.g.dart,29,status,KEYS,"'status': instance.status,"
+lib\features\signalement\domain\entities\signalement.dart,3,signalement.freezed.dart,UI_VISIBLE,part 'signalement.freezed.dart';
+lib\features\signalement\domain\entities\signalement.freezed.dart,6,signalement.dart,UI_VISIBLE,part of 'signalement.dart';
+lib\features\signalement\domain\entities\signalement.freezed.dart,15,It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED],UI_VISIBLE,'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#[REDACTED]');
+lib\features\signalement\domain\entities\signalement.freezed.dart,62,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\signalement\domain\entities\signalement.freezed.dart,134,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\signalement\domain\entities\signalement.freezed.dart,208,"Signalement(id: $id, type: $type, severity: $severity, createdBy: $createdBy, createdAt: $createdAt, description: $description, status: $status)",UI_VISIBLE,"return 'Signalement(id: $id, type: $type, severity: $severity, createdBy: $createdBy, createdAt: $createdAt, description: $description, status: $status)';"
+lib\features\signalement\domain\entities\signalement.freezed.dart,237,vm:prefer-inline,UI_VISIBLE,@pragma('vm:prefer-inline')
+lib\features\signalement\presentation\pages\signalement_detail_page.dart,24,Type: ${signalement.type.name},UI_VISIBLE,"Text('Type: ${signalement.type.name}'),"
+lib\features\signalement\presentation\pages\signalement_detail_page.dart,25,Severity: ${signalement.severity.name},UI_VISIBLE,"Text('Severity: ${signalement.severity.name}'),"
+lib\features\signalement\presentation\pages\signalement_detail_page.dart,26,Status: ${signalement.status.name},UI_VISIBLE,"Text('Status: ${signalement.status.name}'),"
+lib\features\signalement\presentation\pages\signalement_detail_page.dart,34,Signalement ${signalement.id},UI_VISIBLE,"title: 'Signalement ${signalement.id}',"
+lib\features\signalement\presentation\pages\signalement_list_page.dart,27,${l10n.systemStatusLabel}: ${signalement.status.name},UI_VISIBLE,"Text('${l10n.systemStatusLabel}: ${signalement.status.name}'),"
+lib\features\signalement\presentation\providers\signalement_providers.dart,20,Failed to load signalements,UI_VISIBLE,"=> throw Exception('Failed to load signalements'),"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,72,12/15,KEYS,"ction_label, value: '12/15', trend: '+8%', colo"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,72,+8%,INTERNAL,"ue: '12/15', trend: '+8%', color: const Color"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,73,3,KEYS,"lerts_label, value: '3', trend: '-2', color"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,73,-2,KEYS,"value: '3', trend: '-2', color: const Color"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,74,18/20,KEYS,"ators_label, value: '18/20', trend: '90%', colo"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,74,90%,INTERNAL,"ue: '18/20', trend: '90%', color: const Color"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,75,2.4h,UI_VISIBLE,"_time_label, value: '2.4h', trend: '-12%', col"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,75,-12%,UI_VISIBLE,"lue: '2.4h', trend: '-12%', color: const Color"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,87,status,KEYS,= null && _filters!['status'] == s.name;
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,93,status,KEYS,"> _filters = sel ? {'status': s.name} : null),"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,128,${l10n.genericError(e.toString())},UI_VISIBLE,ckBar(content: Text('${l10n.genericError(e.toString())}')));
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,143,${l10n.errorLabel}: $e,UI_VISIBLE,"Center(child: Text('${l10n.errorLabel}: $e')),"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,204,zone,KEYS,".isEmpty) ? null : {'zone': v}),"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,212,of_orders,KEYS,instance.collection('of_orders').doc(item.docId);
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,213,priority,KEYS,"batch.update(ref, {'priority': i, 'priorityUpdate"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,213,priorityUpdatedAt,INTERNAL,"ef, {'priority': i, 'priorityUpdatedAt': FieldValue.serverT"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,248,Erreur: $e,UI_VISIBLE,"Center(child: Text('Erreur: $e')),"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,258,of_orders,KEYS,instance.collection('of_orders').doc(orderWithMeta.
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,258,assignedOperator,INTERNAL,"Meta.docId).update({'assignedOperator': selected, 'assigne"
+lib\features\supervisor\presentation\pages\supervisor_dashboard_page.dart,258,assignedAt,INTERNAL,"perator': selected, 'assignedAt': FieldValue.serverT"
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,19,of_orders,KEYS,irestore.collection('of_orders');
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,22,status,KEYS,al status = filters['status'] as String?;
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,23,zone,KEYS,inal zone = filters['zone'] as String?;
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,24,priority,KEYS,priority = filters['priority'] as int?;
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,25,status,KEYS,"query = query.where('status', isEqualTo: status)"
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,26,zone,KEYS,"query = query.where('zone', isEqualTo: zone);"
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,27,priority,KEYS,"query = query.where('priority', isEqualTo: priorit"
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,30,priority,KEYS,"ery = query.orderBy('priority', descending: false)"
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,34,status,KEYS,al statusStr = data['status'] as String? ?? '';
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,38,client,KEYS,"client: data['client'] as String? ?? '',"
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,39,product,KEYS,"product: data['product'] as String? ?? '',"
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,40,quantity,KEYS,quantity: (data['quantity'] as num?)?.toInt()
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,42,createdAt,INTERNAL,createdAt: (data['createdAt'] as Timestamp?)?.to
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,43,description,KEYS,"description: data['description'] as String?,"
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,44,updatedAt,INTERNAL,updatedAt: (data['updatedAt'] as Timestamp?)?.to
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,49,priority,KEYS,priority: (data['priority'] as num?)?.toInt()
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,50,assignedOperator,INTERNAL,"ignedOperator: data['assignedOperator'] as String?,"
+lib\features\supervisor\presentation\providers\active_orders_provider.dart,51,zone,KEYS,"zone: data['zone'] as String?,"
+lib\features\supervisor\presentation\providers\operators_provider.dart,6,operators,KEYS,instance.collection('operators').snapshots();
+lib\features\supervisor\presentation\providers\operators_provider.dart,7,name,KEYS,".id, name: d.data()['name'] as String? ?? d.id"
+lib\features\supervisor\presentation\providers\operators_provider.dart,7,skills,KEYS,ring>.from(d.data()['skills'] ?? []))).toList())
+lib\features\supervisor\presentation\providers\operators_provider.dart,11,of_orders,KEYS,instance.collection('of_orders').where('assignedOpe
+lib\features\supervisor\presentation\providers\operators_provider.dart,11,assignedOperator,INTERNAL,"('of_orders').where('assignedOperator', isEqualTo: operato"
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,50,${order.client} — ${order.product},UI_VISIBLE,"label: '${order.client} — ${order.product}',"
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,83,Temps restant,UI_VISIBLE,"(Icons.access_time, 'Temps restant', _formatTimeRemaini"
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,84,Opérateur,INTERNAL,"etric(Icons.person, 'Opérateur', assignedOperator ?"
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,84,Non assigné,UI_VISIBLE,"assignedOperator ?? 'Non assigné'),"
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,85,Zone,INTERNAL,"(Icons.location_on, 'Zone', zone ?? '—', color"
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,85,—,INTERNAL,"on, 'Zone', zone ?? '—', color: _zoneColor("
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,104,P$priority,INTERNAL,"child: Text('P$priority', style: const TextS"
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,131,Percage,INTERNAL,if (z == 'Percage') return const Color
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,132,Coupe,INTERNAL,if (z == 'Coupe') return const Color
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,137,??h,UI_VISIBLE,(dt == null) return '??h';
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,139,Retard,INTERNAL,.isNegative) return 'Retard';
+lib\features\supervisor\presentation\widgets\enhanced_of_card.dart,142,${hours}h ${mins}m,UI_VISIBLE,return '${hours}h ${mins}m';
+lib\features\supervisor\presentation\widgets\kpi_card.dart,24,$label: $value${trend != null ? ,UI_VISIBLE,"label: '$label: $value${trend != null ? ', tendance $trend' :"
+lib\features\supervisor\presentation\widgets\kpi_card.dart,24, : ,UI_VISIBLE,"? ', tendance $trend' : ''}',"
+lib\features\supervisor\presentation\widgets\kpi_card.dart,24,},INTERNAL,"tendance $trend' : ''}',"
+lib\l10n\app_localizations.dart,21,l10n/app_localizations.dart,KEYS,/// import 'l10n/app_localizations.dart';
+lib\l10n\app_localizations.dart,97,en,KEYS,"Locale('en'),"
+lib\l10n\app_localizations.dart,98,fr,KEYS,Locale('fr')
+lib\l10n\app_localizations.dart,104,CareLog MVP,UI_VISIBLE,/// **'CareLog MVP'**
+lib\l10n\app_localizations.dart,110,Welcome to CareLog MVP. This application is in initial setup.,UI_VISIBLE,/// **'Welcome to CareLog MVP. This application is in initial setup.'**
+lib\l10n\app_localizations.dart,116,CareLog - Dashboard,UI_VISIBLE,/// **'CareLog - Dashboard'**
+lib\l10n\app_localizations.dart,122,Login,INTERNAL,/// **'Login'**
+lib\l10n\app_localizations.dart,128,Please enter your email,UI_VISIBLE,/// **'Please enter your email'**
+lib\l10n\app_localizations.dart,134,Please enter a valid email,UI_VISIBLE,/// **'Please enter a valid email'**
+lib\l10n\app_localizations.dart,140,Please enter your password,UI_VISIBLE,/// **'Please enter your password'**
+lib\l10n\app_localizations.dart,146,Password must be at least 6 characters,UI_VISIBLE,/// **'Password must be at least 6 characters'**
+lib\l10n\app_localizations.dart,152,Sign in,UI_VISIBLE,/// **'Sign in'**
+lib\l10n\app_localizations.dart,158,Sign up,UI_VISIBLE,/// **'Sign up'**
+lib\l10n\app_localizations.dart,164,Forgot password?,UI_VISIBLE,/// **'Forgot password?'**
+lib\l10n\app_localizations.dart,170,Email sent!,UI_VISIBLE,/// **'Email sent!'**
+lib\l10n\app_localizations.dart,176,We have sent an email to {email} with instructions to reset your password.,UI_VISIBLE,/// **'We have sent an email to {email} with instructions to reset your password.'**
+lib\l10n\app_localizations.dart,182,Also check your spam folder if you don\'t see the email.,UI_VISIBLE,/// **'Also check your spam folder if you don\'t see the email.'**
+lib\l10n\app_localizations.dart,188,Reset Password,UI_VISIBLE,/// **'Reset Password'**
+lib\l10n\app_localizations.dart,194,Enter your email address and we\'ll send you instructions to reset your password.,UI_VISIBLE,/// **'Enter your email address and we\'ll send you instructions to reset your password.'**
+lib\l10n\app_localizations.dart,200,Send reset email,UI_VISIBLE,/// **'Send reset email'**
+lib\l10n\app_localizations.dart,206,Back to login,UI_VISIBLE,/// **'Back to login'**
+lib\l10n\app_localizations.dart,212,Send again,UI_VISIBLE,/// **'Send again'**
+lib\l10n\app_localizations.dart,218,Access Denied,UI_VISIBLE,/// **'Access Denied'**
+lib\l10n\app_localizations.dart,224,Admin access only,UI_VISIBLE,/// **'Admin access only'**
+lib\l10n\app_localizations.dart,230,Admin Dashboard,UI_VISIBLE,/// **'Admin Dashboard'**
+lib\l10n\app_localizations.dart,236,Read-only mode updated successfully,UI_VISIBLE,/// **'Read-only mode updated successfully'**
+lib\l10n\app_localizations.dart,242,✅ Simulation activated: Budget exceeded - System in read-only,UI_VISIBLE,/// **'✅ Simulation activated: Budget exceeded - System in read-only'**
+lib\l10n\app_localizations.dart,248,❌ Simulation error: {error},UI_VISIBLE,/// **'❌ Simulation error: {error}'**
+lib\l10n\app_localizations.dart,254,✅ Simulation deactivated: System restored,UI_VISIBLE,/// **'✅ Simulation deactivated: System restored'**
+lib\l10n\app_localizations.dart,260,❌ Reset error: {error},UI_VISIBLE,/// **'❌ Reset error: {error}'**
+lib\l10n\app_localizations.dart,266,✅ Forced maintenance mode activated,UI_VISIBLE,/// **'✅ Forced maintenance mode activated'**
+lib\l10n\app_localizations.dart,272,❌ Error: {error},UI_VISIBLE,/// **'❌ Error: {error}'**
+lib\l10n\app_localizations.dart,278,System Operational,UI_VISIBLE,/// **'System Operational'**
+lib\l10n\app_localizations.dart,284,System in Maintenance Mode,UI_VISIBLE,/// **'System in Maintenance Mode'**
+lib\l10n\app_localizations.dart,290,Message: {message},UI_VISIBLE,/// **'Message: {message}'**
+lib\l10n\app_localizations.dart,296,Last updated: {datetime},UI_VISIBLE,/// **'Last updated: {datetime}'**
+lib\l10n\app_localizations.dart,302,Admin Controls,UI_VISIBLE,/// **'Admin Controls'**
+lib\l10n\app_localizations.dart,308,Toggle Read-Only,UI_VISIBLE,/// **'Toggle Read-Only'**
+lib\l10n\app_localizations.dart,314,Note: This button calls the Cloud Function to reset read-only mode.,UI_VISIBLE,/// **'Note: This button calls the Cloud Function to reset read-only mode.'**
+lib\l10n\app_localizations.dart,320,System Statistics,UI_VISIBLE,/// **'System Statistics'**
+lib\l10n\app_localizations.dart,326,System Status,UI_VISIBLE,/// **'System Status'**
+lib\l10n\app_localizations.dart,332,Mode,INTERNAL,/// **'Mode'**
+lib\l10n\app_localizations.dart,338,Simulation Budget,UI_VISIBLE,/// **'Simulation Budget'**
+lib\l10n\app_localizations.dart,344,Forced Maintenance,UI_VISIBLE,/// **'Forced Maintenance'**
+lib\l10n\app_localizations.dart,350,Normal,INTERNAL,/// **'Normal'**
+lib\l10n\app_localizations.dart,356,Cloud Functions,UI_VISIBLE,/// **'Cloud Functions'**
+lib\l10n\app_localizations.dart,362,To Deploy,UI_VISIBLE,/// **'To Deploy'**
+lib\l10n\app_localizations.dart,368,Budget Alert,UI_VISIBLE,/// **'Budget Alert'**
+lib\l10n\app_localizations.dart,374,Simulation Active,UI_VISIBLE,/// **'Simulation Active'**
+lib\l10n\app_localizations.dart,380,Security Rules,UI_VISIBLE,/// **'Security Rules'**
+lib\l10n\app_localizations.dart,386,Active,INTERNAL,/// **'Active'**
+lib\l10n\app_localizations.dart,392,Budget Simulation & Testing,UI_VISIBLE,/// **'Budget Simulation & Testing'**
+lib\l10n\app_localizations.dart,398,Tools to test the cost control system without spending real money:,UI_VISIBLE,/// **'Tools to test the cost control system without spending real money:'**
+lib\l10n\app_localizations.dart,404,"1. Click \""Simulate Budget Exceeded\"" to enable read-only\n2. Check home buttons are disabled\n3. Check that maintenance banner appears\n4. Use \""Restore Normal\"" to go back to normal state",UI_VISIBLE,"/// **'1. Click \""Simulate Budget Exceeded\"" to enable read-only\n2. Check home buttons are disabled\n3. Check that maintenance banner appears\n4. Use \""Restore Normal\"" to go back to normal state'**"
+lib\l10n\app_localizations.dart,410,Simulation Controls:,UI_VISIBLE,/// **'Simulation Controls:'**
+lib\l10n\app_localizations.dart,416,Simulate Budget\nExceeded,UI_VISIBLE,/// **'Simulate Budget\nExceeded'**
+lib\l10n\app_localizations.dart,422,Restore\nNormal,INTERNAL,/// **'Restore\nNormal'**
+lib\l10n\app_localizations.dart,428,Force Maintenance Mode,UI_VISIBLE,/// **'Force Maintenance Mode'**
+lib\l10n\app_localizations.dart,434,System in Simulation,UI_VISIBLE,/// **'System in Simulation'**
+lib\l10n\app_localizations.dart,440,System Normal,UI_VISIBLE,/// **'System Normal'**
+lib\l10n\app_localizations.dart,446,Simulate Budget Exceeded,UI_VISIBLE,/// **'Simulate Budget Exceeded'**
+lib\l10n\app_localizations.dart,452,Restore Normal,UI_VISIBLE,/// **'Restore Normal'**
+lib\l10n\app_localizations.dart,458,System is in maintenance mode. Operation not available.,UI_VISIBLE,/// **'System is in maintenance mode. Operation not available.'**
+lib\l10n\app_localizations.dart,464,Error: {error},UI_VISIBLE,/// **'Error: {error}'**
+lib\l10n\app_localizations.dart,470,Reports,INTERNAL,/// **'Reports'**
+lib\l10n\app_localizations.dart,476,Error: User not logged in,UI_VISIBLE,/// **'Error: User not logged in'**
+lib\l10n\app_localizations.dart,482,Error: {error},UI_VISIBLE,/// **'Error: {error}'**
+lib\l10n\app_localizations.dart,488,Report created successfully!,UI_VISIBLE,/// **'Report created successfully!'**
+lib\l10n\app_localizations.dart,494,Unexpected error: {error},UI_VISIBLE,/// **'Unexpected error: {error}'**
+lib\l10n\app_localizations.dart,500,New Report,UI_VISIBLE,/// **'New Report'**
+lib\l10n\app_localizations.dart,506,Report Type,UI_VISIBLE,/// **'Report Type'**
+lib\l10n\app_localizations.dart,512,Severity,INTERNAL,/// **'Severity'**
+lib\l10n\app_localizations.dart,518,Description,INTERNAL,/// **'Description'**
+lib\l10n\app_localizations.dart,524,Describe the issue in detail...,UI_VISIBLE,/// **'Describe the issue in detail...'**
+lib\l10n\app_localizations.dart,530,Description is required,UI_VISIBLE,/// **'Description is required'**
+lib\l10n\app_localizations.dart,536,Description must be at least 10 characters,UI_VISIBLE,/// **'Description must be at least 10 characters'**
+lib\l10n\app_localizations.dart,542,Creating...,UI_VISIBLE,/// **'Creating...'**
+lib\l10n\app_localizations.dart,548,Create Report,UI_VISIBLE,/// **'Create Report'**
+lib\l10n\app_localizations.dart,554,Quality issue,UI_VISIBLE,/// **'Quality issue'**
+lib\l10n\app_localizations.dart,560,Machine failure,UI_VISIBLE,/// **'Machine failure'**
+lib\l10n\app_localizations.dart,566,Material issue,UI_VISIBLE,/// **'Material issue'**
+lib\l10n\app_localizations.dart,572,Process issue,UI_VISIBLE,/// **'Process issue'**
+lib\l10n\app_localizations.dart,578,Other,INTERNAL,/// **'Other'**
+lib\l10n\app_localizations.dart,584,Low,INTERNAL,/// **'Low'**
+lib\l10n\app_localizations.dart,590,Medium,INTERNAL,/// **'Medium'**
+lib\l10n\app_localizations.dart,596,High,INTERNAL,/// **'High'**
+lib\l10n\app_localizations.dart,602,Critical,INTERNAL,/// **'Critical'**
+lib\l10n\app_localizations.dart,608,New Production Order,UI_VISIBLE,/// **'New Production Order'**
+lib\l10n\app_localizations.dart,614,Client,INTERNAL,/// **'Client'**
+lib\l10n\app_localizations.dart,620,Client name...,UI_VISIBLE,/// **'Client name...'**
+lib\l10n\app_localizations.dart,626,Client is required,UI_VISIBLE,/// **'Client is required'**
+lib\l10n\app_localizations.dart,632,Client name must be at least 2 characters,UI_VISIBLE,/// **'Client name must be at least 2 characters'**
+lib\l10n\app_localizations.dart,638,Product,INTERNAL,/// **'Product'**
+lib\l10n\app_localizations.dart,644,Product name...,UI_VISIBLE,/// **'Product name...'**
+lib\l10n\app_localizations.dart,650,Product is required,UI_VISIBLE,/// **'Product is required'**
+lib\l10n\app_localizations.dart,656,Product name must be at least 2 characters,UI_VISIBLE,/// **'Product name must be at least 2 characters'**
+lib\l10n\app_localizations.dart,662,Quantity,INTERNAL,/// **'Quantity'**
+lib\l10n\app_localizations.dart,668,Quantity to produce...,UI_VISIBLE,/// **'Quantity to produce...'**
+lib\l10n\app_localizations.dart,674,Quantity is required,UI_VISIBLE,/// **'Quantity is required'**
+lib\l10n\app_localizations.dart,680,Quantity must be a positive number,UI_VISIBLE,/// **'Quantity must be a positive number'**
+lib\l10n\app_localizations.dart,686,"Quantity cannot exceed 10,000",UI_VISIBLE,"/// **'Quantity cannot exceed 10,000'**"
+lib\l10n\app_localizations.dart,692,Description (Optional),UI_VISIBLE,/// **'Description (Optional)'**
+lib\l10n\app_localizations.dart,698,Enter material description,UI_VISIBLE,/// **'Enter material description'**
+lib\l10n\app_localizations.dart,704,Creating...,UI_VISIBLE,/// **'Creating...'**
+lib\l10n\app_localizations.dart,710,Create Production Order,UI_VISIBLE,/// **'Create Production Order'**
+lib\l10n\app_localizations.dart,716,Production order created successfully!,UI_VISIBLE,/// **'Production order created successfully!'**
+lib\l10n\app_localizations.dart,722,Logout,INTERNAL,/// **'Logout'**
+lib\l10n\app_localizations.dart,728,Admin Dashboard,UI_VISIBLE,/// **'Admin Dashboard'**
+lib\l10n\app_localizations.dart,734,Quick Actions,UI_VISIBLE,/// **'Quick Actions'**
+lib\l10n\app_localizations.dart,740,Materials,INTERNAL,/// **'Materials'**
+lib\l10n\app_localizations.dart,746,Reports,INTERNAL,/// **'Reports'**
+lib\l10n\app_localizations.dart,752,Production Orders,UI_VISIBLE,/// **'Production Orders'**
+lib\l10n\app_localizations.dart,758,Admin Dashboard,UI_VISIBLE,/// **'Admin Dashboard'**
+lib\l10n\app_localizations.dart,764,Material Statistics,UI_VISIBLE,/// **'Material Statistics'**
+lib\l10n\app_localizations.dart,770,Materials,INTERNAL,/// **'Materials'**
+lib\l10n\app_localizations.dart,776,All,INTERNAL,/// **'All'**
+lib\l10n\app_localizations.dart,782,Low Stock,UI_VISIBLE,/// **'Low Stock'**
+lib\l10n\app_localizations.dart,788,Out of Stock,UI_VISIBLE,/// **'Out of Stock'**
+lib\l10n\app_localizations.dart,794,Alerts,INTERNAL,/// **'Alerts'**
+lib\l10n\app_localizations.dart,800,Create Material,UI_VISIBLE,/// **'Create Material'**
+lib\l10n\app_localizations.dart,806,Material created successfully,UI_VISIBLE,/// **'Material created successfully'**
+lib\l10n\app_localizations.dart,812,Error creating material: {error},UI_VISIBLE,/// **'Error creating material: {error}'**
+lib\l10n\app_localizations.dart,818,Reference,INTERNAL,/// **'Reference'**
+lib\l10n\app_localizations.dart,824,Enter material reference,UI_VISIBLE,/// **'Enter material reference'**
+lib\l10n\app_localizations.dart,830,Name,INTERNAL,/// **'Name'**
+lib\l10n\app_localizations.dart,836,Enter material name,UI_VISIBLE,/// **'Enter material name'**
+lib\l10n\app_localizations.dart,842,Description,INTERNAL,/// **'Description'**
+lib\l10n\app_localizations.dart,848,Type,INTERNAL,/// **'Type'**
+lib\l10n\app_localizations.dart,854,Unit of Measure,UI_VISIBLE,/// **'Unit of Measure'**
+lib\l10n\app_localizations.dart,860,Minimum Stock,UI_VISIBLE,/// **'Minimum Stock'**
+lib\l10n\app_localizations.dart,866,Enter minimum stock level,UI_VISIBLE,/// **'Enter minimum stock level'**
+lib\l10n\app_localizations.dart,872,Maximum Stock,UI_VISIBLE,/// **'Maximum Stock'**
+lib\l10n\app_localizations.dart,878,Enter maximum stock level,UI_VISIBLE,/// **'Enter maximum stock level'**
+lib\l10n\app_localizations.dart,884,Reorder Point,UI_VISIBLE,/// **'Reorder Point'**
+lib\l10n\app_localizations.dart,890,Enter reorder point,UI_VISIBLE,/// **'Enter reorder point'**
+lib\l10n\app_localizations.dart,896,Unit Price,UI_VISIBLE,/// **'Unit Price'**
+lib\l10n\app_localizations.dart,902,Enter unit price,UI_VISIBLE,/// **'Enter unit price'**
+lib\l10n\app_localizations.dart,908,Create Material,UI_VISIBLE,/// **'Create Material'**
+lib\l10n\app_localizations.dart,914,Out of Stock,UI_VISIBLE,/// **'Out of Stock'**
+lib\l10n\app_localizations.dart,920,Low Stock,UI_VISIBLE,/// **'Low Stock'**
+lib\l10n\app_localizations.dart,926,In Stock,UI_VISIBLE,/// **'In Stock'**
+lib\l10n\app_localizations.dart,932,Status,INTERNAL,/// **'Status'**
+lib\l10n\app_localizations.dart,938,Reference: {ref},UI_VISIBLE,/// **'Reference: {ref}'**
+lib\l10n\app_localizations.dart,944,Stock: {stock} {uom},UI_VISIBLE,/// **'Stock: {stock} {uom}'**
+lib\l10n\app_localizations.dart,950,{type},INTERNAL,/// **'{type}'**
+lib\l10n\app_localizations.dart,956,{current}/{maximum},KEYS,/// **'{current}/{maximum}'**
+lib\l10n\app_localizations.dart,962,Total Materials,UI_VISIBLE,/// **'Total Materials'**
+lib\l10n\app_localizations.dart,968,Active Materials,UI_VISIBLE,/// **'Active Materials'**
+lib\l10n\app_localizations.dart,974,In Stock,UI_VISIBLE,/// **'In Stock'**
+lib\l10n\app_localizations.dart,980,Low Stock,UI_VISIBLE,/// **'Low Stock'**
+lib\l10n\app_localizations.dart,986,Out of Stock,UI_VISIBLE,/// **'Out of Stock'**
+lib\l10n\app_localizations.dart,992,Expired,INTERNAL,/// **'Expired'**
+lib\l10n\app_localizations.dart,998,Expiring Soon,UI_VISIBLE,/// **'Expiring Soon'**
+lib\l10n\app_localizations.dart,1004,Total Value,UI_VISIBLE,/// **'Total Value'**
+lib\l10n\app_localizations.dart,1010,Login error,UI_VISIBLE,/// **'Login error'**
+lib\l10n\app_localizations.dart,1016,Login error: {error},UI_VISIBLE,/// **'Login error: {error}'**
+lib\l10n\app_localizations.dart,1022,Sign up error,UI_VISIBLE,/// **'Sign up error'**
+lib\l10n\app_localizations.dart,1028,Sign up error: {error},UI_VISIBLE,/// **'Sign up error: {error}'**
+lib\l10n\app_localizations.dart,1034,Consumable,INTERNAL,/// **'Consumable'**
+lib\l10n\app_localizations.dart,1040,Durable,INTERNAL,/// **'Durable'**
+lib\l10n\app_localizations.dart,1046,Service,INTERNAL,/// **'Service'**
+lib\l10n\app_localizations.dart,1052,Pieces,INTERNAL,/// **'Pieces'**
+lib\l10n\app_localizations.dart,1058,Kilograms,INTERNAL,/// **'Kilograms'**
+lib\l10n\app_localizations.dart,1064,Liters,INTERNAL,/// **'Liters'**
+lib\l10n\app_localizations.dart,1070,Meters,INTERNAL,/// **'Meters'**
+lib\l10n\app_localizations.dart,1076,Production Orders,UI_VISIBLE,/// **'Production Orders'**
+lib\l10n\app_localizations.dart,1082,Retry,INTERNAL,/// **'Retry'**
+lib\l10n\app_localizations.dart,1088,No production orders found,UI_VISIBLE,/// **'No production orders found'**
+lib\l10n\app_localizations.dart,1094,Order #{id},UI_VISIBLE,/// **'Order #{id}'**
+lib\l10n\app_localizations.dart,1100,Created: {datetime},UI_VISIBLE,/// **'Created: {datetime}'**
+lib\l10n\app_localizations.dart,1106,Updated: {datetime},UI_VISIBLE,/// **'Updated: {datetime}'**
+lib\l10n\app_localizations.dart,1112,Material {id},UI_VISIBLE,/// **'Material {id}'**
+lib\l10n\app_localizations.dart,1118,Material Detail Page - Coming Soon,UI_VISIBLE,/// **'Material Detail Page - Coming Soon'**
+lib\l10n\app_localizations.dart,1124,Order # {id},UI_VISIBLE,/// **'Order # {id}'**
+lib\l10n\app_localizations.dart,1130,Client: {client},UI_VISIBLE,/// **'Client: {client}'**
+lib\l10n\app_localizations.dart,1136,Product: {product},UI_VISIBLE,/// **'Product: {product}'**
+lib\l10n\app_localizations.dart,1142,Quantity: {quantity},UI_VISIBLE,/// **'Quantity: {quantity}'**
+lib\l10n\app_localizations.dart,1148,Description: {description},UI_VISIBLE,/// **'Description: {description}'**
+lib\l10n\app_localizations.dart,1154,Created: {datetime},UI_VISIBLE,/// **'Created: {datetime}'**
+lib\l10n\app_localizations.dart,1160,Updated: {datetime},UI_VISIBLE,/// **'Updated: {datetime}'**
+lib\l10n\app_localizations.dart,1166,Unknown,INTERNAL,/// **'Unknown'**
+lib\l10n\app_localizations.dart,1172,Material Reception,UI_VISIBLE,/// **'Material Reception'**
+lib\l10n\app_localizations.dart,1178,Material Preparation,UI_VISIBLE,/// **'Material Preparation'**
+lib\l10n\app_localizations.dart,1184,Production - Coupe,UI_VISIBLE,/// **'Production - Coupe'**
+lib\l10n\app_localizations.dart,1190,Production - Prod,UI_VISIBLE,/// **'Production - Prod'**
+lib\l10n\app_localizations.dart,1196,Production - Test,UI_VISIBLE,/// **'Production - Test'**
+lib\l10n\app_localizations.dart,1202,Control,INTERNAL,/// **'Control'**
+lib\l10n\app_localizations.dart,1208,Shipment,INTERNAL,/// **'Shipment'**
+lib\l10n\app_localizations.dart,1214,Completed,INTERNAL,/// **'Completed'**
+lib\l10n\app_localizations.dart,1220,Cancelled,INTERNAL,/// **'Cancelled'**
+lib\l10n\app_localizations.dart,1226,Esporta PDF,UI_VISIBLE,/// **'Esporta PDF'**
+lib\l10n\app_localizations.dart,1232,Supervisor Dashboard,UI_VISIBLE,/// **'Supervisor Dashboard'**
+lib\l10n\app_localizations.dart,1238,Production,INTERNAL,/// **'Production'**
+lib\l10n\app_localizations.dart,1244,Alerts,INTERNAL,/// **'Alerts'**
+lib\l10n\app_localizations.dart,1250,Operators,INTERNAL,/// **'Operators'**
+lib\l10n\app_localizations.dart,1256,Avg Time,UI_VISIBLE,/// **'Avg Time'**
+lib\l10n\app_localizations.dart,1262,Reset,INTERNAL,/// **'Reset'**
+lib\l10n\app_localizations.dart,1268,No active OF,UI_VISIBLE,/// **'No active OF'**
+lib\l10n\app_localizations.dart,1274,Supervisor and admin access only,UI_VISIBLE,/// **'Supervisor and admin access only'**
+lib\l10n\app_localizations.dart,1280,Priorities updated,UI_VISIBLE,/// **'Priorities updated'**
+lib\l10n\app_localizations.dart,1286,Assign an operator for zone: {zone},UI_VISIBLE,/// **'Assign an operator for zone: {zone}'**
+lib\l10n\app_localizations.dart,1292,Calculating...,UI_VISIBLE,/// **'Calculating...'**
+lib\l10n\app_localizations.dart,1298,Zone,INTERNAL,/// **'Zone'**
+lib\l10n\app_localizations.dart,1304,Workload: {w},UI_VISIBLE,/// **'Workload: {w}'**
+lib\l10n\app_localizations.dart,1310,Error,INTERNAL,/// **'Error'**
+lib\l10n\app_localizations.dart,1325,en,KEYS,"<String>['en', 'fr'].contains(loc"
+lib\l10n\app_localizations.dart,1325,fr,KEYS,"<String>['en', 'fr'].contains(locale.la"
+lib\l10n\app_localizations.dart,1334,en,KEYS,case 'en':
+lib\l10n\app_localizations.dart,1336,fr,KEYS,case 'fr':
+lib\l10n\app_localizations.dart,1341,"AppLocalizations.delegate failed to load unsupported locale ""$locale"". This is likely ",UI_VISIBLE,"'AppLocalizations.delegate failed to load unsupported locale ""$locale"". This is likely '"
+lib\l10n\app_localizations.dart,1342,an issue with the localizations generation tool. Please file an issue ,UI_VISIBLE,'an issue with the localizations generation tool. Please file an issue '
+lib\l10n\app_localizations.dart,1343,on GitHub with a reproducible sample app and the gen-l10n configuration ,UI_VISIBLE,'on GitHub with a reproducible sample app and the gen-l10n configuration '
+lib\l10n\app_localizations.dart,1344,that was used.,UI_VISIBLE,'that was used.');
+lib\l10n\app_localizations_en.dart,9,en,KEYS,En([String locale = 'en']) : super(locale);
+lib\l10n\app_localizations_en.dart,12,CareLog MVP,UI_VISIBLE,ing get appTitle => 'CareLog MVP';
+lib\l10n\app_localizations_en.dart,16,Welcome to CareLog MVP. This application is in initial setup.,UI_VISIBLE,'Welcome to CareLog MVP. This application is in initial setup.';
+lib\l10n\app_localizations_en.dart,19,CareLog - Dashboard,UI_VISIBLE,et homeDashboard => 'CareLog - Dashboard';
+lib\l10n\app_localizations_en.dart,22,Login,INTERNAL,g get loginTitle => 'Login';
+lib\l10n\app_localizations_en.dart,25,Please enter your email,UI_VISIBLE,g get enterEmail => 'Please enter your email';
+lib\l10n\app_localizations_en.dart,28,Please enter a valid email,UI_VISIBLE,enterValidEmail => 'Please enter a valid email';
+lib\l10n\app_localizations_en.dart,31,Please enter your password,UI_VISIBLE,et enterPassword => 'Please enter your password';
+lib\l10n\app_localizations_en.dart,34,Password must be at least 6 characters,UI_VISIBLE,passwordMinChars => 'Password must be at least 6 characters';
+lib\l10n\app_localizations_en.dart,37,Sign in,UI_VISIBLE,tring get signIn => 'Sign in';
+lib\l10n\app_localizations_en.dart,40,Sign up,UI_VISIBLE,tring get signUp => 'Sign up';
+lib\l10n\app_localizations_en.dart,43,Forgot password?,UI_VISIBLE,t forgotPassword => 'Forgot password?';
+lib\l10n\app_localizations_en.dart,46,Email sent!,UI_VISIBLE,etEmailSentTitle => 'Email sent!';
+lib\l10n\app_localizations_en.dart,50,We have sent an email to $email with instructions to reset your password.,UI_VISIBLE,return 'We have sent an email to $email with instructions to reset your password.';
+lib\l10n\app_localizations_en.dart,55,Also check your spam folder if you don\'t see the email.,UI_VISIBLE,'Also check your spam folder if you don\'t see the email.';
+lib\l10n\app_localizations_en.dart,58,Reset Password,UI_VISIBLE,setPasswordTitle => 'Reset Password';
+lib\l10n\app_localizations_en.dart,62,Enter your email address and we\'ll send you instructions to reset your password.,UI_VISIBLE,'Enter your email address and we\'ll send you instructions to reset your password.';
+lib\l10n\app_localizations_en.dart,65,Send reset email,UI_VISIBLE,t sendResetEmail => 'Send reset email';
+lib\l10n\app_localizations_en.dart,68,Back to login,UI_VISIBLE,get backToLogin => 'Back to login';
+lib\l10n\app_localizations_en.dart,71,Send again,UI_VISIBLE,ng get sendAgain => 'Send again';
+lib\l10n\app_localizations_en.dart,74,Access Denied,UI_VISIBLE,ccessDeniedTitle => 'Access Denied';
+lib\l10n\app_localizations_en.dart,77,Admin access only,UI_VISIBLE,essDeniedMessage => 'Admin access only';
+lib\l10n\app_localizations_en.dart,80,Admin Dashboard,UI_VISIBLE,inDashboardTitle => 'Admin Dashboard';
+lib\l10n\app_localizations_en.dart,83,Read-only mode updated successfully,UI_VISIBLE,lyUpdatedSuccess => 'Read-only mode updated successfully';
+lib\l10n\app_localizations_en.dart,87,✅ Simulation activated: Budget exceeded - System in read-only,UI_VISIBLE,'✅ Simulation activated: Budget exceeded - System in read-only';
+lib\l10n\app_localizations_en.dart,91,❌ Simulation error: $error,UI_VISIBLE,return '❌ Simulation error: $error';
+lib\l10n\app_localizations_en.dart,96,✅ Simulation deactivated: System restored,UI_VISIBLE,'✅ Simulation deactivated: System restored';
+lib\l10n\app_localizations_en.dart,100,❌ Reset error: $error,UI_VISIBLE,return '❌ Reset error: $error';
+lib\l10n\app_localizations_en.dart,104,✅ Forced maintenance mode activated,UI_VISIBLE,intenanceSuccess => '✅ Forced maintenance mode activated';
+lib\l10n\app_localizations_en.dart,108,❌ Error: $error,UI_VISIBLE,return '❌ Error: $error';
+lib\l10n\app_localizations_en.dart,112,System Operational,UI_VISIBLE,stemStatusNormal => 'System Operational';
+lib\l10n\app_localizations_en.dart,115,System in Maintenance Mode,UI_VISIBLE,tatusMaintenance => 'System in Maintenance Mode';
+lib\l10n\app_localizations_en.dart,119,Message: $message,UI_VISIBLE,return 'Message: $message';
+lib\l10n\app_localizations_en.dart,124,Last updated: $datetime,UI_VISIBLE,return 'Last updated: $datetime';
+lib\l10n\app_localizations_en.dart,128,Admin Controls,UI_VISIBLE,minControlsTitle => 'Admin Controls';
+lib\l10n\app_localizations_en.dart,131,Toggle Read-Only,UI_VISIBLE,oggleButtonLabel => 'Toggle Read-Only';
+lib\l10n\app_localizations_en.dart,135,Note: This button calls the Cloud Function to reset read-only mode.,UI_VISIBLE,'Note: This button calls the Cloud Function to reset read-only mode.';
+lib\l10n\app_localizations_en.dart,138,System Statistics,UI_VISIBLE,systemStatsTitle => 'System Statistics';
+lib\l10n\app_localizations_en.dart,141,System Status,UI_VISIBLE,ystemStatusLabel => 'System Status';
+lib\l10n\app_localizations_en.dart,144,Mode,INTERNAL,ng get modeLabel => 'Mode';
+lib\l10n\app_localizations_en.dart,147,Simulation Budget,UI_VISIBLE,t simulatedLabel => 'Simulation Budget';
+lib\l10n\app_localizations_en.dart,150,Forced Maintenance,UI_VISIBLE,get forcedLabel => 'Forced Maintenance';
+lib\l10n\app_localizations_en.dart,153,Normal,INTERNAL,get normalLabel => 'Normal';
+lib\l10n\app_localizations_en.dart,156,Cloud Functions,UI_VISIBLE,udFunctionsLabel => 'Cloud Functions';
+lib\l10n\app_localizations_en.dart,159,To Deploy,UI_VISIBLE,FunctionsPending => 'To Deploy';
+lib\l10n\app_localizations_en.dart,162,Budget Alert,UI_VISIBLE,budgetAlertLabel => 'Budget Alert';
+lib\l10n\app_localizations_en.dart,165,Simulation Active,UI_VISIBLE,SimulationActive => 'Simulation Active';
+lib\l10n\app_localizations_en.dart,168,Security Rules,UI_VISIBLE,curityRulesLabel => 'Security Rules';
+lib\l10n\app_localizations_en.dart,171,Active,INTERNAL,urityRulesActive => 'Active';
+lib\l10n\app_localizations_en.dart,174,Budget Simulation & Testing,UI_VISIBLE,et testingHeader => 'Budget Simulation & Testing';
+lib\l10n\app_localizations_en.dart,178,Tools to test the cost control system without spending real money:,UI_VISIBLE,'Tools to test the cost control system without spending real money:';
+lib\l10n\app_localizations_en.dart,182,"1. Click \""Simulate Budget Exceeded\"" to enable read-only\n2. Check home buttons are disabled\n3. Check that maintenance banner appears\n4. Use \""Restore Normal\"" to go back to normal state",UI_VISIBLE,"'1. Click \""Simulate Budget Exceeded\"" to enable read-only\n2. Check home buttons are disabled\n3. Check that maintenance banner appears\n4. Use \""Restore Normal\"" to go back to normal state';"
+lib\l10n\app_localizations_en.dart,185,Simulation Controls:,UI_VISIBLE,ionControlsLabel => 'Simulation Controls:';
+lib\l10n\app_localizations_en.dart,188,Simulate Budget\nExceeded,UI_VISIBLE,ulateButtonLabel => 'Simulate Budget\nExceeded';
+lib\l10n\app_localizations_en.dart,191,Restore\nNormal,INTERNAL,storeButtonLabel => 'Restore\nNormal';
+lib\l10n\app_localizations_en.dart,194,Force Maintenance Mode,UI_VISIBLE,aintenanceButton => 'Force Maintenance Mode';
+lib\l10n\app_localizations_en.dart,197,System in Simulation,UI_VISIBLE,stemInSimulation => 'System in Simulation';
+lib\l10n\app_localizations_en.dart,200,System Normal,UI_VISIBLE,get systemNormal => 'System Normal';
+lib\l10n\app_localizations_en.dart,203,Simulate Budget Exceeded,UI_VISIBLE,ulateButtonShort => 'Simulate Budget Exceeded';
+lib\l10n\app_localizations_en.dart,206,Restore Normal,UI_VISIBLE,storeButtonShort => 'Restore Normal';
+lib\l10n\app_localizations_en.dart,210,System is in maintenance mode. Operation not available.,UI_VISIBLE,'System is in maintenance mode. Operation not available.';
+lib\l10n\app_localizations_en.dart,214,Error: $error,UI_VISIBLE,return 'Error: $error';
+lib\l10n\app_localizations_en.dart,218,Reports,INTERNAL,alementListTitle => 'Reports';
+lib\l10n\app_localizations_en.dart,221,Error: User not logged in,UI_VISIBLE,ementNotLoggedIn => 'Error: User not logged in';
+lib\l10n\app_localizations_en.dart,225,Error: $error,UI_VISIBLE,return 'Error: $error';
+lib\l10n\app_localizations_en.dart,229,Report created successfully!,UI_VISIBLE,ntCreatedSuccess => 'Report created successfully!';
+lib\l10n\app_localizations_en.dart,233,Unexpected error: $error,UI_VISIBLE,return 'Unexpected error: $error';
+lib\l10n\app_localizations_en.dart,237,New Report,UI_VISIBLE,ementCreateTitle => 'New Report';
+lib\l10n\app_localizations_en.dart,240,Report Type,UI_VISIBLE,alementTypeLabel => 'Report Type';
+lib\l10n\app_localizations_en.dart,243,Severity,INTERNAL,entSeverityLabel => 'Severity';
+lib\l10n\app_localizations_en.dart,246,Description,INTERNAL,DescriptionLabel => 'Description';
+lib\l10n\app_localizations_en.dart,249,Describe the issue in detail...,UI_VISIBLE,tDescriptionHint => 'Describe the issue in detail...';
+lib\l10n\app_localizations_en.dart,252,Description is required,UI_VISIBLE,criptionRequired => 'Description is required';
+lib\l10n\app_localizations_en.dart,256,Description must be at least 10 characters,UI_VISIBLE,'Description must be at least 10 characters';
+lib\l10n\app_localizations_en.dart,259,Creating...,UI_VISIBLE,nalementCreating => 'Creating...';
+lib\l10n\app_localizations_en.dart,262,Create Report,UI_VISIBLE,mentCreateButton => 'Create Report';
+lib\l10n\app_localizations_en.dart,265,Quality issue,UI_VISIBLE,ype_qualityIssue => 'Quality issue';
+lib\l10n\app_localizations_en.dart,268,Machine failure,UI_VISIBLE,e_machineFailure => 'Machine failure';
+lib\l10n\app_localizations_en.dart,271,Material issue,UI_VISIBLE,pe_materialIssue => 'Material issue';
+lib\l10n\app_localizations_en.dart,274,Process issue,UI_VISIBLE,ype_processIssue => 'Process issue';
+lib\l10n\app_localizations_en.dart,277,Other,INTERNAL,lementType_other => 'Other';
+lib\l10n\app_localizations_en.dart,280,Low,INTERNAL,get severity_low => 'Low';
+lib\l10n\app_localizations_en.dart,283,Medium,INTERNAL,severity_medium => 'Medium';
+lib\l10n\app_localizations_en.dart,286,High,INTERNAL,et severity_high => 'High';
+lib\l10n\app_localizations_en.dart,289,Critical,INTERNAL,everity_critical => 'Critical';
+lib\l10n\app_localizations_en.dart,292,New Production Order,UI_VISIBLE,OrderCreateTitle => 'New Production Order';
+lib\l10n\app_localizations_en.dart,295,Client,INTERNAL,get clientLabel => 'Client';
+lib\l10n\app_localizations_en.dart,298,Client name...,UI_VISIBLE,g get clientHint => 'Client name...';
+lib\l10n\app_localizations_en.dart,301,Client is required,UI_VISIBLE,t clientRequired => 'Client is required';
+lib\l10n\app_localizations_en.dart,304,Client name must be at least 2 characters,UI_VISIBLE,clientMinLength => 'Client name must be at least 2 characters';
+lib\l10n\app_localizations_en.dart,307,Product,INTERNAL,get productLabel => 'Product';
+lib\l10n\app_localizations_en.dart,310,Product name...,UI_VISIBLE,get productHint => 'Product name...';
+lib\l10n\app_localizations_en.dart,313,Product is required,UI_VISIBLE,productRequired => 'Product is required';
+lib\l10n\app_localizations_en.dart,316,Product name must be at least 2 characters,UI_VISIBLE,productMinLength => 'Product name must be at least 2 characters';
+lib\l10n\app_localizations_en.dart,319,Quantity,INTERNAL,et quantityLabel => 'Quantity';
+lib\l10n\app_localizations_en.dart,322,Quantity to produce...,UI_VISIBLE,get quantityHint => 'Quantity to produce...';
+lib\l10n\app_localizations_en.dart,325,Quantity is required,UI_VISIBLE,quantityRequired => 'Quantity is required';
+lib\l10n\app_localizations_en.dart,328,Quantity must be a positive number,UI_VISIBLE,quantityPositive => 'Quantity must be a positive number';
+lib\l10n\app_localizations_en.dart,331,"Quantity cannot exceed 10,000",UI_VISIBLE,"get quantityMax => 'Quantity cannot exceed 10,000';"
+lib\l10n\app_localizations_en.dart,334,Description (Optional),UI_VISIBLE,ionOptionalLabel => 'Description (Optional)';
+lib\l10n\app_localizations_en.dart,337,Enter material description,UI_VISIBLE,descriptionHint => 'Enter material description';
+lib\l10n\app_localizations_en.dart,340,Creating...,UI_VISIBLE,ofOrderCreating => 'Creating...';
+lib\l10n\app_localizations_en.dart,343,Create Production Order,UI_VISIBLE,rderCreateButton => 'Create Production Order';
+lib\l10n\app_localizations_en.dart,346,Production order created successfully!,UI_VISIBLE,erCreatedSuccess => 'Production order created successfully!';
+lib\l10n\app_localizations_en.dart,349,Logout,INTERNAL,tring get logout => 'Logout';
+lib\l10n\app_localizations_en.dart,352,Admin Dashboard,UI_VISIBLE,DashboardTooltip => 'Admin Dashboard';
+lib\l10n\app_localizations_en.dart,355,Quick Actions,UI_VISIBLE,uickActionsTitle => 'Quick Actions';
+lib\l10n\app_localizations_en.dart,358,Materials,INTERNAL,t materialsLabel => 'Materials';
+lib\l10n\app_localizations_en.dart,361,Reports,INTERNAL,ignalementsLabel => 'Reports';
+lib\l10n\app_localizations_en.dart,364,Production Orders,UI_VISIBLE,et ofOrdersLabel => 'Production Orders';
+lib\l10n\app_localizations_en.dart,367,Admin Dashboard,UI_VISIBLE,inDashboardShort => 'Admin Dashboard';
+lib\l10n\app_localizations_en.dart,370,Material Statistics,UI_VISIBLE,lStatisticsTitle => 'Material Statistics';
+lib\l10n\app_localizations_en.dart,373,Materials,INTERNAL,terialsPageTitle => 'Materials';
+lib\l10n\app_localizations_en.dart,376,All,INTERNAL,materialsTab_all => 'All';
+lib\l10n\app_localizations_en.dart,379,Low Stock,UI_VISIBLE,ialsTab_lowStock => 'Low Stock';
+lib\l10n\app_localizations_en.dart,382,Out of Stock,UI_VISIBLE,sTab_outOf_stock => 'Out of Stock';
+lib\l10n\app_localizations_en.dart,385,Alerts,INTERNAL,erialsTab_alerts => 'Alerts';
+lib\l10n\app_localizations_en.dart,388,Create Material,UI_VISIBLE,ateMaterialTitle => 'Create Material';
+lib\l10n\app_localizations_en.dart,391,Material created successfully,UI_VISIBLE,Material_success => 'Material created successfully';
+lib\l10n\app_localizations_en.dart,395,Error creating material: $error,UI_VISIBLE,return 'Error creating material: $error';
+lib\l10n\app_localizations_en.dart,399,Reference,INTERNAL,t referenceLabel => 'Reference';
+lib\l10n\app_localizations_en.dart,402,Enter material reference,UI_VISIBLE,et referenceHint => 'Enter material reference';
+lib\l10n\app_localizations_en.dart,405,Name,INTERNAL,ng get nameLabel => 'Name';
+lib\l10n\app_localizations_en.dart,408,Enter material name,UI_VISIBLE,ing get nameHint => 'Enter material name';
+lib\l10n\app_localizations_en.dart,411,Description,INTERNAL,descriptionLabel => 'Description';
+lib\l10n\app_localizations_en.dart,414,Type,INTERNAL,ng get typeLabel => 'Type';
+lib\l10n\app_localizations_en.dart,417,Unit of Measure,UI_VISIBLE,itOfMeasureLabel => 'Unit of Measure';
+lib\l10n\app_localizations_en.dart,420,Minimum Stock,UI_VISIBLE,inimumStockLabel => 'Minimum Stock';
+lib\l10n\app_localizations_en.dart,423,Enter minimum stock level,UI_VISIBLE,minimumStockHint => 'Enter minimum stock level';
+lib\l10n\app_localizations_en.dart,426,Maximum Stock,UI_VISIBLE,aximumStockLabel => 'Maximum Stock';
+lib\l10n\app_localizations_en.dart,429,Enter maximum stock level,UI_VISIBLE,maximumStockHint => 'Enter maximum stock level';
+lib\l10n\app_localizations_en.dart,432,Reorder Point,UI_VISIBLE,eorderPointLabel => 'Reorder Point';
+lib\l10n\app_localizations_en.dart,435,Enter reorder point,UI_VISIBLE,reorderPointHint => 'Enter reorder point';
+lib\l10n\app_localizations_en.dart,438,Unit Price,UI_VISIBLE,t unitPriceLabel => 'Unit Price';
+lib\l10n\app_localizations_en.dart,441,Enter unit price,UI_VISIBLE,et unitPriceHint => 'Enter unit price';
+lib\l10n\app_localizations_en.dart,444,Create Material,UI_VISIBLE,teMaterialButton => 'Create Material';
+lib\l10n\app_localizations_en.dart,447,Out of Stock,UI_VISIBLE,stockStatus_out => 'Out of Stock';
+lib\l10n\app_localizations_en.dart,450,Low Stock,UI_VISIBLE,stockStatus_low => 'Low Stock';
+lib\l10n\app_localizations_en.dart,453,In Stock,UI_VISIBLE,t stockStatus_in => 'In Stock';
+lib\l10n\app_localizations_en.dart,456,Status,INTERNAL,get statusLabel => 'Status';
+lib\l10n\app_localizations_en.dart,460,Reference: $ref,UI_VISIBLE,return 'Reference: $ref';
+lib\l10n\app_localizations_en.dart,465,Stock: $stock $uom,UI_VISIBLE,return 'Stock: $stock $uom';
+lib\l10n\app_localizations_en.dart,470,$type,INTERNAL,return '$type';
+lib\l10n\app_localizations_en.dart,475,$current/$maximum,KEYS,return '$current/$maximum';
+lib\l10n\app_localizations_en.dart,479,Total Materials,UI_VISIBLE,s_totalMaterials => 'Total Materials';
+lib\l10n\app_localizations_en.dart,482,Active Materials,UI_VISIBLE,_activeMaterials => 'Active Materials';
+lib\l10n\app_localizations_en.dart,485,In Stock,UI_VISIBLE,ialStats_inStock => 'In Stock';
+lib\l10n\app_localizations_en.dart,488,Low Stock,UI_VISIBLE,alStats_lowStock => 'Low Stock';
+lib\l10n\app_localizations_en.dart,491,Out of Stock,UI_VISIBLE,Stats_outOfStock => 'Out of Stock';
+lib\l10n\app_localizations_en.dart,494,Expired,INTERNAL,ialStats_expired => 'Expired';
+lib\l10n\app_localizations_en.dart,497,Expiring Soon,UI_VISIBLE,ats_expiringSoon => 'Expiring Soon';
+lib\l10n\app_localizations_en.dart,500,Total Value,UI_VISIBLE,Stats_totalValue => 'Total Value';
+lib\l10n\app_localizations_en.dart,503,Login error,UI_VISIBLE,g get loginError => 'Login error';
+lib\l10n\app_localizations_en.dart,507,Login error: $error,UI_VISIBLE,return 'Login error: $error';
+lib\l10n\app_localizations_en.dart,511,Sign up error,UI_VISIBLE,get signupError => 'Sign up error';
+lib\l10n\app_localizations_en.dart,515,Sign up error: $error,UI_VISIBLE,return 'Sign up error: $error';
+lib\l10n\app_localizations_en.dart,519,Consumable,INTERNAL,type_consumable => 'Consumable';
+lib\l10n\app_localizations_en.dart,522,Durable,INTERNAL,get type_durable => 'Durable';
+lib\l10n\app_localizations_en.dart,525,Service,INTERNAL,get type_service => 'Service';
+lib\l10n\app_localizations_en.dart,528,Pieces,INTERNAL,g get uom_pieces => 'Pieces';
+lib\l10n\app_localizations_en.dart,531,Kilograms,INTERNAL,tring get uom_kg => 'Kilograms';
+lib\l10n\app_localizations_en.dart,534,Liters,INTERNAL,g get uom_liters => 'Liters';
+lib\l10n\app_localizations_en.dart,537,Meters,INTERNAL,g get uom_meters => 'Meters';
+lib\l10n\app_localizations_en.dart,540,Production Orders,UI_VISIBLE,fOrdersPageTitle => 'Production Orders';
+lib\l10n\app_localizations_en.dart,543,Retry,INTERNAL,g get retryLabel => 'Retry';
+lib\l10n\app_localizations_en.dart,546,No production orders found,UI_VISIBLE,noOfOrdersFound => 'No production orders found';
+lib\l10n\app_localizations_en.dart,550,Order #$id,UI_VISIBLE,return 'Order #$id';
+lib\l10n\app_localizations_en.dart,555,Created: $datetime,UI_VISIBLE,return 'Created: $datetime';
+lib\l10n\app_localizations_en.dart,560,Updated: $datetime,UI_VISIBLE,return 'Updated: $datetime';
+lib\l10n\app_localizations_en.dart,565,Material $id,UI_VISIBLE,return 'Material $id';
+lib\l10n\app_localizations_en.dart,569,Material Detail Page - Coming Soon,UI_VISIBLE,DetailComingSoon => 'Material Detail Page - Coming Soon';
+lib\l10n\app_localizations_en.dart,573,Order # $id,UI_VISIBLE,return 'Order # $id';
+lib\l10n\app_localizations_en.dart,578,Client: $client,UI_VISIBLE,return 'Client: $client';
+lib\l10n\app_localizations_en.dart,583,Product: $product,UI_VISIBLE,return 'Product: $product';
+lib\l10n\app_localizations_en.dart,588,Quantity: $quantity,UI_VISIBLE,return 'Quantity: $quantity';
+lib\l10n\app_localizations_en.dart,593,Description: $description,UI_VISIBLE,return 'Description: $description';
+lib\l10n\app_localizations_en.dart,598,Created: $datetime,UI_VISIBLE,return 'Created: $datetime';
+lib\l10n\app_localizations_en.dart,603,Updated: $datetime,UI_VISIBLE,return 'Updated: $datetime';
+lib\l10n\app_localizations_en.dart,607,Unknown,INTERNAL,erStatus_unknown => 'Unknown';
+lib\l10n\app_localizations_en.dart,610,Material Reception,UI_VISIBLE,aterialReception => 'Material Reception';
+lib\l10n\app_localizations_en.dart,613,Material Preparation,UI_VISIBLE,erialPreparation => 'Material Preparation';
+lib\l10n\app_localizations_en.dart,616,Production - Coupe,UI_VISIBLE,_productionCoupe => 'Production - Coupe';
+lib\l10n\app_localizations_en.dart,619,Production - Prod,UI_VISIBLE,s_productionProd => 'Production - Prod';
+lib\l10n\app_localizations_en.dart,622,Production - Test,UI_VISIBLE,s_productionTest => 'Production - Test';
+lib\l10n\app_localizations_en.dart,625,Control,INTERNAL,erStatus_control => 'Control';
+lib\l10n\app_localizations_en.dart,628,Shipment,INTERNAL,rStatus_shipment => 'Shipment';
+lib\l10n\app_localizations_en.dart,631,Completed,INTERNAL,Status_completed => 'Completed';
+lib\l10n\app_localizations_en.dart,634,Cancelled,INTERNAL,Status_cancelled => 'Cancelled';
+lib\l10n\app_localizations_en.dart,637,Esporta PDF,UI_VISIBLE,rtPdfButtonLabel => 'Esporta PDF';
+lib\l10n\app_localizations_en.dart,640,Supervisor Dashboard,UI_VISIBLE,orDashboardTitle => 'Supervisor Dashboard';
+lib\l10n\app_localizations_en.dart,643,Production,INTERNAL,production_label => 'Production';
+lib\l10n\app_localizations_en.dart,646,Alerts,INTERNAL,kpi_alerts_label => 'Alerts';
+lib\l10n\app_localizations_en.dart,649,Operators,INTERNAL,_operators_label => 'Operators';
+lib\l10n\app_localizations_en.dart,652,Avg Time,UI_VISIBLE,i_avg_time_label => 'Avg Time';
+lib\l10n\app_localizations_en.dart,655,Reset,INTERNAL,get filter_reset => 'Reset';
+lib\l10n\app_localizations_en.dart,658,No active OF,UI_VISIBLE,g get noActiveOf => 'No active OF';
+lib\l10n\app_localizations_en.dart,661,Supervisor and admin access only,UI_VISIBLE,DeniedSupervisor => 'Supervisor and admin access only';
+lib\l10n\app_localizations_en.dart,664,Priorities updated,UI_VISIBLE,rioritiesUpdated => 'Priorities updated';
+lib\l10n\app_localizations_en.dart,668,Assign an operator for zone: $zone,UI_VISIBLE,return 'Assign an operator for zone: $zone';
+lib\l10n\app_localizations_en.dart,672,Calculating...,UI_VISIBLE,ialogCalculating => 'Calculating...';
+lib\l10n\app_localizations_en.dart,675,Zone,INTERNAL,ng get zoneLabel => 'Zone';
+lib\l10n\app_localizations_en.dart,679,Workload: $w,UI_VISIBLE,return 'Workload: $w';
+lib\l10n\app_localizations_en.dart,683,Error,INTERNAL,g get errorLabel => 'Error';
+lib\l10n\app_localizations_fr.dart,9,fr,KEYS,Fr([String locale = 'fr']) : super(locale);
+lib\l10n\app_localizations_fr.dart,12,CareLog MVP,UI_VISIBLE,ing get appTitle => 'CareLog MVP';
+lib\l10n\app_localizations_fr.dart,16,Bienvenue dans CareLog MVP. Cette application est en configuration initiale.,UI_VISIBLE,'Bienvenue dans CareLog MVP. Cette application est en configuration initiale.';
+lib\l10n\app_localizations_fr.dart,19,CareLog - Tableau de bord,UI_VISIBLE,et homeDashboard => 'CareLog - Tableau de bord';
+lib\l10n\app_localizations_fr.dart,22,Connexion,INTERNAL,g get loginTitle => 'Connexion';
+lib\l10n\app_localizations_fr.dart,25,Veuillez entrer votre email,UI_VISIBLE,g get enterEmail => 'Veuillez entrer votre email';
+lib\l10n\app_localizations_fr.dart,28,Veuillez entrer un email valide,UI_VISIBLE,enterValidEmail => 'Veuillez entrer un email valide';
+lib\l10n\app_localizations_fr.dart,31,Veuillez entrer votre mot de passe,UI_VISIBLE,et enterPassword => 'Veuillez entrer votre mot de passe';
+lib\l10n\app_localizations_fr.dart,35,Le mot de passe doit contenir au moins 6 caractères,UI_VISIBLE,'Le mot de passe doit contenir au moins 6 caractères';
+lib\l10n\app_localizations_fr.dart,38,Se connecter,UI_VISIBLE,tring get signIn => 'Se connecter';
+lib\l10n\app_localizations_fr.dart,41,S\'inscrire,INTERNAL,tring get signUp => 'S\'inscrire';
+lib\l10n\app_localizations_fr.dart,44,Mot de passe oublié?,UI_VISIBLE,t forgotPassword => 'Mot de passe oublié?';
+lib\l10n\app_localizations_fr.dart,47,Email envoyé!,UI_VISIBLE,etEmailSentTitle => 'Email envoyé!';
+lib\l10n\app_localizations_fr.dart,51,Nous avons envoyé un email à $email avec les instructions pour réinitialiser le mot de passe.,UI_VISIBLE,return 'Nous avons envoyé un email à $email avec les instructions pour réinitialiser le mot de passe.';
+lib\l10n\app_localizations_fr.dart,56,Vérifiez aussi le dossier spam si vous ne voyez pas l\'email.,UI_VISIBLE,'Vérifiez aussi le dossier spam si vous ne voyez pas l\'email.';
+lib\l10n\app_localizations_fr.dart,59,Réinitialiser le mot de passe,UI_VISIBLE,setPasswordTitle => 'Réinitialiser le mot de passe';
+lib\l10n\app_localizations_fr.dart,63,Entrez votre adresse email et nous vous enverrons les instructions pour réinitialiser votre mot de passe.,UI_VISIBLE,'Entrez votre adresse email et nous vous enverrons les instructions pour réinitialiser votre mot de passe.';
+lib\l10n\app_localizations_fr.dart,66,Envoyer l\'email de réinitialisation,UI_VISIBLE,t sendResetEmail => 'Envoyer l\'email de réinitialisation';
+lib\l10n\app_localizations_fr.dart,69,Retour à la connexion,UI_VISIBLE,get backToLogin => 'Retour à la connexion';
+lib\l10n\app_localizations_fr.dart,72,Envoyer à nouveau,UI_VISIBLE,ng get sendAgain => 'Envoyer à nouveau';
+lib\l10n\app_localizations_fr.dart,75,Accès refusé,UI_VISIBLE,ccessDeniedTitle => 'Accès refusé';
+lib\l10n\app_localizations_fr.dart,78,Accès réservé aux administrateurs,UI_VISIBLE,essDeniedMessage => 'Accès réservé aux administrateurs';
+lib\l10n\app_localizations_fr.dart,81,Tableau de bord administrateur,UI_VISIBLE,inDashboardTitle => 'Tableau de bord administrateur';
+lib\l10n\app_localizations_fr.dart,85,Mode lecture seule mis à jour avec succès,UI_VISIBLE,'Mode lecture seule mis à jour avec succès';
+lib\l10n\app_localizations_fr.dart,89,✅ Simulation activée : Budget dépassé - Système en lecture seule,UI_VISIBLE,'✅ Simulation activée : Budget dépassé - Système en lecture seule';
+lib\l10n\app_localizations_fr.dart,93,❌ Erreur de simulation : $error,UI_VISIBLE,return '❌ Erreur de simulation : $error';
+lib\l10n\app_localizations_fr.dart,98,✅ Simulation désactivée : Système restauré,UI_VISIBLE,'✅ Simulation désactivée : Système restauré';
+lib\l10n\app_localizations_fr.dart,102,❌ Erreur de réinitialisation : $error,UI_VISIBLE,return '❌ Erreur de réinitialisation : $error';
+lib\l10n\app_localizations_fr.dart,106,✅ Mode maintenance forcée activé,UI_VISIBLE,intenanceSuccess => '✅ Mode maintenance forcée activé';
+lib\l10n\app_localizations_fr.dart,110,❌ Erreur : $error,UI_VISIBLE,return '❌ Erreur : $error';
+lib\l10n\app_localizations_fr.dart,114,Système opérationnel,UI_VISIBLE,stemStatusNormal => 'Système opérationnel';
+lib\l10n\app_localizations_fr.dart,117,Système en mode maintenance,UI_VISIBLE,tatusMaintenance => 'Système en mode maintenance';
+lib\l10n\app_localizations_fr.dart,121,Message : $message,UI_VISIBLE,return 'Message : $message';
+lib\l10n\app_localizations_fr.dart,126,Dernière mise à jour : $datetime,UI_VISIBLE,return 'Dernière mise à jour : $datetime';
+lib\l10n\app_localizations_fr.dart,130,Contrôles administrateur,UI_VISIBLE,minControlsTitle => 'Contrôles administrateur';
+lib\l10n\app_localizations_fr.dart,133,Basculer lecture seule,UI_VISIBLE,oggleButtonLabel => 'Basculer lecture seule';
+lib\l10n\app_localizations_fr.dart,137,Remarque : Ce bouton appelle la Cloud Function pour réinitialiser le mode lecture seule.,UI_VISIBLE,'Remarque : Ce bouton appelle la Cloud Function pour réinitialiser le mode lecture seule.';
+lib\l10n\app_localizations_fr.dart,140,Statistiques du système,UI_VISIBLE,systemStatsTitle => 'Statistiques du système';
+lib\l10n\app_localizations_fr.dart,143,État du système,UI_VISIBLE,ystemStatusLabel => 'État du système';
+lib\l10n\app_localizations_fr.dart,146,Mode,INTERNAL,ng get modeLabel => 'Mode';
+lib\l10n\app_localizations_fr.dart,149,Simulation de budget,UI_VISIBLE,t simulatedLabel => 'Simulation de budget';
+lib\l10n\app_localizations_fr.dart,152,Maintenance forcée,UI_VISIBLE,get forcedLabel => 'Maintenance forcée';
+lib\l10n\app_localizations_fr.dart,155,Normal,INTERNAL,get normalLabel => 'Normal';
+lib\l10n\app_localizations_fr.dart,158,Cloud Functions,UI_VISIBLE,udFunctionsLabel => 'Cloud Functions';
+lib\l10n\app_localizations_fr.dart,161,À déployer,UI_VISIBLE,FunctionsPending => 'À déployer';
+lib\l10n\app_localizations_fr.dart,164,Alerte budget,UI_VISIBLE,budgetAlertLabel => 'Alerte budget';
+lib\l10n\app_localizations_fr.dart,167,Simulation active,UI_VISIBLE,SimulationActive => 'Simulation active';
+lib\l10n\app_localizations_fr.dart,170,Règles de sécurité,UI_VISIBLE,curityRulesLabel => 'Règles de sécurité';
+lib\l10n\app_localizations_fr.dart,173,Actives,INTERNAL,urityRulesActive => 'Actives';
+lib\l10n\app_localizations_fr.dart,176,Simulation de budget et tests,UI_VISIBLE,et testingHeader => 'Simulation de budget et tests';
+lib\l10n\app_localizations_fr.dart,180,Outils pour tester le système de contrôle des coûts sans dépenser d\'argent réel :,UI_VISIBLE,'Outils pour tester le système de contrôle des coûts sans dépenser d\'argent réel :';
+lib\l10n\app_localizations_fr.dart,184,"1. Cliquez sur \""Simuler Budget Dépassé\"" pour activer la lecture seule\n2. Vérifiez que les boutons de la page d\'accueil sont désactivés\n3. Vérifiez que la bannière de maintenance apparaît\n4. Utilisez \""Restaurer Normal\"" pour revenir à l\'état normal",UI_VISIBLE,"'1. Cliquez sur \""Simuler Budget Dépassé\"" pour activer la lecture seule\n2. Vérifiez que les boutons de la page d\'accueil sont désactivés\n3. Vérifiez que la bannière de maintenance apparaît\n4. Utilisez \""Restaurer Normal\"" pour revenir à l\'état normal';"
+lib\l10n\app_localizations_fr.dart,187,Contrôles de simulation :,UI_VISIBLE,ionControlsLabel => 'Contrôles de simulation :';
+lib\l10n\app_localizations_fr.dart,190,Simuler Budget\nDépassé,UI_VISIBLE,ulateButtonLabel => 'Simuler Budget\nDépassé';
+lib\l10n\app_localizations_fr.dart,193,Restaurer\nNormal,INTERNAL,storeButtonLabel => 'Restaurer\nNormal';
+lib\l10n\app_localizations_fr.dart,196,Forcer le mode maintenance,UI_VISIBLE,aintenanceButton => 'Forcer le mode maintenance';
+lib\l10n\app_localizations_fr.dart,199,Système en simulation,UI_VISIBLE,stemInSimulation => 'Système en simulation';
+lib\l10n\app_localizations_fr.dart,202,Système normal,UI_VISIBLE,get systemNormal => 'Système normal';
+lib\l10n\app_localizations_fr.dart,205,Simuler Budget Dépassé,UI_VISIBLE,ulateButtonShort => 'Simuler Budget Dépassé';
+lib\l10n\app_localizations_fr.dart,208,Restaurer Normal,UI_VISIBLE,storeButtonShort => 'Restaurer Normal';
+lib\l10n\app_localizations_fr.dart,212,Le système est en mode maintenance. Opération non disponible.,UI_VISIBLE,'Le système est en mode maintenance. Opération non disponible.';
+lib\l10n\app_localizations_fr.dart,216,Erreur : $error,UI_VISIBLE,return 'Erreur : $error';
+lib\l10n\app_localizations_fr.dart,220,Signalements,INTERNAL,alementListTitle => 'Signalements';
+lib\l10n\app_localizations_fr.dart,223,Erreur : Utilisateur non connecté,UI_VISIBLE,ementNotLoggedIn => 'Erreur : Utilisateur non connecté';
+lib\l10n\app_localizations_fr.dart,227,Erreur : $error,UI_VISIBLE,return 'Erreur : $error';
+lib\l10n\app_localizations_fr.dart,231,Signalement créé avec succès !,UI_VISIBLE,ntCreatedSuccess => 'Signalement créé avec succès !';
+lib\l10n\app_localizations_fr.dart,235,Erreur inattendue : $error,UI_VISIBLE,return 'Erreur inattendue : $error';
+lib\l10n\app_localizations_fr.dart,239,Nouveau signalement,UI_VISIBLE,ementCreateTitle => 'Nouveau signalement';
+lib\l10n\app_localizations_fr.dart,242,Type de signalement,UI_VISIBLE,alementTypeLabel => 'Type de signalement';
+lib\l10n\app_localizations_fr.dart,245,Sévérité,INTERNAL,entSeverityLabel => 'Sévérité';
+lib\l10n\app_localizations_fr.dart,248,Description,INTERNAL,DescriptionLabel => 'Description';
+lib\l10n\app_localizations_fr.dart,251,Décrivez le problème en détail...,UI_VISIBLE,tDescriptionHint => 'Décrivez le problème en détail...';
+lib\l10n\app_localizations_fr.dart,254,La description est obligatoire,UI_VISIBLE,criptionRequired => 'La description est obligatoire';
+lib\l10n\app_localizations_fr.dart,258,La description doit contenir au moins 10 caractères,UI_VISIBLE,'La description doit contenir au moins 10 caractères';
+lib\l10n\app_localizations_fr.dart,261,Création...,UI_VISIBLE,nalementCreating => 'Création...';
+lib\l10n\app_localizations_fr.dart,264,Créer le signalement,UI_VISIBLE,mentCreateButton => 'Créer le signalement';
+lib\l10n\app_localizations_fr.dart,267,Problème de qualité,UI_VISIBLE,ype_qualityIssue => 'Problème de qualité';
+lib\l10n\app_localizations_fr.dart,270,Panne machine,UI_VISIBLE,e_machineFailure => 'Panne machine';
+lib\l10n\app_localizations_fr.dart,273,Problème matériel,UI_VISIBLE,pe_materialIssue => 'Problème matériel';
+lib\l10n\app_localizations_fr.dart,276,Problème de processus,UI_VISIBLE,ype_processIssue => 'Problème de processus';
+lib\l10n\app_localizations_fr.dart,279,Autre,INTERNAL,lementType_other => 'Autre';
+lib\l10n\app_localizations_fr.dart,282,Faible,INTERNAL,get severity_low => 'Faible';
+lib\l10n\app_localizations_fr.dart,285,Moyen,INTERNAL,severity_medium => 'Moyen';
+lib\l10n\app_localizations_fr.dart,288,Élevé,INTERNAL,et severity_high => 'Élevé';
+lib\l10n\app_localizations_fr.dart,291,Critique,INTERNAL,everity_critical => 'Critique';
+lib\l10n\app_localizations_fr.dart,294,Nouvel ordre de production,UI_VISIBLE,OrderCreateTitle => 'Nouvel ordre de production';
+lib\l10n\app_localizations_fr.dart,297,Client,INTERNAL,get clientLabel => 'Client';
+lib\l10n\app_localizations_fr.dart,300,Nom du client...,UI_VISIBLE,g get clientHint => 'Nom du client...';
+lib\l10n\app_localizations_fr.dart,303,Le client est obligatoire,UI_VISIBLE,t clientRequired => 'Le client est obligatoire';
+lib\l10n\app_localizations_fr.dart,307,Le nom du client doit contenir au moins 2 caractères,UI_VISIBLE,'Le nom du client doit contenir au moins 2 caractères';
+lib\l10n\app_localizations_fr.dart,310,Produit,INTERNAL,get productLabel => 'Produit';
+lib\l10n\app_localizations_fr.dart,313,Nom du produit...,UI_VISIBLE,get productHint => 'Nom du produit...';
+lib\l10n\app_localizations_fr.dart,316,Le produit est obligatoire,UI_VISIBLE,productRequired => 'Le produit est obligatoire';
+lib\l10n\app_localizations_fr.dart,320,Le nom du produit doit contenir au moins 2 caractères,UI_VISIBLE,'Le nom du produit doit contenir au moins 2 caractères';
+lib\l10n\app_localizations_fr.dart,323,Quantité,INTERNAL,et quantityLabel => 'Quantité';
+lib\l10n\app_localizations_fr.dart,326,Quantité à produire...,UI_VISIBLE,get quantityHint => 'Quantité à produire...';
+lib\l10n\app_localizations_fr.dart,329,La quantité est obligatoire,UI_VISIBLE,quantityRequired => 'La quantité est obligatoire';
+lib\l10n\app_localizations_fr.dart,332,La quantité doit être un nombre positif,UI_VISIBLE,quantityPositive => 'La quantité doit être un nombre positif';
+lib\l10n\app_localizations_fr.dart,335,La quantité ne peut pas dépasser 10 000,UI_VISIBLE,get quantityMax => 'La quantité ne peut pas dépasser 10 000';
+lib\l10n\app_localizations_fr.dart,338,Description (Optionnel),UI_VISIBLE,ionOptionalLabel => 'Description (Optionnel)';
+lib\l10n\app_localizations_fr.dart,341,Entrez la description du matériel,UI_VISIBLE,descriptionHint => 'Entrez la description du matériel';
+lib\l10n\app_localizations_fr.dart,344,Création...,UI_VISIBLE,ofOrderCreating => 'Création...';
+lib\l10n\app_localizations_fr.dart,347,Créer ordre de production,UI_VISIBLE,rderCreateButton => 'Créer ordre de production';
+lib\l10n\app_localizations_fr.dart,350,Ordre de production créé avec succès !,UI_VISIBLE,erCreatedSuccess => 'Ordre de production créé avec succès !';
+lib\l10n\app_localizations_fr.dart,353,Se déconnecter,UI_VISIBLE,tring get logout => 'Se déconnecter';
+lib\l10n\app_localizations_fr.dart,356,Tableau de bord administrateur,UI_VISIBLE,DashboardTooltip => 'Tableau de bord administrateur';
+lib\l10n\app_localizations_fr.dart,359,Actions rapides,UI_VISIBLE,uickActionsTitle => 'Actions rapides';
+lib\l10n\app_localizations_fr.dart,362,Matériaux,INTERNAL,t materialsLabel => 'Matériaux';
+lib\l10n\app_localizations_fr.dart,365,Signalements,INTERNAL,ignalementsLabel => 'Signalements';
+lib\l10n\app_localizations_fr.dart,368,Ordres de production,UI_VISIBLE,et ofOrdersLabel => 'Ordres de production';
+lib\l10n\app_localizations_fr.dart,371,Tableau administrateur,UI_VISIBLE,inDashboardShort => 'Tableau administrateur';
+lib\l10n\app_localizations_fr.dart,374,Statistiques Matériels,UI_VISIBLE,lStatisticsTitle => 'Statistiques Matériels';
+lib\l10n\app_localizations_fr.dart,377,Matériaux,INTERNAL,terialsPageTitle => 'Matériaux';
+lib\l10n\app_localizations_fr.dart,380,Tous,INTERNAL,materialsTab_all => 'Tous';
+lib\l10n\app_localizations_fr.dart,383,Stock faible,UI_VISIBLE,ialsTab_lowStock => 'Stock faible';
+lib\l10n\app_localizations_fr.dart,386,Rupture de stock,UI_VISIBLE,sTab_outOf_stock => 'Rupture de stock';
+lib\l10n\app_localizations_fr.dart,389,Alertes,INTERNAL,erialsTab_alerts => 'Alertes';
+lib\l10n\app_localizations_fr.dart,392,Créer Matériel,UI_VISIBLE,ateMaterialTitle => 'Créer Matériel';
+lib\l10n\app_localizations_fr.dart,395,Matériel créé avec succès,UI_VISIBLE,Material_success => 'Matériel créé avec succès';
+lib\l10n\app_localizations_fr.dart,399,Erreur lors de la création du matériel : $error,UI_VISIBLE,return 'Erreur lors de la création du matériel : $error';
+lib\l10n\app_localizations_fr.dart,403,Référence,INTERNAL,t referenceLabel => 'Référence';
+lib\l10n\app_localizations_fr.dart,406,Entrez la référence du matériel,UI_VISIBLE,et referenceHint => 'Entrez la référence du matériel';
+lib\l10n\app_localizations_fr.dart,409,Nom,INTERNAL,ng get nameLabel => 'Nom';
+lib\l10n\app_localizations_fr.dart,412,Entrez le nom du matériel,UI_VISIBLE,ing get nameHint => 'Entrez le nom du matériel';
+lib\l10n\app_localizations_fr.dart,415,Description,INTERNAL,descriptionLabel => 'Description';
+lib\l10n\app_localizations_fr.dart,418,Type,INTERNAL,ng get typeLabel => 'Type';
+lib\l10n\app_localizations_fr.dart,421,Unité de mesure,UI_VISIBLE,itOfMeasureLabel => 'Unité de mesure';
+lib\l10n\app_localizations_fr.dart,424,Stock minimum,UI_VISIBLE,inimumStockLabel => 'Stock minimum';
+lib\l10n\app_localizations_fr.dart,427,Entrez le niveau de stock minimum,UI_VISIBLE,minimumStockHint => 'Entrez le niveau de stock minimum';
+lib\l10n\app_localizations_fr.dart,430,Stock maximum,UI_VISIBLE,aximumStockLabel => 'Stock maximum';
+lib\l10n\app_localizations_fr.dart,433,Entrez le niveau de stock maximum,UI_VISIBLE,maximumStockHint => 'Entrez le niveau de stock maximum';
+lib\l10n\app_localizations_fr.dart,436,Point de réapprovisionnement,UI_VISIBLE,eorderPointLabel => 'Point de réapprovisionnement';
+lib\l10n\app_localizations_fr.dart,439,Entrez le point de réapprovisionnement,UI_VISIBLE,reorderPointHint => 'Entrez le point de réapprovisionnement';
+lib\l10n\app_localizations_fr.dart,442,Prix unitaire,UI_VISIBLE,t unitPriceLabel => 'Prix unitaire';
+lib\l10n\app_localizations_fr.dart,445,Entrez le prix unitaire,UI_VISIBLE,et unitPriceHint => 'Entrez le prix unitaire';
+lib\l10n\app_localizations_fr.dart,448,Créer le matériel,UI_VISIBLE,teMaterialButton => 'Créer le matériel';
+lib\l10n\app_localizations_fr.dart,451,Rupture de stock,UI_VISIBLE,stockStatus_out => 'Rupture de stock';
+lib\l10n\app_localizations_fr.dart,454,Stock faible,UI_VISIBLE,stockStatus_low => 'Stock faible';
+lib\l10n\app_localizations_fr.dart,457,En stock,UI_VISIBLE,t stockStatus_in => 'En stock';
+lib\l10n\app_localizations_fr.dart,460,Statut,INTERNAL,get statusLabel => 'Statut';
+lib\l10n\app_localizations_fr.dart,464,Référence : $ref,UI_VISIBLE,return 'Référence : $ref';
+lib\l10n\app_localizations_fr.dart,469,Stock : $stock $uom,UI_VISIBLE,return 'Stock : $stock $uom';
+lib\l10n\app_localizations_fr.dart,474,$type,INTERNAL,return '$type';
+lib\l10n\app_localizations_fr.dart,479,$current/$maximum,KEYS,return '$current/$maximum';
+lib\l10n\app_localizations_fr.dart,483,Total des matériaux,UI_VISIBLE,s_totalMaterials => 'Total des matériaux';
+lib\l10n\app_localizations_fr.dart,486,Matériaux actifs,UI_VISIBLE,_activeMaterials => 'Matériaux actifs';
+lib\l10n\app_localizations_fr.dart,489,En stock,UI_VISIBLE,ialStats_inStock => 'En stock';
+lib\l10n\app_localizations_fr.dart,492,Stock faible,UI_VISIBLE,alStats_lowStock => 'Stock faible';
+lib\l10n\app_localizations_fr.dart,495,Rupture de stock,UI_VISIBLE,Stats_outOfStock => 'Rupture de stock';
+lib\l10n\app_localizations_fr.dart,498,Périmé,INTERNAL,ialStats_expired => 'Périmé';
+lib\l10n\app_localizations_fr.dart,501,Périmant bientôt,UI_VISIBLE,ats_expiringSoon => 'Périmant bientôt';
+lib\l10n\app_localizations_fr.dart,504,Valeur totale,UI_VISIBLE,Stats_totalValue => 'Valeur totale';
+lib\l10n\app_localizations_fr.dart,507,Erreur de connexion,UI_VISIBLE,g get loginError => 'Erreur de connexion';
+lib\l10n\app_localizations_fr.dart,511,Erreur de connexion : $error,UI_VISIBLE,return 'Erreur de connexion : $error';
+lib\l10n\app_localizations_fr.dart,515,Erreur d\'inscription,UI_VISIBLE,get signupError => 'Erreur d\'inscription';
+lib\l10n\app_localizations_fr.dart,519,Erreur d\'inscription : $error,UI_VISIBLE,return 'Erreur d\'inscription : $error';
+lib\l10n\app_localizations_fr.dart,523,Consommable,INTERNAL,type_consumable => 'Consommable';
+lib\l10n\app_localizations_fr.dart,526,Durable,INTERNAL,get type_durable => 'Durable';
+lib\l10n\app_localizations_fr.dart,529,Service,INTERNAL,get type_service => 'Service';
+lib\l10n\app_localizations_fr.dart,532,Pièces,INTERNAL,g get uom_pieces => 'Pièces';
+lib\l10n\app_localizations_fr.dart,535,Kilogrammes,INTERNAL,tring get uom_kg => 'Kilogrammes';
+lib\l10n\app_localizations_fr.dart,538,Litres,INTERNAL,g get uom_liters => 'Litres';
+lib\l10n\app_localizations_fr.dart,541,Mètres,INTERNAL,g get uom_meters => 'Mètres';
+lib\l10n\app_localizations_fr.dart,544,Ordres de production,UI_VISIBLE,fOrdersPageTitle => 'Ordres de production';
+lib\l10n\app_localizations_fr.dart,547,Réessayer,INTERNAL,g get retryLabel => 'Réessayer';
+lib\l10n\app_localizations_fr.dart,550,Aucun ordre de production trouvé,UI_VISIBLE,noOfOrdersFound => 'Aucun ordre de production trouvé';
+lib\l10n\app_localizations_fr.dart,554,Ordre #$id,UI_VISIBLE,return 'Ordre #$id';
+lib\l10n\app_localizations_fr.dart,559,Créé : $datetime,UI_VISIBLE,return 'Créé : $datetime';
+lib\l10n\app_localizations_fr.dart,564,Mis à jour : $datetime,UI_VISIBLE,return 'Mis à jour : $datetime';
+lib\l10n\app_localizations_fr.dart,569,Matériel $id,UI_VISIBLE,return 'Matériel $id';
+lib\l10n\app_localizations_fr.dart,574,Page de détail du matériel - Bientôt disponible,UI_VISIBLE,'Page de détail du matériel - Bientôt disponible';
+lib\l10n\app_localizations_fr.dart,578,Ordre # $id,UI_VISIBLE,return 'Ordre # $id';
+lib\l10n\app_localizations_fr.dart,583,Client : $client,UI_VISIBLE,return 'Client : $client';
+lib\l10n\app_localizations_fr.dart,588,Produit : $product,UI_VISIBLE,return 'Produit : $product';
+lib\l10n\app_localizations_fr.dart,593,Quantité : $quantity,UI_VISIBLE,return 'Quantité : $quantity';
+lib\l10n\app_localizations_fr.dart,598,Description : $description,UI_VISIBLE,return 'Description : $description';
+lib\l10n\app_localizations_fr.dart,603,Créé : $datetime,UI_VISIBLE,return 'Créé : $datetime';
+lib\l10n\app_localizations_fr.dart,608,Mis à jour : $datetime,UI_VISIBLE,return 'Mis à jour : $datetime';
+lib\l10n\app_localizations_fr.dart,612,Inconnu,INTERNAL,erStatus_unknown => 'Inconnu';
+lib\l10n\app_localizations_fr.dart,615,Réception des matériaux,UI_VISIBLE,aterialReception => 'Réception des matériaux';
+lib\l10n\app_localizations_fr.dart,618,Préparation des matériaux,UI_VISIBLE,erialPreparation => 'Préparation des matériaux';
+lib\l10n\app_localizations_fr.dart,621,Production - Coupe,UI_VISIBLE,_productionCoupe => 'Production - Coupe';
+lib\l10n\app_localizations_fr.dart,624,Production - Prod,UI_VISIBLE,s_productionProd => 'Production - Prod';
+lib\l10n\app_localizations_fr.dart,627,Production - Test,UI_VISIBLE,s_productionTest => 'Production - Test';
+lib\l10n\app_localizations_fr.dart,630,Contrôle,INTERNAL,erStatus_control => 'Contrôle';
+lib\l10n\app_localizations_fr.dart,633,Expédition,INTERNAL,rStatus_shipment => 'Expédition';
+lib\l10n\app_localizations_fr.dart,636,Terminée,INTERNAL,Status_completed => 'Terminée';
+lib\l10n\app_localizations_fr.dart,639,Annulé,INTERNAL,Status_cancelled => 'Annulé';
+lib\l10n\app_localizations_fr.dart,642,Esporta PDF,UI_VISIBLE,rtPdfButtonLabel => 'Esporta PDF';
+lib\l10n\app_localizations_fr.dart,645,Tableau de bord superviseur,UI_VISIBLE,orDashboardTitle => 'Tableau de bord superviseur';
+lib\l10n\app_localizations_fr.dart,648,Production,INTERNAL,production_label => 'Production';
+lib\l10n\app_localizations_fr.dart,651,Alertes,INTERNAL,kpi_alerts_label => 'Alertes';
+lib\l10n\app_localizations_fr.dart,654,Opérateurs,INTERNAL,_operators_label => 'Opérateurs';
+lib\l10n\app_localizations_fr.dart,657,Temps Moyen,UI_VISIBLE,i_avg_time_label => 'Temps Moyen';
+lib\l10n\app_localizations_fr.dart,660,Réinitialiser,INTERNAL,get filter_reset => 'Réinitialiser';
+lib\l10n\app_localizations_fr.dart,663,Aucune OF active,UI_VISIBLE,g get noActiveOf => 'Aucune OF active';
+lib\l10n\app_localizations_fr.dart,667,Accès réservé aux superviseurs et administrateurs,UI_VISIBLE,'Accès réservé aux superviseurs et administrateurs';
+lib\l10n\app_localizations_fr.dart,670,Priorités mises à jour,UI_VISIBLE,rioritiesUpdated => 'Priorités mises à jour';
+lib\l10n\app_localizations_fr.dart,674,Attribuer un opérateur pour zone : $zone,UI_VISIBLE,return 'Attribuer un opérateur pour zone : $zone';
+lib\l10n\app_localizations_fr.dart,678,Calcul...,UI_VISIBLE,ialogCalculating => 'Calcul...';
+lib\l10n\app_localizations_fr.dart,681,Zone,INTERNAL,ng get zoneLabel => 'Zone';
+lib\l10n\app_localizations_fr.dart,685,Charge: $w,UI_VISIBLE,return 'Charge: $w';
+lib\l10n\app_localizations_fr.dart,689,Erreur,INTERNAL,g get errorLabel => 'Erreur';

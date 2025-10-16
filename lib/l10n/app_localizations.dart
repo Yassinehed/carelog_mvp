@@ -1225,6 +1225,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Esporta PDF'**
   String get exportPdfButtonLabel;
+
+  /// No description provided for @supervisorDashboardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Supervisor Dashboard'**
+  String get supervisorDashboardTitle;
+
+  /// No description provided for @kpi_production_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Production'**
+  String get kpi_production_label;
+
+  /// No description provided for @kpi_alerts_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts'**
+  String get kpi_alerts_label;
+
+  /// No description provided for @kpi_operators_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Operators'**
+  String get kpi_operators_label;
+
+  /// No description provided for @kpi_avg_time_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg Time'**
+  String get kpi_avg_time_label;
+
+  /// No description provided for @filter_reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get filter_reset;
+
+  /// No description provided for @noActiveOf.
+  ///
+  /// In en, this message translates to:
+  /// **'No active OF'**
+  String get noActiveOf;
+
+  /// No description provided for @accessDeniedSupervisor.
+  ///
+  /// In en, this message translates to:
+  /// **'Supervisor and admin access only'**
+  String get accessDeniedSupervisor;
+
+  /// No description provided for @prioritiesUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Priorities updated'**
+  String get prioritiesUpdated;
+
+  /// No description provided for @assignOperatorForZone.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign an operator for zone: {zone}'**
+  String assignOperatorForZone(Object zone);
+
+  /// No description provided for @assignDialogCalculating.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculating...'**
+  String get assignDialogCalculating;
+
+  /// No description provided for @zoneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Zone'**
+  String get zoneLabel;
+
+  /// No description provided for @workloadLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Workload: {w}'**
+  String workloadLabel(Object w);
+
+  /// No description provided for @errorLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get errorLabel;
 }
 
 class _AppLocalizationsDelegate
